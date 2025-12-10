@@ -1,3 +1,219 @@
 ---
-layout: default
+layout: null
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.data.resume.basics.name }} - Resume</title>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        :root {
+            --background-color: #282a36; /* Dracula background */
+            --text-color: #f8f8f2;     /* Dracula foreground */
+            --primary-color: #bd93f9;  /* Dracula purple */
+            --secondary-color: #6272a4; /* Dracula comment */
+            --border-color: #44475a;   /* Dracula current line */
+            --link-color: #8be9fd;     /* Dracula cyan */
+            --link-hover-color: #bd93f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #383a59; /* Slightly lighter Dracula current line */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            margin: 10px 0 5px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        .header p {
+            margin: 0;
+            font-size: 1.1em;
+            color: var(--text-color);
+        }
+
+        .social-icons {
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            color: var(--link-color);
+            font-size: 1.8em;
+            margin: 0 12px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: var(--link-hover-color);
+            transform: translateY(-3px);
+        }
+
+        /* Section Titles */
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+
+        /* Job Entry */
+        .job-entry, .education-entry {
+            margin-bottom: 30px;
+        }
+        .job-entry h3, .education-entry h3 {
+            color: var(--link-color);
+            margin-bottom: 5px;
+            font-size: 1.4em;
+        }
+        .job-entry p, .education-entry p {
+            margin: 0;
+            font-size: 0.95em;
+            color: var(--secondary-color);
+        }
+        .job-entry .company-name, .education-entry .institution-name {
+            font-weight: bold;
+            color: var(--text-color);
+        }
+        .job-entry .role-title, .education-entry .degree-title {
+            font-weight: bold;
+            color: var(--link-color);
+        }
+        .job-entry .date-range, .education-entry .date-range {
+            font-style: italic;
+            color: var(--secondary-color);
+        }
+        .job-entry ul, .education-entry ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 0;
+            margin-top: 10px;
+            color: var(--text-color);
+        }
+        .job-entry ul li, .education-entry ul li {
+            margin-bottom: 5px;
+        }
+        .job-entry ul li a, .education-entry ul li a {
+            color: var(--link-color);
+        }
+        .job-entry ul li a:hover, .education-entry ul li a:hover {
+            color: var(--link-hover-color);
+            text-decoration: underline;
+        }
+        
+        /* Specific role formatting within description */
+        .role-detail {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+        .role-detail strong {
+            color: var(--link-color);
+        }
+        .role-detail span {
+            font-style: italic;
+            color: var(--secondary-color);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="{{ site.data.resume.basics.photo }}" alt="{{ site.data.resume.basics.name }}" class="profile-photo">
+            <h1>{{ site.data.resume.basics.name }}</h1>
+            <p>{{ site.data.resume.basics.title }}</p>
+            <div class="social-icons">
+                <a href="mailto:{{ site.data.resume.basics.email }}" title="Email"><i class="fa fa-envelope"></i></a>
+                <a href="{{ site.data.resume.basics.linkedin }}" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="{{ site.data.resume.basics.github }}" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </header>
+
+        {% if site.data.resume.history %}
+        <h2>Experience</h2>
+        {% for company_block in site.data.resume.history %}
+        <div class="job-entry">
+            <h3>
+                <a href="{{ company_block.url }}" target="_blank" class="company-name">{{ company_block.company }}</a>
+                <span class="date-range"> ({{ company_block.start_date }} - {{ company_block.end_date }})</span>
+            </h3>
+            {% if company_block.roles %}
+                {% for role in company_block.roles %}
+                    <div class="role-detail">
+                        <strong>{{ role.title }}</strong>
+                        <span>{{ role.start_date }} - {{ role.end_date }}</span>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {{ company_block.description | markdownify }}
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% if site.data.resume.education %}
+        <h2>Education</h2>
+        {% for education_entry in site.data.resume.education %}
+        <div class="education-entry">
+            <h3>
+                <a href="{{ education_entry.url }}" target="_blank" class="institution-name">{{ education_entry.university }}</a>
+                <span class="date-range"> ({{ education_entry.start_date }} - {{ education_entry.end_date }})</span>
+            </h3>
+            <p class="degree-title">{{ education_entry.degree }}</p>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+    </div>
+</body>
+</html>
