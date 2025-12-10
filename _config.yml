@@ -1,6 +1,9 @@
-# Minimal Jekyll Config
+title: Max Spevack
+description: Senior Principal Linux Architect & Chief of Staff
+remote_theme: dracula/gh-pages
+lang: en
+
+# Build settings
 markdown: kramdown
-permalink: /:title/
-exclude:
-  - README.md
-  - OldResume.md
+plugins:
+  - jekyll-remote-theme
