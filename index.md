@@ -26,11 +26,13 @@ title: Resume
 
 ## Experience
 
-### [CIQ](https://ciq.com/)
-*(July 2025 - Present)*
+---
 
-**Senior Principal Linux Architect**  
-**Chief of Staff to the CTO**
+<h2 style="color: #ff79c6; margin-bottom: 5px;">[CIQ](https://ciq.com/)</h2>
+<p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(July 2025 - Present)</p>
+
+<strong style="color: #50fa7b;">Senior Principal Linux Architect</strong>  
+<strong style="color: #50fa7b;">Chief of Staff to the CTO</strong>
 
 The easiest way to describe my job is as CIQ's Linux [fixer](https://en.wikipedia.org/wiki/Fixer_(person)) and as [consigliere](https://en.wikipedia.org/wiki/Consigliere) to the CTO.
 
@@ -46,12 +48,10 @@ The easiest way to describe my job is as CIQ's Linux [fixer](https://en.wikipedi
 *   Hired the long-term Director for RAT and serve as coach/mentor and exception catcher for the RAT and Linux Engineering Directors.
 *   Established the engineering organization's weekly reporting framework, coordinated with Product on prioritization tracking, and automated the process using AI.
 
----
+--- 
 
-### [Google](http://www.google.com/)
-*(July 2021 - July 2023)*
-
-**Senior Manager, [Google Compute Engine](https://cloud.google.com/compute/)**
+<h2 style="color: #ff79c6; margin-bottom: 5px;">[Google](http://www.google.com/)</h2>
+<strong style="color: #50fa7b;">Senior Manager, [Google Compute Engine](https://cloud.google.com/compute/)</strong>
 
 I formed and led the ~50 person GCE Fleet organization, owning the development, qualification, and release velocity of the kernel + hypervisor bundle running on all GCE hosts. The team owned the lifecycle and versioning of GCE host pools.
 
@@ -61,11 +61,11 @@ I formed and led the ~50 person GCE Fleet organization, owning the development, 
 
 ---
 
-### [Amazon Web Services](http://aws.amazon.com/)
-*(July 2019 - June 2021)*
+<h2 style="color: #ff79c6; margin-bottom: 5px;">[Amazon Web Services](http://aws.amazon.com/)</h2>
+<p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(July 2019 - June 2021)</p>
 
-**General Manager, [Amazon Linux](https://aws.amazon.com/linux/amazon-linux-2023/)**  
-**Senior Manager, [Open Source](https://aws.amazon.com/opensource/)**
+<strong style="color: #50fa7b;">General Manager, [Amazon Linux](https://aws.amazon.com/linux/amazon-linux-2023/)</strong>  
+<strong style="color: #50fa7b;">Senior Manager, [Open Source](https://aws.amazon.com/opensource/)</strong>
 
 I led the >100 person organization that owned Amazon Linux – available as a [public EC2 image](https://aws.amazon.com/amazon-linux-ami/) and as an internal server OS for both [AWS](http://aws.amazon.com/) and Amazon's [retail business](http://www.amazon.com/) – as well as Amazon’s [Open Source Program Office](https://en.wikipedia.org/wiki/Open_Source_Program_Office) (OSPO).
 
@@ -86,10 +86,10 @@ With the OSPO, I re-organized the team to take a tooling-based approach to its c
 
 ---
 
-### [Google](http://www.google.com/)
-*(February 2016 - June 2019)*
+<h2 style="color: #ff79c6; margin-bottom: 5px;">[Google](http://www.google.com/)</h2>
+<p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(February 2016 - June 2019)</p>
 
-**Senior Manager, [Google Compute Engine](https://cloud.google.com/compute/)**
+<strong style="color: #50fa7b;">Senior Manager, [Google Compute Engine](https://cloud.google.com/compute/)</strong>
 
 I led the three GCE engineering teams accountable for:
 
@@ -102,10 +102,10 @@ Customer-facing launches include [Skylake](https://cloud.google.com/blog/product
 
 ---
 
-### [Amazon Web Services](http://aws.amazon.com/)
-*(August 2011 - January 2016)*
+<h2 style="color: #ff79c6; margin-bottom: 5px;">[Amazon Web Services](http://aws.amazon.com/)</h2>
+<p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(August 2011 - January 2016)</p>
 
-**Manager, Linux Kernel & Operating Systems**
+<strong style="color: #50fa7b;">Manager, Linux Kernel & Operating Systems</strong>
 
 I led the team accountable for Amazon Linux. The team's primary objective was to build, qualify, deploy, and support multiple versions of Amazon Linux. This included [feature](https://aws.amazon.com/amazon-linux-ami/2015.09-release-notes/) [development](https://aws.amazon.com/amazon-linux-ami/2015.03-release-notes/) and integration with EC2, building kernel and userspace packages, [security updates](https://alas.aws.amazon.com/), and deploying packages and images. The team owned the infrastructure and tooling to build packages, compose images, stage repositories, perform automated testing, and gather metrics.
 
@@ -113,12 +113,12 @@ I spent a year simultaneously managing two distinct teams – the Amazon Linux t
 
 ---
 
-### [Red Hat](http://www.redhat.com/)
-*(August 2004 - August 2011)*
+<h2 style="color: #ff79c6; margin-bottom: 5px;">[Red Hat](http://www.redhat.com/)</h2>
+<p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(August 2004 - August 2011)</p>
 
-**Manager, Open Source Community Architecture** *(Feb 2008 - Aug 2011)*  
-**[Fedora Project Leader](https://docs.fedoraproject.org/en-US/council/fpl/)** *(Feb 2006 - Feb 2008)*  
-**Linux Systems Engineer** *(Aug 2004 - Feb 2006)*
+<strong style="color: #50fa7b;">Manager, Open Source Community Architecture</strong> <span style="color: #8be9fd;">*(Feb 2008 - Aug 2011)*</span>  
+<strong style="color: #50fa7b;">[Fedora Project Leader](https://docs.fedoraproject.org/en-US/council/fpl/)</strong> <span style="color: #8be9fd;">*(Feb 2006 - Feb 2008)*</span>  
+<strong style="color: #50fa7b;">Linux Systems Engineer</strong> <span style="color: #8be9fd;">*(Aug 2004 - Feb 2006)*</span>
 
 I was ultimately accountable for the [Fedora Project](https://getfedora.org/), a collaboration between Red Hat and a worldwide community of free software contributors whose flagship project is the [Fedora Linux distribution](http://en.wikipedia.org/wiki/Fedora_(operating_system)). I was responsible for Red Hat employees and community contributors in numerous areas: product and engineering, operations, marketing, branding, community, communications, public speaking, legal, financial, budgeting, and hiring.
 
@@ -130,14 +130,14 @@ After two years I split the role into several parts – a continued Fedora Proje
 
 ---
 
-### [Verisign](http://en.wikipedia.org/wiki/Verisign)
-*(October 2002 - August 2004)*
+<h2 style="color: #ff79c6; margin-bottom: 5px;">[Verisign](http://en.wikipedia.org/wiki/Verisign)</h2>
+<p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(October 2002 - August 2004)</p>
 
-**Quality Assurance Engineer**
+<strong style="color: #50fa7b;">Quality Assurance Engineer</strong>
 
 ---
 
-### [Stanford University](http://cs.stanford.edu/)
-*(September 1998 - June 2002)*
+<h2 style="color: #ff79c6; margin-bottom: 5px;">[Stanford University](http://cs.stanford.edu/)</h2>
+<p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(September 1998 - June 2002)</p>
 
-**BS [Computer Science](http://cs.stanford.edu/)**
+<strong style="color: #50fa7b;">BS [Computer Science](http://cs.stanford.edu/)</strong>
