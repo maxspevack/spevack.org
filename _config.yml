@@ -125,9 +125,6 @@ content:
         link: http://en.wikipedia.org/wiki/Verisign
         description: Quality Assurance Engineer.
 
-  - title: Education
-    layout: list
-    content:
       - title: BS Computer Science
         sub_title: Stanford University
         caption: Sep 1998 - Jun 2002
@@ -135,5 +132,5 @@ content:
 
 # Build settings
 markdown: kramdown
-plugins:
-  - jekyll-remote-theme
+# plugins:
+#   - jekyll-remote-theme

@@ -1,13 +1,11 @@
 <div class="container header-container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 header-left">
+    <div class="col-xs-12 header-center">
       {% if site.about_profile_image %}
         <img class="profile-image" src="{{ site.about_profile_image | relative_url }}" alt="{{ site.name | escape }}">
       {% endif %}
       <h1>{{ site.name | escape }}</h1>
-      <h2>{{ site.title | escape }}</h2>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 header-right">
+      
       <ul class="icons no-print">
         {%- if site.email -%}
           <li>
@@ -36,32 +34,46 @@
 </div>
 
 <style>
-  .profile-image {
-    width: 100px; /* Adjust size as needed */
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
+  .header-container {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0; /* The horizontal line you wanted */
+    margin-bottom: 30px;
   }
-  .header-left {
+  .header-center {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center items in the column */
+    align-items: center;
     text-align: center;
   }
-  .header-right {
-    display: flex;
-    justify-content: center; /* Center icons horizontally */
-    align-items: center; /* Center icons vertically */
+  .profile-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
   }
-  .header-right .icons {
+  h1 {
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  .icons {
     padding: 0;
     margin: 0;
+    list-style: none;
   }
-  .header-right .icons li {
+  .icons li {
     display: inline-block;
-    margin: 0 5px; /* Adjust spacing between icons */
+    margin: 0 10px;
   }
-  /* Ensure Font Awesome is loaded, if not, it will be added in _includes/head.html */
+  .button--sacnite {
+    font-size: 1.5em; /* Larger icons */
+    color: #555;
+    transition: color 0.2s;
+  }
+  .button--sacnite:hover {
+    color: #000;
+  }
+  /* Font Awesome Import */
   @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 </style>
