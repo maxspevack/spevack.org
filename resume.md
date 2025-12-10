@@ -1,5 +1,40 @@
 # Max Spevack
-[max.spevack {at} gmail.com](mailto:max.spevack@gmail.com) | [LinkedIn](https://www.linkedin.com/in/maxspevack/)
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+  .icon-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 1.5em; /* Slightly smaller for resume */
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .icon-link {
+    color: #555;
+    transition: color 0.2s, transform 0.2s;
+    text-decoration: none; /* Remove underline for icons */
+  }
+  .icon-link:hover {
+    color: #000;
+    transform: translateY(-3px);
+  }
+  /* Specific brand colors on hover */
+  .icon-link.linkedin:hover { color: #0077b5; }
+  .icon-link.email:hover { color: #ea4335; }
+</style>
+
+<div class="icon-row">
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/maxspevack/" class="icon-link linkedin" title="LinkedIn" target="_blank">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  
+  <!-- Email -->
+  <a href="mailto:max.spevack@gmail.com" class="icon-link email" title="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+</div>
 
 ## [CIQ](https://ciq.com/)
 ### Senior Principal Linux Architect
