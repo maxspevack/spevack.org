@@ -1,5 +1,4 @@
 title: Max Spevack
-description: Senior Principal Linux Architect & Chief of Staff
 theme: null
 remote_theme: sproogen/modern-resume-theme
 lang: en
@@ -12,14 +11,9 @@ darkmode: true
 name: Max Spevack
 title: Senior Principal Linux Architect
 email: max.spevack@gmail.com
-email_title: Email Me
 about_profile_image: /max.jpg
 github_username: maxspevack
 linkedin_username: maxspevack
-
-# About Section (Optional - kept brief)
-about_content: |
-  Senior Principal Linux Architect & Chief of Staff to the CTO.
 
 # Content Sections
 content:
@@ -31,9 +25,9 @@ content:
         caption: July 2025 - Present
         link: https://ciq.com/
         description: |
-          The easiest way to describe my job is as CIQ's Linux <a href="https://en.wikipedia.org/wiki/Fixer_(person)">fixer</a> and as <a href="https://en.wikipedia.org/wiki/Consigliere">consigliere</a> to the CTO.
+          I am CIQ's Linux <a href="https://en.wikipedia.org/wiki/Fixer_(person)">fixer</a> and as <a href="https://en.wikipedia.org/wiki/Consigliere">consigliere</a> to the CTO.
           <ul>
-            <li>I served as interim leader of the Automation & Delivery team for five months, during which the team:
+            <li>I led the Automation & Delivery team for five months, during which the team:
               <ul>
                 <li>Launched an automated image build pipeline with customized schedules and kickoffs.</li>
                 <li>Revamped secure boot signing automation and established an automated testing framework across all major cloud platforms.</li>
@@ -42,8 +36,8 @@ content:
                 <li>Drafted and helped implement a re-org creating the Release All Things (RAT) team alongside the Linux Engineering (LE) team. LE is accountable for packages making it through the build system. RAT is accountable for everything required to assemble those packages into repositories and images and delivering those artifacts to customers.</li>
               </ul>
             </li>
-            <li>Led 2026 planning for the combined LE + RAT organization.</li>
             <li>Hired the long-term Director for RAT and serve as coach/mentor and exception catcher for the RAT and Linux Engineering Directors.</li>
+            <li>Led 2026 planning for the combined LE + RAT organization.</li>
             <li>Established the engineering organization's weekly reporting framework, coordinated with Product on prioritization tracking, and automated the process using AI.</li>
           </ul>
 
@@ -103,10 +97,11 @@ content:
           I led the team accountable for Amazon Linux. The team's primary objective was to build, qualify, deploy, and support multiple versions of Amazon Linux. This included feature development, building kernel and userspace packages, security updates, and deploying packages and images.
           I spent a year simultaneously managing two distinct teams – the Amazon Linux team discussed above, and the team responsible for qualifications of new EC2 instance types and platforms (T2, C4, D2). I also spent 18 months as part of the EC2 Operations team, responsible for a weekly summary of all EC2 operational issues.
 
-      - title: Manager, Open Source Community Architecture / Fedora Project Leader
+      - title: Manager, Open Source Community Architecture
+        title: Fedora Project Leader
         sub_title: Red Hat
         caption: Feb 2006 - Aug 2011
-        link: http://www.redhat.com/
+        link: https://www.redhat.com/
         description: |
           I was ultimately accountable for the <a href="https://getfedora.org/">Fedora Project</a>. I was responsible for Red Hat employees and community contributors in numerous areas: product and engineering, operations, marketing, branding, community, communications, public speaking, legal, financial, budgeting, and hiring.
           After two years I split the role into several parts – a continued Fedora Project Leader, a new Fedora Engineering Manager, and a new Open Source Community Architecture team, which I led.
@@ -119,16 +114,15 @@ content:
       - title: Quality Assurance Engineer
         sub_title: Verisign
         caption: Oct 2002 - Aug 2004
-        link: http://en.wikipedia.org/wiki/Verisign
-        description: Quality Assurance Engineer.
+        link: https://www.verisign.com/
 
   - title: Education
     layout: list
     content:
       - title: BS Computer Science
         sub_title: Stanford University
-        caption: Sep 1998 - Jun 2002
-        link: http://cs.stanford.edu/
+        caption: September 1998 - June 2002
+        link: https://www.cs.stanford.edu/
 
 # Build settings
 markdown: kramdown
