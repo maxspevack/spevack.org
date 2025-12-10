@@ -46,7 +46,7 @@ The easiest way to describe my job is as CIQ's Linux [fixer](https://en.wikipedi
 
 ---
 
-<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="http://www.google.com/" style="color: #ff79c6; text-decoration: none;">Google</a></h2>
+<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="https://www.google.com/" style="color: #ff79c6; text-decoration: none;">Google</a></h2>
 <p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(July 2021 - July 2023)</p>
 
 <strong style="color: #50fa7b;">Senior Manager, [Google Compute Engine](https://cloud.google.com/compute/)</strong>
@@ -59,18 +59,18 @@ I formed and led the ~50 person GCE Fleet organization, owning the development, 
 
 ---
 
-<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="http://aws.amazon.com/" style="color: #ff79c6; text-decoration: none;">Amazon Web Services</a></h2>
+<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="https://aws.amazon.com/" style="color: #ff79c6; text-decoration: none;">Amazon Web Services</a></h2>
 <p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(July 2019 - June 2021)</p>
 
 <strong style="color: #50fa7b;">General Manager, [Amazon Linux](https://aws.amazon.com/linux/amazon-linux-2023/)</strong>  
 <strong style="color: #50fa7b;">Senior Manager, [Open Source](https://aws.amazon.com/opensource/)</strong>
 
-I led the >100 person organization that owned Amazon Linux – available as a [public EC2 image](https://aws.amazon.com/amazon-linux-ami/) and as an internal server OS for both [AWS](http://aws.amazon.com/) and Amazon's [retail business](http://www.amazon.com/) – as well as Amazon’s [Open Source Program Office](https://en.wikipedia.org/wiki/Open_Source_Program_Office) (OSPO).
+I led the >100 person organization that owned Amazon Linux – available as a [public EC2 image](https://aws.amazon.com/amazon-linux-ami/) and as an internal server OS for both [AWS](https://aws.amazon.com/) and Amazon's [retail business](https://www.amazon.com/) – as well as Amazon’s [Open Source Program Office](https://en.wikipedia.org/wiki/Open_Source_Program_Office) (OSPO).
 
 I was ultimately accountable for Amazon’s Linux portfolio – product and engineering, including:
 
 *   Creation of the [Amazon Linux 1](https://aws.amazon.com/amazon-linux-ami/) (AL1) [extended support plan](https://aws.amazon.com/blogs/aws/update-on-amazon-ami-end-of-life/) based on many customer requests.
-*   Continued development of [Amazon Linux 2](https://aws.amazon.com/amazon-linux-ami/) (AL2), including the addition of [kernel live patching](https://docs.aws.amazon.com/linux/al2/ug/al2-live-patching.html).
+*   Continued development of [Amazon Linux 2](https://aws.amazon.com/amazon-linux-2/) (AL2), including the addition of [kernel live patching](https://docs.aws.amazon.com/linux/al2/ug/al2-live-patching.html).
 *   Delivered the fully-approved PR/FAQ for [Amazon Linux 2023](https://aws.amazon.com/linux/amazon-linux-2023/).
 *   Launched GA of [Bottlerocket](https://bottlerocket.dev/), a Linux-based OS purpose-built for hosting containers on multiple platforms (AWS, Bare Metal, VMWare) as well as orchestrators (EKS, ECS).
 *   Prioritized internal migration to AL2 by delivering in-place upgrades from AL1.
@@ -84,7 +84,7 @@ With the OSPO, I re-organized the team to take a tooling-based approach to its c
 
 ---
 
-<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="http://www.google.com/" style="color: #ff79c6; text-decoration: none;">Google</a></h2>
+<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="https://www.google.com/" style="color: #ff79c6; text-decoration: none;">Google</a></h2>
 <p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(February 2016 - June 2019)</p>
 
 <strong style="color: #50fa7b;">Senior Manager, [Google Compute Engine](https://cloud.google.com/compute/)</strong>
@@ -100,7 +100,7 @@ Customer-facing launches include [Skylake](https://cloud.google.com/blog/product
 
 ---
 
-<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="http://aws.amazon.com/" style="color: #ff79c6; text-decoration: none;">Amazon Web Services</a></h2>
+<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="https://aws.amazon.com/" style="color: #ff79c6; text-decoration: none;">Amazon Web Services</a></h2>
 <p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(August 2011 - January 2016)</p>
 
 <strong style="color: #50fa7b;">Manager, Linux Kernel & Operating Systems</strong>
@@ -111,31 +111,31 @@ I spent a year simultaneously managing two distinct teams – the Amazon Linux t
 
 ---
 
-<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="http://www.redhat.com/" style="color: #ff79c6; text-decoration: none;">Red Hat</a></h2>
+<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="https://www.redhat.com/" style="color: #ff79c6; text-decoration: none;">Red Hat</a></h2>
 <p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(August 2004 - August 2011)</p>
 
 <strong style="color: #50fa7b;">Manager, Open Source Community Architecture</strong> <span style="color: #8be9fd;">*(Feb 2008 - Aug 2011)*</span>  
 <strong style="color: #50fa7b;">[Fedora Project Leader](https://docs.fedoraproject.org/en-US/council/fpl/)</strong> <span style="color: #8be9fd;">*(Feb 2006 - Feb 2008)*</span>  
 <strong style="color: #50fa7b;">Linux Systems Engineer</strong> <span style="color: #8be9fd;">*(Aug 2004 - Feb 2006)*</span>
 
-I was ultimately accountable for the [Fedora Project](https://getfedora.org/), a collaboration between Red Hat and a worldwide community of free software contributors whose flagship project is the [Fedora Linux distribution](http://en.wikipedia.org/wiki/Fedora_(operating_system)). I was responsible for Red Hat employees and community contributors in numerous areas: product and engineering, operations, marketing, branding, community, communications, public speaking, legal, financial, budgeting, and hiring.
+I was ultimately accountable for the [Fedora Project](https://fedoraproject.org/), a collaboration between Red Hat and a worldwide community of free software contributors whose flagship project is the [Fedora Linux distribution](http://en.wikipedia.org/wiki/Fedora_(operating_system)). I was responsible for Red Hat employees and community contributors in numerous areas: product and engineering, operations, marketing, branding, community, communications, public speaking, legal, financial, budgeting, and hiring.
 
 After two years I split the role into several parts – a continued Fedora Project Leader, a new Fedora Engineering Manager, and a new Open Source Community Architecture team, which I led. This was a global team, with a charter to deliver highly leveraged growth, development, and success of communities strategic to Red Hat's business and brand, including:
 
-*   Ensuring that the free software community was an equal partner in the creation of Red Hat's products, and that the [Open Source Way](http://www.theopensourceway.org/) was institutionalized in Red Hat’s culture.
+*   Ensuring that the free software community was an equal partner in the creation of Red Hat's products, and that the [Open Source Way](https://www.theopensourceway.org/) was institutionalized in Red Hat’s culture.
 *   Stewardship and senior-level leadership of the Fedora Project.
-*   Merging the Open Source Way and education, founding the [Teaching Open Source](http://teachingopensource.org/) community.
+*   Merging the Open Source Way and education, founding the [Teaching Open Source](https://teachingopensource.org/) community.
 
 ---
 
-<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="http://en.wikipedia.org/wiki/Verisign" style="color: #ff79c6; text-decoration: none;">Verisign</a></h2>
+<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="https://www.verisign.com/" style="color: #ff79c6; text-decoration: none;">Verisign</a></h2>
 <p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(October 2002 - August 2004)</p>
 
 <strong style="color: #50fa7b;">Quality Assurance Engineer</strong>
 
 ---
 
-<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="http://cs.stanford.edu/" style="color: #ff79c6; text-decoration: none;">Stanford University</a></h2>
+<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="https://cs.stanford.edu/" style="color: #ff79c6; text-decoration: none;">Stanford University</a></h2>
 <p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(September 1998 - June 2002)</p>
 
-<strong style="color: #50fa7b;">BS [Computer Science](http://cs.stanford.edu/)</strong>
+<strong style="color: #50fa7b;">BS [Computer Science](https://cs.stanford.edu/)</strong>
