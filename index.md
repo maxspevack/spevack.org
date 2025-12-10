@@ -28,7 +28,7 @@ title: Max Spevack
 <!-- Load FontAwesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-<h2 style="color: #ff79c6; border-bottom: 1px solid #44475a; padding-bottom: 10px; margin-top: 40px; margin-bottom: 30px;">Experience</h2>
+<h2 style="color: #bd93f9; border-bottom: 1px solid #44475a; padding-bottom: 10px; margin-top: 40px; margin-bottom: 30px;">Experience</h2>
 
 <h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="https://ciq.com/" style="color: #ff79c6; text-decoration: none;">CIQ</a></h2>
 <p style="color: #6272a4; font-style: italic; margin-top: 0; margin-bottom: 15px;">(July 2025 - Present)</p>
@@ -111,7 +111,7 @@ Led three engineering teams (KVM, Kernel Performance, Customer Experience) respo
 
 <strong style="color: #50fa7b;">Quality Assurance Engineer</strong>
 
-<h2 style="color: #ff79c6; border-bottom: 1px solid #44475a; padding-bottom: 10px; margin-top: 40px; margin-bottom: 30px;">Education</h2>
+<h2 style="color: #bd93f9; border-bottom: 1px solid #44475a; padding-bottom: 10px; margin-top: 40px; margin-bottom: 30px;">Education</h2>
 
 <h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="https://cs.stanford.edu/" style="color: #ff79c6; text-decoration: none;">Stanford University</a></h2>
 <p style="color: #6272a4; font-style: italic; margin-top: 0; margin-bottom: 15px;">(September 1998 - June 2002)</p>
