@@ -1,5 +1,6 @@
 remote_theme: "dracula/gh-pages"
-title: Max Spevack
-#remote_theme: pages-themes/hacker@v0.2.0
-#remote_theme: pages-themes/midnight@v0.2.0
-#remote_theme: pages-themes/tactile@v0.2.0
+title: spevack.org
+tagline: Max Spevack
+description: Max Spevack
+url: https://spevack.org
+logo: favicon.ico
