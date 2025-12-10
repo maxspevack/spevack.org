@@ -14,6 +14,9 @@
     <!-- We try to find the standard location or fall back -->
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
     <!-- Custom Favicons from index.md logic are usually in head, but we put them in body in index.md. 
          Let's keep them here for correctness if we can, or rely on index.md's explicit tags. 
          Actually, since index.md has them, we don't strictly need them here, 
@@ -24,7 +27,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="shortcut icon" href="/favicon.ico">
   </head>
-  <body>
+  <body style="padding-top: 50px;">
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         {{ content }}
