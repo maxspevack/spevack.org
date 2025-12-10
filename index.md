@@ -1,5 +1,5 @@
 # MAX SPEVACK
-[max.spevack@gmail.com](mailto:max.spevack@gmail.com) | [LinkedIn](https://www.linkedin.com/in/maxspevack/)
+[max.spevack {at} gmail.com](mailto:max.spevack@gmail.com) | [LinkedIn](https://www.linkedin.com/in/maxspevack/)
 
 ## [CIQ](https://ciq.com/)
 ### Senior Principal Linux Architect
