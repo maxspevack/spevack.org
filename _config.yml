@@ -1,6 +1,10 @@
-remote_theme: "dracula/gh-pages"
-title: spevack.org
-tagline: Max Spevack
-description: Max Spevack
-url: https://spevack.org
-logo: favicon.ico
+title: Max Spevack
+description: Senior Principal Linux Architect & Chief of Staff
+theme: null
+remote_theme: sproogen/modern-resume-theme
+lang: en
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-remote-theme
