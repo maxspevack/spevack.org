@@ -5,23 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!-- Use the theme's SEO tag if available, or simple title -->
     {% if site.title %}
       <title>{{ site.title }}</title>
     {% endif %}
 
     <!-- Link to the theme's CSS (Dracula) -->
-    <!-- We try to find the standard location or fall back -->
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
-    <!-- Custom Favicons from index.md logic are usually in head, but we put them in body in index.md. 
-         Let's keep them here for correctness if we can, or rely on index.md's explicit tags. 
-         Actually, since index.md has them, we don't strictly need them here, 
-         BUT index.md content goes into {{ content }}, which is in <body>. 
-         Technically favicons belong in <head>. Let's move them here for valid HTML. -->
+    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
