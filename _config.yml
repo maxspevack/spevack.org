@@ -3,21 +3,132 @@ description: Senior Principal Linux Architect & Chief of Staff
 theme: null
 remote_theme: sproogen/modern-resume-theme
 lang: en
+version: 2
 
 # Theme Settings
-limit_day_night: true
-force_night: true
+darkmode: true
 
-# Personal Details (Header)
+# Personal Details
 name: Max Spevack
-tagline: Senior Principal Linux Architect
-mobile: ""
+title: Senior Principal Linux Architect
 email: max.spevack@gmail.com
-website: ""
-github: maxspevack
-linkedin: maxspevack
-twitter: ""
-stackoverflow: ""
+email_title: Email Me
+about_profile_image: /max.jpg
+github_username: maxspevack
+linkedin_username: maxspevack
+
+# About Section (Optional - kept brief)
+about_content: |
+  Senior Principal Linux Architect & Chief of Staff to the CTO.
+
+# Content Sections
+content:
+  - title: Experience
+    layout: list
+    content:
+      - title: Senior Principal Linux Architect & Chief of Staff to the CTO
+        sub_title: CIQ
+        caption: July 2025 - Present
+        link: https://ciq.com/
+        description: |
+          The easiest way to describe my job is as CIQ's Linux <a href="https://en.wikipedia.org/wiki/Fixer_(person)">fixer</a> and as <a href="https://en.wikipedia.org/wiki/Consigliere">consigliere</a> to the CTO.
+          <ul>
+            <li>I served as interim leader of the Automation & Delivery team for five months, during which the team:
+              <ul>
+                <li>Launched an automated image build pipeline with customized schedules and kickoffs.</li>
+                <li>Revamped secure boot signing automation and established an automated testing framework across all major cloud platforms.</li>
+                <li>Improved image freshness metrics from quarterly to monthly.</li>
+                <li>Produced customized images for <a href="https://cloud.google.com/distributed-cloud-air-gapped">Google Distributed Cloud</a>, AMD, and NVIDIA.</li>
+                <li>Drafted and helped implement a re-org creating the Release All Things (RAT) team alongside the Linux Engineering (LE) team. LE is accountable for packages making it through the build system. RAT is accountable for everything required to assemble those packages into repositories and images and delivering those artifacts to customers.</li>
+              </ul>
+            </li>
+            <li>Led 2026 planning for the combined LE + RAT organization.</li>
+            <li>Hired the long-term Director for RAT and serve as coach/mentor and exception catcher for the RAT and Linux Engineering Directors.</li>
+            <li>Established the engineering organization's weekly reporting framework, coordinated with Product on prioritization tracking, and automated the process using AI.</li>
+          </ul>
+
+      - title: Senior Manager, Google Compute Engine
+        sub_title: Google
+        caption: Jul 2021 - Jul 2023
+        link: https://cloud.google.com/compute/
+        description: |
+          I formed and led the ~50 person GCE Fleet organization, owning the development, qualification, and release velocity of the kernel + hypervisor bundle running on all GCE hosts. The team owned the lifecycle and versioning of GCE host pools.
+          <ul>
+            <li>Assembly, qualification, deployment, and operation of the standard GCE fleet, with a primary focus on velocity and heterogeneity metrics to inform our engineering priorities. One innovation was the amusingly named “mandatory experiments” policy to reduce rollbacks.</li>
+            <li>Development, initial deployment, and operation of a “stable fleet” for enterprise customers with greater sensitivities to change windows. This functionality included automated notifications, migration window (with live and managed migrations), and specific rate-of-change guarantees. Later, this stable fleet concept expanded to fine-grained GCE host pools.</li>
+            <li>White-gloves engineering treatment for ultra-VIP GCE customers.</li>
+          </ul>
+
+      - title: General Manager, Amazon Linux
+        sub_title: Amazon Web Services
+        caption: Jul 2019 - Jun 2021
+        link: https://aws.amazon.com/linux/amazon-linux-2023/
+        description: |
+          I led the >100 person organization that owned Amazon Linux – available as a <a href="https://aws.amazon.com/amazon-linux-ami/">public EC2 image</a> and as an internal server OS for both AWS and Amazon's retail business – as well as Amazon’s <a href="https://en.wikipedia.org/wiki/Open_Source_Program_Office">Open Source Program Office</a> (OSPO).
+          I was ultimately accountable for Amazon’s Linux portfolio – product and engineering, including:
+          <ul>
+            <li>Creation of the <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux 1</a> (AL1) <a href="https://aws.amazon.com/blogs/aws/update-on-amazon-linux-ami-end-of-life/">extended support plan</a> based on many customer requests.</li>
+            <li>Continued development of <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux 2</a> (AL2), including the addition of <a href="https://docs.aws.amazon.com/linux/al2/ug/al2-live-patching.html">kernel live patching</a>.</li>
+            <li>Delivered the fully-approved PR/FAQ for <a href="https://aws.amazon.com/linux/amazon-linux-2023/">Amazon Linux 2023</a>.</li>
+            <li>Launched GA of <a href="https://bottlerocket.dev/">Bottlerocket</a>, a Linux-based OS purpose-built for hosting containers on multiple platforms (AWS, Bare Metal, VMWare) as well as orchestrators (EKS, ECS).</li>
+            <li>Prioritized internal migration to AL2 by delivering in-place upgrades from AL1.</li>
+            <li>Rebuilt the CVE ingestion infrastructure, improving Amazon Linux security tracking and <a href="https://alas.aws.amazon.com/">publication</a>.</li>
+          </ul>
+          With the OSPO, I re-organized the team to take a tooling-based approach to its charter, specifically increasing the number of cases (including GitHub administration and M&A work) that could be resolved either automatically or by customers directly.
+          <ul>
+            <li>Launched “Open Source Champions”, a program to deputize Principal Engineers in organizations to make open-source related decisions directly, pushing ownership to the customer.</li>
+            <li>Delivered and received approval from AWS leadership on “Open Source Decision Making Guidelines”, a mechanism for teams to determine if and when to open source their code.</li>
+            <li>Developed and operationalized an “Open Source Readiness Review”, ensuring that teams making the decision to open source their code had done so in a way that would result in successful community projects.</li>
+          </ul>
+
+      - title: Senior Manager, Google Compute Engine
+        sub_title: Google
+        caption: Feb 2016 - Jun 2019
+        link: https://cloud.google.com/compute/
+        description: |
+          I led the three GCE engineering teams accountable for:
+          <ul>
+            <li>KVM, both in Google's kernel and the relationship with the upstream community.</li>
+            <li>Building, qualifying, and measuring GCE host kernel quality and deployment velocity.</li>
+            <li>New product introduction and end-to-end customer experience for CPUs, GPUs, memory-optimized instances, and nested virtualization.</li>
+            <li>Live migration functionality and efficiency.</li>
+          </ul>
+          Customer-facing launches include Skylake and Cascade Lake CPUs, SAP-certified large memory instances (ultramem, m2), Nvidia GPUs (V100, P4, T4), and nested virtualization. The team received four of Google's "Cloud Feat of Engineering" awards.
+
+      - title: Manager, Linux Kernel & Operating Systems
+        sub_title: Amazon Web Services
+        caption: Aug 2011 - Jan 2016
+        link: http://aws.amazon.com/
+        description: |
+          I led the team accountable for Amazon Linux. The team's primary objective was to build, qualify, deploy, and support multiple versions of Amazon Linux. This included feature development, building kernel and userspace packages, security updates, and deploying packages and images.
+          I spent a year simultaneously managing two distinct teams – the Amazon Linux team discussed above, and the team responsible for qualifications of new EC2 instance types and platforms (T2, C4, D2). I also spent 18 months as part of the EC2 Operations team, responsible for a weekly summary of all EC2 operational issues.
+
+      - title: Manager, Open Source Community Architecture / Fedora Project Leader
+        sub_title: Red Hat
+        caption: Feb 2006 - Aug 2011
+        link: http://www.redhat.com/
+        description: |
+          I was ultimately accountable for the <a href="https://getfedora.org/">Fedora Project</a>. I was responsible for Red Hat employees and community contributors in numerous areas: product and engineering, operations, marketing, branding, community, communications, public speaking, legal, financial, budgeting, and hiring.
+          After two years I split the role into several parts – a continued Fedora Project Leader, a new Fedora Engineering Manager, and a new Open Source Community Architecture team, which I led.
+          <ul>
+            <li>Ensuring that the free software community was an equal partner in the creation of Red Hat's products, and that the Open Source Way was institutionalized in Red Hat’s culture.</li>
+            <li>Stewardship and senior-level leadership of the Fedora Project.</li>
+            <li>Merging the Open Source Way and education, founding the Teaching Open Source community.</li>
+          </ul>
+
+      - title: Quality Assurance Engineer
+        sub_title: Verisign
+        caption: Oct 2002 - Aug 2004
+        link: http://en.wikipedia.org/wiki/Verisign
+        description: Quality Assurance Engineer.
+
+  - title: Education
+    layout: list
+    content:
+      - title: BS Computer Science
+        sub_title: Stanford University
+        caption: Sep 1998 - Jun 2002
+        link: http://cs.stanford.edu/
 
 # Build settings
 markdown: kramdown
