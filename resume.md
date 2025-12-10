@@ -1,4 +1,4 @@
-# MAX SPEVACK
+# Max Spevack
 [max.spevack {at} gmail.com](mailto:max.spevack@gmail.com) | [LinkedIn](https://www.linkedin.com/in/maxspevack/)
 
 ## [CIQ](https://ciq.com/)
