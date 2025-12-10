@@ -1,11 +1,10 @@
 ---
 layout: default
-title: Resume
+title: Max Spevack
 ---
 <div style="text-align: center;">
   <img src="max.jpg" style="width: 150px; border-radius: 50%; border: 3px solid #bd93f9; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
   <h1 style="margin-top: 10px; margin-bottom: 5px;">Max Spevack</h1>
-  <p style="color: #bd93f9; font-weight: bold; margin-bottom: 15px;">Senior Principal Linux Architect</p>
   
   <p>
     <a href="mailto:max.spevack@gmail.com" style="margin: 0 10px; text-decoration: none;">
@@ -28,7 +27,7 @@ title: Resume
 
 ---
 
-<h2 style="color: #ff79c6; margin-bottom: 5px;">[CIQ](https://ciq.com/)</h2>
+<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="https://ciq.com/" style="color: #ff79c6; text-decoration: none;">CIQ</a></h2>
 <p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(July 2025 - Present)</p>
 
 <strong style="color: #50fa7b;">Senior Principal Linux Architect</strong>  
@@ -48,9 +47,11 @@ The easiest way to describe my job is as CIQ's Linux [fixer](https://en.wikipedi
 *   Hired the long-term Director for RAT and serve as coach/mentor and exception catcher for the RAT and Linux Engineering Directors.
 *   Established the engineering organization's weekly reporting framework, coordinated with Product on prioritization tracking, and automated the process using AI.
 
---- 
+---
 
-<h2 style="color: #ff79c6; margin-bottom: 5px;">[Google](http://www.google.com/)</h2>
+<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="http://www.google.com/" style="color: #ff79c6; text-decoration: none;">Google</a></h2>
+<p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(July 2021 - July 2023)</p>
+
 <strong style="color: #50fa7b;">Senior Manager, [Google Compute Engine](https://cloud.google.com/compute/)</strong>
 
 I formed and led the ~50 person GCE Fleet organization, owning the development, qualification, and release velocity of the kernel + hypervisor bundle running on all GCE hosts. The team owned the lifecycle and versioning of GCE host pools.
@@ -61,7 +62,7 @@ I formed and led the ~50 person GCE Fleet organization, owning the development, 
 
 ---
 
-<h2 style="color: #ff79c6; margin-bottom: 5px;">[Amazon Web Services](http://aws.amazon.com/)</h2>
+<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="http://aws.amazon.com/" style="color: #ff79c6; text-decoration: none;">Amazon Web Services</a></h2>
 <p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(July 2019 - June 2021)</p>
 
 <strong style="color: #50fa7b;">General Manager, [Amazon Linux](https://aws.amazon.com/linux/amazon-linux-2023/)</strong>  
@@ -86,7 +87,7 @@ With the OSPO, I re-organized the team to take a tooling-based approach to its c
 
 ---
 
-<h2 style="color: #ff79c6; margin-bottom: 5px;">[Google](http://www.google.com/)</h2>
+<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="http://www.google.com/" style="color: #ff79c6; text-decoration: none;">Google</a></h2>
 <p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(February 2016 - June 2019)</p>
 
 <strong style="color: #50fa7b;">Senior Manager, [Google Compute Engine](https://cloud.google.com/compute/)</strong>
@@ -102,7 +103,7 @@ Customer-facing launches include [Skylake](https://cloud.google.com/blog/product
 
 ---
 
-<h2 style="color: #ff79c6; margin-bottom: 5px;">[Amazon Web Services](http://aws.amazon.com/)</h2>
+<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="http://aws.amazon.com/" style="color: #ff79c6; text-decoration: none;">Amazon Web Services</a></h2>
 <p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(August 2011 - January 2016)</p>
 
 <strong style="color: #50fa7b;">Manager, Linux Kernel & Operating Systems</strong>
@@ -113,7 +114,7 @@ I spent a year simultaneously managing two distinct teams – the Amazon Linux t
 
 ---
 
-<h2 style="color: #ff79c6; margin-bottom: 5px;">[Red Hat](http://www.redhat.com/)</h2>
+<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="http://www.redhat.com/" style="color: #ff79c6; text-decoration: none;">Red Hat</a></h2>
 <p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(August 2004 - August 2011)</p>
 
 <strong style="color: #50fa7b;">Manager, Open Source Community Architecture</strong> <span style="color: #8be9fd;">*(Feb 2008 - Aug 2011)*</span>  
@@ -130,14 +131,14 @@ After two years I split the role into several parts – a continued Fedora Proje
 
 ---
 
-<h2 style="color: #ff79c6; margin-bottom: 5px;">[Verisign](http://en.wikipedia.org/wiki/Verisign)</h2>
+<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="http://en.wikipedia.org/wiki/Verisign" style="color: #ff79c6; text-decoration: none;">Verisign</a></h2>
 <p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(October 2002 - August 2004)</p>
 
 <strong style="color: #50fa7b;">Quality Assurance Engineer</strong>
 
 ---
 
-<h2 style="color: #ff79c6; margin-bottom: 5px;">[Stanford University](http://cs.stanford.edu/)</h2>
+<h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="http://cs.stanford.edu/" style="color: #ff79c6; text-decoration: none;">Stanford University</a></h2>
 <p style="color: #f1fa8c; font-style: italic; margin-top: 0; margin-bottom: 15px;">(September 1998 - June 2002)</p>
 
 <strong style="color: #50fa7b;">BS [Computer Science](http://cs.stanford.edu/)</strong>
