@@ -4,6 +4,21 @@ theme: null
 remote_theme: sproogen/modern-resume-theme
 lang: en
 
+# Theme Settings
+limit_day_night: true
+force_night: true
+
+# Personal Details (Header)
+name: Max Spevack
+tagline: Senior Principal Linux Architect
+mobile: ""
+email: max.spevack@gmail.com
+website: ""
+github: maxspevack
+linkedin: maxspevack
+twitter: ""
+stackoverflow: ""
+
 # Build settings
 markdown: kramdown
 plugins:
