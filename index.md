@@ -4,16 +4,16 @@ title: Max Spevack
 ---
 <div style="text-align: center;">
   <img src="max.jpg" style="width: 150px; border-radius: 50%; border: 3px solid #bd93f9; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
-  <h1 style="margin-top: 10px; margin-bottom: 5px;">Max Spevack</h1>
+  <h1 style="margin-top: 10px; margin-bottom: 15px;">Max Spevack</h1>
   
   <p>
-    <a href="mailto:max.spevack@gmail.com" style="margin: 0 10px; text-decoration: none;">
+    <a href="mailto:max.spevack@gmail.com" style="margin: 0 10px; text-decoration: none; color: #bd93f9;">
       <i class="fas fa-envelope fa-lg"></i>
     </a>
-    <a href="https://www.linkedin.com/in/maxspevack/" style="margin: 0 10px; text-decoration: none;">
+    <a href="https://www.linkedin.com/in/maxspevack/" style="margin: 0 10px; text-decoration: none; color: #bd93f9;">
       <i class="fab fa-linkedin fa-lg"></i>
     </a>
-    <a href="https://github.com/maxspevack" style="margin: 0 10px; text-decoration: none;">
+    <a href="https://github.com/maxspevack" style="margin: 0 10px; text-decoration: none; color: #bd93f9;">
       <i class="fab fa-github fa-lg"></i>
     </a>
   </p>
@@ -22,8 +22,6 @@ title: Max Spevack
 
 <!-- Load FontAwesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-## Experience
 
 ---
 
