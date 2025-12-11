@@ -5,7 +5,7 @@ title: Max Spevack
 <div style="text-align: center;">
   <img src="max.jpg" style="width: 150px; border-radius: 50%; border: 3px solid #bd93f9; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
   <h1 style="margin-top: 10px; margin-bottom: 15px; color: #bd93f9;">Max Spevack</h1>
-  <p style="color: #8be9fd; font-weight: bold; margin-bottom: 15px;">Engineering Leader & Linux Architect</p>
+  <p style="color: #8be9fd; font-weight: bold; margin-bottom: 15px;">Engineering Leader & Organizational Architect</p>
   
   <p>
     <a href="mailto:max.spevack@gmail.com" style="margin: 0 10px; text-decoration: none; color: #f8f8f2;">
@@ -21,14 +21,14 @@ title: Max Spevack
   <br>
   
   <p style="max-width: 700px; margin: 0 auto; text-align: left; line-height: 1.6; color: #f8f8f2;">
-    Senior technology leader with 20+ years of experience bridging deep Linux engineering and high-level product strategy at hyperscale (Google, AWS) and open-source pioneers (Red Hat). Proven track record of transforming engineering organizations, launching operating systems that power the cloud, and driving operational rigor in complex environments.
+    Senior technology leader with 20+ years of experience bridging deep Linux engineering and high-level product strategy. Specializing in high-stakes engineering leadership, organizational turnarounds, and building the teams that power the cloud at hyperscale (Google, AWS) and open-source pioneers (Red Hat).
   </p>
 </div>
 
 <!-- Load FontAwesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-<h2 style="color: #bd93f9; border-bottom: 1px solid #44475a; padding-bottom: 10px; margin-top: 40px; margin-bottom: 30px;">Experience</h2>
+<hr style="border-color: #44475a;">
 
 <h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="https://ciq.com/" style="color: #ff79c6; text-decoration: none;">CIQ</a></h2>
 <p style="color: #6272a4; font-style: italic; margin-top: 0; margin-bottom: 15px;">(July 2025 - Present)</p>
@@ -36,10 +36,10 @@ title: Max Spevack
 <strong style="color: #50fa7b;">Senior Principal Linux Architect</strong>  
 <strong style="color: #50fa7b;">Chief of Staff to the CTO</strong>
 
-Acting as the strategic "fixer" for the CTO, driving cross-functional alignment and operational velocity across the engineering organization.
+Acting as the strategic "fixer" for the CTO, re-architecting the engineering organization for velocity and accountability.
 
 *   **Organizational Transformation:** Architected and executed the reorganization of Engineering into "Linux Engineering" (Build) and "Release All Things" (Delivery), clarifying accountability and accelerating release velocity.
-*   **Automation & Efficiency:** Interim-led the Automation team to reduce image build cycles from quarterly to monthly, launching a fully automated pipeline for [Google Distributed Cloud](https://cloud.google.com/distributed-cloud-air-gapped), AMD, and NVIDIA streams.
+*   **Turnaround Leadership:** Stepped in as interim leader of the Automation team to unblock stalled delivery pipelines. Reduced image build cycles from quarterly to monthly and launched automated pipelines for [Google Distributed Cloud](https://cloud.google.com/distributed-cloud-air-gapped) and NVIDIA before hiring a permanent Director.
 *   **Strategic Planning:** Led 2026 resource planning and prioritization, implementing AI-driven reporting frameworks to provide executive visibility into engineering output.
 
 <hr style="border-color: #44475a;">
@@ -49,9 +49,9 @@ Acting as the strategic "fixer" for the CTO, driving cross-functional alignment 
 
 <strong style="color: #50fa7b;">Senior Manager, [Google Compute Engine](https://cloud.google.com/compute/) (GCE Fleet)</strong>
 
-Directed the 50-person engineering organization responsible for the lifecycle, qualification, and kernel/hypervisor velocity of the entire global GCE fleet.
+Directed the 50-person engineering organization responsible for the lifecycle and stability of the entire global GCE fleet.
 
-*   **Reliability Engineering:** Conceived and implemented the "Mandatory Experiments" policy, significantly reducing fleet-wide regressions and rollback incidents.
+*   **Culture Change:** Transformed the engineering culture toward proactive reliability by conceiving and implementing the "Mandatory Experiments" policy, significantly reducing fleet-wide regressions and rollback incidents.
 *   **Enterprise Product Growth:** Designed and launched the "Stable Fleet" product line, securing key enterprise workloads by guaranteeing reduced change rates and managed maintenance windows.
 *   **Customer Engineering:** Established a "White Glove" engineering tier for ultra-high-value customers, directly intervening to resolve complex kernel/virtualization blockers.
 
@@ -62,9 +62,9 @@ Directed the 50-person engineering organization responsible for the lifecycle, q
 
 <strong style="color: #50fa7b;">General Manager, [Amazon Linux](https://aws.amazon.com/linux/amazon-linux-2023/) & [Open Source](https://aws.amazon.com/opensource/)</strong>
 
-Held P&L and engineering accountability for the Amazon Linux OS (powering millions of EC2 instances) and led the Amazon OSPO. Scaled organization to 100+ engineers and product managers.
+Recruited to overhaul the Amazon Linux organization and the Amazon OSPO. Scaled the team to 100+ engineers and product managers while redefining the product roadmap.
 
-*   **Product Strategy:** Delivered the roadmap and PR/FAQ for [Amazon Linux 2023](https://aws.amazon.com/linux/amazon-linux-2023/), defining the next generation of AWS's core operating system.
+*   **Product Turnaround:** Delivered the roadmap and PR/FAQ for [Amazon Linux 2023](https://aws.amazon.com/linux/amazon-linux-2023/), defining the next generation of AWS's core operating system after a period of stagnation.
 *   **Innovation:** Launched [Bottlerocket](https://bottlerocket.dev/) GA, a purpose-built open-source OS for container orchestration, capturing new workloads on EKS/ECS.
 *   **Lifecycle Management:** Engineered the [extended support plan](https://aws.amazon.com/blogs/aws/update-on-amazon-ami-end-of-life/) for Amazon Linux 1, retaining critical legacy customer workloads while driving automated migration paths to AL2.
 *   **Open Source Strategy:** Transformed the OSPO from a compliance bottleneck into a strategic enabler by launching the "Open Source Champions" program and automating legal reviews, reducing cycle time for code releases.
@@ -111,7 +111,7 @@ Led three engineering teams (KVM, Kernel Performance, Customer Experience) respo
 
 <strong style="color: #50fa7b;">Quality Assurance Engineer</strong>
 
-<h2 style="color: #bd93f9; border-bottom: 1px solid #44475a; padding-bottom: 10px; margin-top: 40px; margin-bottom: 30px;">Education</h2>
+<hr style="border-color: #44475a;">
 
 <h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="https://cs.stanford.edu/" style="color: #ff79c6; text-decoration: none;">Stanford University</a></h2>
 <p style="color: #6272a4; font-style: italic; margin-top: 0; margin-bottom: 15px;">(September 1998 - June 2002)</p>
