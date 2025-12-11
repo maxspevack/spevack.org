@@ -13,10 +13,27 @@ The site is built using **Jekyll** and hosted on **GitHub Pages**. It prioritize
 ## 📂 File Structure
 
 *   `index.md`: The single source of truth for the resume content. Written in standard Markdown with minimal inline HTML for the header.
+*   `resume.pdf`: Auto-generated print-friendly version of the resume.
+*   `generate_pdf.py`: Python script (using WeasyPrint) that transpiles `index.md` into `resume.pdf`.
 *   `_config.yml`: Jekyll configuration file defining the remote theme and site metadata.
 *   `_layouts/default.html`: The HTML wrapper that overrides the theme's default. It links the theme's CSS, FontAwesome, and handles the favicons.
 *   `max.jpg`: Profile picture.
 *   `CNAME`: Configures the custom domain `spevack.org`.
+
+## 🤖 Automation
+
+### PDF Resume Generation
+The repository includes a **Git Pre-Commit Hook** (`.git/hooks/pre-commit`) that automatically ensures `resume.pdf` is always in sync with `index.md`.
+
+1.  When you commit a change to `index.md`.
+2.  The hook runs `generate_pdf.py` (using the `fishwrap` Python environment).
+3.  The script converts the Markdown to a clean, print-optimized HTML structure and renders it to PDF.
+4.  The updated `resume.pdf` is automatically added to the commit.
+
+You can also generate it manually:
+```bash
+make pdf
+```
 
 ## 🚀 Deployment
 
