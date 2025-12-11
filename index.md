@@ -17,6 +17,9 @@ title: Max Spevack
     <a href="https://github.com/maxspevack" style="margin: 0 10px; text-decoration: none; color: #f8f8f2;">
       <i class="fab fa-github fa-lg" onmouseover="this.style.color='#ff79c6'" onmouseout="this.style.color='#f8f8f2'"></i>
     </a>
+    <a href="/resume.pdf" style="margin: 0 10px; text-decoration: none; color: #f8f8f2;" download>
+      <i class="fas fa-file-pdf fa-lg" onmouseover="this.style.color='#ff79c6'" onmouseout="this.style.color='#f8f8f2'"></i>
+    </a>
   </p>
   <br>
   
@@ -28,7 +31,7 @@ title: Max Spevack
 <!-- Load FontAwesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-<hr style="border-color: #44475a;">
+<h2 style="color: #bd93f9; border-bottom: 1px solid #44475a; padding-bottom: 10px; margin-top: 40px; margin-bottom: 30px;">Experience</h2>
 
 <h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="https://ciq.com/" style="color: #ff79c6; text-decoration: none;">CIQ</a></h2>
 <p style="color: #6272a4; font-style: italic; margin-top: 0; margin-bottom: 15px;">(July 2025 - Present)</p>
@@ -62,7 +65,7 @@ Directed the 50-person engineering organization responsible for the lifecycle an
 
 <strong style="color: #50fa7b;">General Manager, [Amazon Linux](https://aws.amazon.com/linux/amazon-linux-2023/) & [Open Source](https://aws.amazon.com/opensource/)</strong>
 
-Recruited to overhaul the Amazon Linux organization and the Amazon OSPO. Scaled the team to 100+ engineers and product managers while redefining the product roadmap.
+Recruited to overhaul the Amazon Linux organization and OSPO. Scaled the team to 100+ engineers and product managers while redefining the product roadmap.
 
 *   **Product Turnaround:** Delivered the roadmap and PR/FAQ for [Amazon Linux 2023](https://aws.amazon.com/linux/amazon-linux-2023/), defining the next generation of AWS's core operating system after a period of stagnation.
 *   **Innovation:** Launched [Bottlerocket](https://bottlerocket.dev/) GA, a purpose-built open-source OS for container orchestration, capturing new workloads on EKS/ECS.
@@ -78,7 +81,7 @@ Recruited to overhaul the Amazon Linux organization and the Amazon OSPO. Scaled 
 
 Led three engineering teams (KVM, Kernel Performance, Customer Experience) responsible for the core virtualization technology powering Google Cloud.
 
-*   **Hardware Enablement:** Partnered with Intel/Nvidia to launch GCE support for [Skylake](https://cloud.google.com/blog/products/gcp/compute-engine-updates-bring-skylake-ga-extended-memory-and-more-vm-flexibility)/[Cascade Lake](https://cloud.google.com/blog/products/compute/introducing-compute-and-memory-optimized-vms-for-google-compute-engine) CPUs and Tesla [V100](https://cloud.google.com/blog/products/compute/tesla-v100-gpus-are-now-generally-available)/[T4](https://cloud.google.com/blog/products/compute/efficiently-scale-ml-and-other-compute-workloads-on-nvidias-t4-gpu-now-generally-available) GPUs, unlocking new ML/AI revenue streams.
+*   **Hardware Enablement:** Partnered with Intel/Nvidia to launch GCE support for [Skylake](https://cloud.google.com/blog/products/gcp/compute-engine-updates-bring-skylake-ga-extended-memory-and-more-vm-flexibility)/[Cascade Lake](https://cloud.google.com/blog/products/gcp/compute-engine-updates-bring-skylake-ga-extended-memory-and-more-vm-flexibility) CPUs and Tesla [V100](https://cloud.google.com/blog/products/gcp/tesla-v100-gpus-are-now-generally-available)/[T4](https://cloud.google.com/blog/products/gcp/efficiently-scale-ml-and-other-compute-workloads-on-nvidias-t4-gpu-now-generally-available) GPUs, unlocking new ML/AI revenue streams.
 *   **Crisis Response:** Led the engineering response to [Spectre/Meltdown](https://blog.google/products/google-cloud/answering-your-questions-about-meltdown-and-spectre/) and [L1TF](https://cloud.google.com/blog/products/gcp/protecting-against-the-new-l1tf-speculative-vulnerabilities), patching the massive GCE fleet with minimal customer disruption (Awarded Google "Feat of Engineering").
 *   **Feature Engineering:** Delivered [Nested Virtualization](https://cloud.google.com/blog/products/gcp/introducing-nested-virtualization-for) and SAP-certified large-memory instances ([ultramem](https://cloud.google.com/blog/products/gcp/now-shipping-ultramem-machine-types-with-up-to-4tb-of-ram)), removing blockers for enterprise cloud migration (Awarded Google "Feat of Engineering").
 
@@ -112,6 +115,8 @@ Led three engineering teams (KVM, Kernel Performance, Customer Experience) respo
 <strong style="color: #50fa7b;">Quality Assurance Engineer</strong>
 
 <hr style="border-color: #44475a;">
+
+<h2 style="color: #bd93f9; border-bottom: 1px solid #44475a; padding-bottom: 10px; margin-top: 40px; margin-bottom: 30px;">Education</h2>
 
 <h2 style="color: #ff79c6; margin-bottom: 5px;"><a href="https://cs.stanford.edu/" style="color: #ff79c6; text-decoration: none;">Stanford University</a></h2>
 <p style="color: #6272a4; font-style: italic; margin-top: 0; margin-bottom: 15px;">(September 1998 - June 2002)</p>
