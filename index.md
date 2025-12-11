@@ -24,7 +24,7 @@ title: Max Spevack
   <br>
   
   <p style="max-width: 700px; margin: 0 auto; text-align: left; line-height: 1.6; color: #f8f8f2;">
-    Senior technology leader with 20+ years of experience bridging deep Linux engineering and high-level product strategy. Specializing in high-stakes engineering leadership, organizational turnarounds, and building the teams that power the cloud at hyperscale (Google, AWS) and open-source pioneers (Red Hat).
+    Senior leader with 20+ years of experience bridging deep Linux engineering and high-level product strategy. Specializing in high-stakes engineering leadership, organizational turnarounds, and building the teams that power the cloud at hyperscale (Google, AWS) and open-source pioneers (Red Hat).
   </p>
 </div>
 
