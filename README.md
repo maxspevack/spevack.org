@@ -27,6 +27,16 @@ The site deploys automatically via GitHub Pages whenever a commit is pushed to t
 To run locally (requires Ruby & Bundler):
 
 ```bash
+# Setup dependencies
+make install
+
+# Run the local server at http://127.0.0.1:4000
+make serve
+```
+
+Alternatively, you can run the commands directly:
+
+```bash
 bundle install
 bundle exec jekyll serve
 ```
