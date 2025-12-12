@@ -81,7 +81,7 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
 
 .identity-row h1 {
     margin: 0;
-    border-bottom: none; /* No underline per request */
+    border-bottom: none !important; /* Force removal of underline */
     line-height: 1;
 }
 
