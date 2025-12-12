@@ -3,6 +3,7 @@ layout: default
 title: Max Spevack
 ---
 <div style="text-align: center; color: #f8f8f2;">
+  <!-- Profile Header -->
   <img src="max.jpg" style="width: 150px; border-radius: 50%; border: 3px solid #bd93f9; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
   <h1 style="margin-top: 10px; margin-bottom: 5px; color: #bd93f9;">Max Spevack</h1>
   <p style="color: #8be9fd; font-weight: bold; margin-bottom: 15px;">Bad at chess, decent at AI, stellar at Mario-Kart!</p>
@@ -16,7 +17,7 @@ title: Max Spevack
 
   <!-- The Daily Clamour Feature Card -->
   <a href="https://dailyclamour.com" style="text-decoration: none; color: inherit;">
-    <div style="background-color: #282a36; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); margin-top: 40px; max-width: 650px; margin-left: auto; margin-right: auto; position: relative; border: 1px solid #44475a;">
+    <div style="background-color: #282a36; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); margin-top: 40px; max-width: 650px; margin-left: auto; margin-right: auto; position: relative; border: 1px solid #44475a; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1.00)'">
       
       <!-- Hero Image Banner -->
       <div style="width: 100%; position: relative;">
@@ -40,15 +41,26 @@ title: Max Spevack
           In a world of whispers and half-truths, <strong>The Daily Clamour</strong> rips through the static like a tireless news hound! Meet Scoop -- our pearl of persistence -- and his whirlwind digital press. We're an old-school engine of raw grit, churning out the truth (and a bit of delightful gossip). So loud, so fast, so utterly unyielding, you'll feel the rumble in your bones.
         </p>
 
-        <span style="display: inline-block; background-color: #ff5555; color: #f8f8f2; padding: 14px 35px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.2em; transition: all 0.3s ease; border: 2px solid #ff5555; box-shadow: 0 4px 6px rgba(0,0,0,0.3);"
-           onmouseover="this.style.backgroundColor='#282a36'; this.style.color='#ff5555';" 
-           onmouseout="this.style.backgroundColor='#ff5555'; this.style.color='#f8f8f2'">
+        <span style="display: inline-block; background-color: #ff5555; color: #f8f8f2; padding: 14px 35px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.2em; transition: all 0.3s ease; border: 2px solid #ff5555; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
           Get Your Daily Dose
         </span>
       </div>
     </div>
   </a>
-</div>
 
-<!-- Load FontAwesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- The "Behind The Scenes" Link -->
+  <div style="margin-top: 25px; font-size: 0.9em; opacity: 0.8;">
+    <span style="color: #6272a4;">Built entirely with Gemini Ultra.</span><br>
+    <a href="/story/" style="color: #8be9fd; text-decoration: none; border-bottom: 1px dotted #8be9fd; margin-top: 5px; display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='#50fa7b'" onmouseout="this.style.color='#8be9fd'">
+      Read the Engineering Story: "Vibe-Coding a News Engine" &rarr;
+    </a>
+  </div>
+
+  <!-- The "Soupçon" Footer -->
+  <div style="margin-top: 60px; margin-bottom: 40px; border-top: 1px solid #44475a; max-width: 400px; margin-left: auto; margin-right: auto; padding-top: 20px;">
+    <p style="font-family: 'Courier New', monospace; color: #6272a4; font-size: 0.85em;">
+      <i class="fas fa-code"></i> &nbsp;This website was also re-implemented as a <em>soupçon</em> by the same AI team.
+    </p>
+  </div>
+
+</div>
