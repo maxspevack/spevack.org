@@ -84,9 +84,9 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
 
 .social-icons a {
     color: var(--text-color);
+    text-decoration: none; /* Remove underline */
     margin: 0 10px;
     font-size: 1.5em;
-    text-decoration: none;
     transition: color 0.2s;
 }
 .social-icons a:hover { color: var(--accent-red); }

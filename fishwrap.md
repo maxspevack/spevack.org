@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Vibe-Coding with Gemini Ultra
-permalink: /story/
+permalink: /fishwrap/
 ---
 <div class="story-container">
   
@@ -61,7 +61,13 @@ permalink: /story/
   </div>
   
   <div style="text-align: center; margin-top: 40px;">
-    <a href="/" style="font-family: var(--font-mono); font-size: 0.9em;">&larr; Back to Max Spevack</a>
+    <a href="/resume/" style="font-family: var(--font-mono); font-size: 0.9em;">&larr; Back to Max Spevack</a>
+  </div>
+
+  <div class="footer-note">
+    <p>
+      <i class="fas fa-newspaper"></i> &nbsp;This website (spevack.org) was also re-implemented as a <em>soupçon</em> by the same AI team.
+    </p>
   </div>
 
 </div>
