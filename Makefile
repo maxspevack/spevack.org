@@ -32,7 +32,16 @@ generate-pdf: pdf-deps
 
 publish-resume: generate-pdf
 	@echo "Publishing spevack.org (pushing changes to GitHub)..."
-	git add .
+	git add assets/css/*.css
+	git add *.md
+	git add *.py
+	git add *.pdf
+	git add Makefile
+	git add requirements.txt
+	git add Gemfile
+	git add .gitignore
+	git add _config.yml
+	git add *.png *.jpg *.ico
 	git commit -m "chore: Update website and resume PDF" || true # '|| true' to allow no-change commits
 	git push
 
@@ -40,4 +49,6 @@ publish-resume: generate-pdf
 clean:
 	@echo "Cleaning up generated files..."
 	rm -f resume.pdf
+	rm -f debug_resume.html
+	rm -rf _site
 	@echo "Cleanup complete."

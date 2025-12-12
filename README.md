@@ -19,7 +19,7 @@ The site is built using **Jekyll** and hosted on **GitHub Pages**. It is designe
 ## 📂 File Structure
 
 *   `assets/css/vintage.css`: The source of truth for the site's styling.
-*   `generate_pdf.py`: Python script (using WeasyPrint) that transpiles `resume.md` into `resume.pdf`.
+*   `generate_pdf.py`: Python script (using WeasyPrint) that transpiles `resume.md` into `resume.pdf`. **Crucially, this script ingests `vintage.css` directly**, ensuring the PDF always matches the website's design.
 *   `_layouts/default.html`: The HTML wrapper. It links the vintage CSS, FontAwesome, and handles the favicons.
 *   `max.jpg`: Profile picture.
 *   `CNAME`: Configures the custom domain `spevack.org`.
@@ -27,16 +27,17 @@ The site is built using **Jekyll** and hosted on **GitHub Pages**. It is designe
 ## 🤖 Automation
 
 ### PDF Resume Generation
-The repository includes a **Git Pre-Commit Hook** (`.git/hooks/pre-commit`) that automatically ensures `resume.pdf` is always in sync with `resume.md`.
+The repository uses a local build process (via `Makefile`) to generate the PDF artifact before pushing.
 
-1.  When you commit a change to `resume.md`.
-2.  The hook runs `generate_pdf.py` (using the `fishwrap` Python environment).
-3.  The script converts the Markdown to a clean, print-optimized HTML structure and renders it to PDF.
-4.  The updated `resume.pdf` is automatically added to the commit.
+1.  **Generate:** `make generate-pdf` builds `resume.pdf` from `resume.md`, applying `vintage.css` styles.
+2.  **Publish:** `make publish-resume` generates the PDF and pushes all changed artifacts to GitHub.
 
-You can also generate it manually:
+### Setup
+The project manages its own Python virtual environment for PDF generation:
+
 ```bash
-make pdf
+# Setup Python venv and install dependencies
+make install
 ```
 
 ## 🚀 Deployment
@@ -45,19 +46,9 @@ The site deploys automatically via GitHub Pages whenever a commit is pushed to t
 
 ## 🛠 Local Development
 
-To run locally (requires Ruby & Bundler):
+To run locally (requires Ruby & Bundler for the site, Python for the PDF):
 
 ```bash
-# Setup dependencies
-make install
-
 # Run the local server at http://127.0.0.1:4000
 make serve
-```
-
-Alternatively, you can run the commands directly:
-
-```bash
-bundle install
-bundle exec jekyll serve
 ```
