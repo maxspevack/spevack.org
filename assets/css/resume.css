@@ -1,0 +1,157 @@
+/* Clean Professional Resume Theme */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --muted-color: #666666;
+    --accent-color: #2c3e50; /* Slate Blue - Professional */
+    --link-color: #2980b9;
+    --border-color: #eeeeee;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Georgia', serif; /* Classic, readable serif for body */
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    font-size: 10pt;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif; /* Clean sans-serif for headers */
+    color: var(--text-color);
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 24pt;
+    font-weight: 700;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px;
+    color: var(--accent-color);
+}
+
+h2 {
+    font-size: 14pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 5px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 12pt;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+p {
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+/* Profile Header */
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.identity-row {
+    display: flex;
+    flex-direction: column; /* Stacked for clean resume look */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid var(--border-color);
+}
+
+.profile-tagline {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    color: var(--muted-color);
+    font-size: 10pt;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.social-icons {
+    margin-top: 10px;
+    font-size: 9pt;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+.social-icons a {
+    color: var(--accent-color);
+    margin: 0 8px;
+    font-weight: 600;
+}
+
+/* Content Container */
+/* For the resume, we remove the "card" styling from the website for a flat document look */
+.story-container {
+    background: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+}
+
+/* Metadata (Dates, Locations) */
+.story-container p em {
+    font-family: 'Courier Prime', monospace;
+    font-size: 9pt;
+    color: var(--muted-color);
+    display: block;
+    margin-bottom: 5px;
+    font-style: normal;
+}
+
+/* Job Titles / Highlights */
+.story-container p strong {
+    color: var(--accent-color);
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-weight: 700;
+    font-size: 1.05em;
+}
+
+/* Lists */
+ul {
+    padding-left: 1.2em;
+    margin-top: 0.5em;
+}
+
+li {
+    margin-bottom: 4px;
+    text-align: left; /* Ensure left align */
+}
+
+/* Quotes/Summaries */
+blockquote {
+    border-left: 3px solid var(--border-color);
+    margin: 10px 0;
+    padding-left: 15px;
+    color: var(--muted-color);
+    font-style: italic;
+}

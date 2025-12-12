@@ -9,7 +9,7 @@ from weasyprint.text.fonts import FontConfiguration
 INPUT_FILE = "resume.md"
 OUTPUT_FILE = "resume.pdf"
 DEBUG_HTML_FILE = "debug_resume.html"
-CSS_FILE = "assets/css/vintage.css"
+CSS_FILE = "assets/css/resume.css"
 
 def generate_pdf():
     # 1. Read Markdown Content
