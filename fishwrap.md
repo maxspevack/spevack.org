@@ -61,7 +61,7 @@ permalink: /fishwrap/
   </div>
   
   <div style="text-align: center; margin-top: 40px;">
-    <a href="/resume/" style="font-family: var(--font-mono); font-size: 0.9em;">&larr; Back to Max Spevack</a>
+    <a href="/" style="font-family: var(--font-mono); font-size: 0.9em;">&larr; Back to Max Spevack</a>
   </div>
 
   <div class="footer-note">

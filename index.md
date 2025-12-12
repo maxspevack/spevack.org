@@ -1,18 +1,56 @@
 ---
-layout: null
+layout: default
+title: Max Spevack
 permalink: /
-sitemap: false
 ---
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Redirecting to Resume...</title>
-    <link rel="canonical" href="/resume/">
-    <meta http-equiv="refresh" content="0; url=/resume/">
-</head>
-<body>
-    <h1>Redirecting...</h1>
-    <p>If you are not redirected automatically, follow this <a href="/resume/">link to my resume</a>.</p>
-</body>
-</html>
+<div class="profile-header">
+  <img src="max.jpg" class="profile-photo" alt="Max Spevack">
+  <h1>Max Spevack</h1>
+  <p class="profile-tagline">Bad at chess, decent at AI, stellar at Mario-Kart!</p>
+  
+  <div class="social-icons">
+    <a href="mailto:max.spevack@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="/resume.pdf" download><i class="fas fa-file-pdf"></i></a>
+    <a href="https://www.linkedin.com/in/maxspevack/"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/maxspevack"><i class="fab fa-github"></i></a>
+  </div>
+</div>
+
+<!-- The Daily Clamour Feature Card -->
+<a href="https://dailyclamour.com" class="clamour-card">
+  
+  <!-- Hero Image -->
+  <img src="/scoop-ad-wide.png" class="clamour-hero" alt="Scoop the Pearl">
+
+  <div class="clamour-content">
+    
+    <!-- Logo Overlap -->
+    <img src="/daily-clamour.png" class="clamour-logo" alt="The Daily Clamour">
+
+    <h2 class="clamour-headline">"Often Wrong, Never in Doubt!"</h2>
+    
+    <p class="clamour-copy">
+      In a world of whispers, <strong>The Daily Clamour</strong> rips through the static! Meet Scoop and his whirlwind press. We're an old-school engine of raw grit, churning out the truth. So loud, so fast, you'll feel the rumble.
+    </p>
+
+    <span class="clamour-btn">Read Today's Edition</span>
+  </div>
+</a>
+
+<!-- Navigation Links -->
+<div style="text-align: center; margin-top: 40px; font-family: var(--font-mono);">
+  
+  <div style="margin-bottom: 20px;">
+    <a href="/resume/" style="font-weight: bold; font-size: 1.1em; border-bottom: 2px solid var(--accent-primary);">
+      View Professional Resume &rarr;
+    </a>
+  </div>
+
+  <div>
+    <span style="color: var(--muted-color); font-size: 0.9em;">Built entirely with Gemini Ultra.</span><br>
+    <a href="/fishwrap/" style="font-weight: bold; font-size: 0.9em; border-bottom: 1px dotted var(--accent-primary);">
+      Read the Engineering Story &rarr;
+    </a>
+  </div>
+
+</div>
