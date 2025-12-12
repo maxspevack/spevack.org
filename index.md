@@ -11,45 +11,43 @@ title: Max Spevack
     <a href="mailto:max.spevack@gmail.com" style="margin: 0 10px; text-decoration: none; color: #f8f8f2;">
       <i class="fas fa-envelope fa-lg" onmouseover="this.style.color='#ff79c6'" onmouseout="this.style.color='#f8f8f2'"></i>
     </a>
-    <a href="https://github.com/maxspevack" style="margin: 0 10px; text-decoration: none; color: #f8f8f2;">
-      <i class="fab fa-github fa-lg" onmouseover="this.style.color='#ff79c6'" onmouseout="this.style.color='#f8f8f2'"></i>
-    </a>
   </p>
   <br>
 
   <!-- The Daily Clamour Feature Card -->
-  <div style="background-color: #282a36; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); margin-top: 40px; max-width: 650px; margin-left: auto; margin-right: auto; position: relative; border: 1px solid #44475a;">
-    
-    <!-- Hero Image Banner -->
-    <div style="width: 100%; position: relative;">
-      <img src="/scoop-ad-wide.png" alt="Scoop the Pearl in the Pressroom" style="width: 100%; height: auto; display: block; border-radius: 12px 12px 0 0; opacity: 0.95;">
-      <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100px; background: linear-gradient(to top, #282a36, transparent);"></div>
-    </div>
-
-    <!-- Content Body -->
-    <div style="padding: 0 30px 30px 30px; position: relative;">
+  <a href="https://dailyclamour.com" style="text-decoration: none; color: inherit;">
+    <div style="background-color: #282a36; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); margin-top: 40px; max-width: 650px; margin-left: auto; margin-right: auto; position: relative; border: 1px solid #44475a;">
       
-      <!-- Overlapping Logo -->
-      <div style="margin-top: -60px; margin-bottom: 15px; text-align: center;">
-         <img src="/daily-clamour.png" alt="The Daily Clamour Logo" style="width: 140px; background-color: #282a36; padding: 10px; border-radius: 50%; box-shadow: 0 5px 15px rgba(0,0,0,0.6); display: inline-block;">
+      <!-- Hero Image Banner -->
+      <div style="width: 100%; position: relative;">
+        <img src="/scoop-ad-wide.png" alt="Scoop the Pearl in the Pressroom" style="width: 100%; height: auto; display: block; border-radius: 12px 12px 0 0; opacity: 0.95;">
+        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100px; background: linear-gradient(to top, #282a36, transparent);"></div>
       </div>
 
-      <h2 style="color: #50fa7b; font-family: 'Times New Roman', serif; font-size: 2.2em; margin-bottom: 5px; margin-top: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
-        Often Wrong, Never in Doubt!
-      </h2>
-      
-      <p style="font-size: 1.1em; line-height: 1.6; color: #f8f8f2; margin-bottom: 25px; max-width: 580px; margin-left: auto; margin-right: auto;">
-        In a world of whispers and half-truths, <strong>The Daily Clamour</strong> rips through the static like a tireless news hound! Meet Scoop -- our pearl of persistence -- and his whirlwind digital press. We're an old-school engine of raw grit, churning out the truth (and a bit of delightful gossip). So loud, so fast, so utterly unyielding, you'll feel the rumble in your bones.
-      </p>
+      <!-- Content Body -->
+      <div style="padding: 0 30px 30px 30px; position: relative;">
+        
+        <!-- Overlapping Logo -->
+        <div style="margin-top: -60px; margin-bottom: 15px; text-align: center;">
+           <img src="/daily-clamour.png" alt="The Daily Clamour Logo" style="width: 140px; background-color: #282a36; padding: 10px; border-radius: 50%; box-shadow: 0 5px 15px rgba(0,0,0,0.6); display: inline-block;">
+        </div>
 
-      <a href="https://dailyclamour.com" 
-         style="display: inline-block; background-color: #ff5555; color: #f8f8f2; padding: 14px 35px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.2em; transition: all 0.3s ease; border: 2px solid #ff5555; box-shadow: 0 4px 6px rgba(0,0,0,0.3);"
-         onmouseover="this.style.backgroundColor='#282a36'; this.style.color='#ff5555';" 
-         onmouseout="this.style.backgroundColor='#ff5555'; this.style.color='#f8f8f2'">
-        Get Your Daily Dose
-      </a>
+        <h2 style="color: #50fa7b; font-family: 'Times New Roman', serif; font-size: 2.2em; margin-bottom: 5px; margin-top: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+          "Often Wrong, Never in Doubt!"
+        </h2>
+        
+        <p style="font-size: 1.1em; line-height: 1.6; color: #f8f8f2; margin-bottom: 25px; max-width: 580px; margin-left: auto; margin-right: auto;">
+          In a world of whispers and half-truths, <strong>The Daily Clamour</strong> rips through the static like a tireless news hound! Meet Scoop -- our pearl of persistence -- and his whirlwind digital press. We're an old-school engine of raw grit, churning out the truth (and a bit of delightful gossip). So loud, so fast, so utterly unyielding, you'll feel the rumble in your bones.
+        </p>
+
+        <span style="display: inline-block; background-color: #ff5555; color: #f8f8f2; padding: 14px 35px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.2em; transition: all 0.3s ease; border: 2px solid #ff5555; box-shadow: 0 4px 6px rgba(0,0,0,0.3);"
+           onmouseover="this.style.backgroundColor='#282a36'; this.style.color='#ff5555';" 
+           onmouseout="this.style.backgroundColor='#ff5555'; this.style.color='#f8f8f2'">
+          Get Your Daily Dose
+        </span>
+      </div>
     </div>
-  </div>
+  </a>
 </div>
 
 <!-- Load FontAwesome -->
