@@ -7,13 +7,6 @@ permalink: /
   <img src="max.jpg" class="profile-photo" alt="Max Spevack">
   <h1>Max Spevack</h1>
   <p class="profile-tagline">Bad at chess, decent at AI, stellar at Mario-Kart!</p>
-  
-  <div class="social-icons">
-    <a href="mailto:max.spevack@gmail.com"><i class="fas fa-envelope"></i></a>
-    <a href="/resume.pdf" download><i class="fas fa-file-pdf"></i></a>
-    <a href="https://www.linkedin.com/in/maxspevack/"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/maxspevack"><i class="fab fa-github"></i></a>
-  </div>
 </div>
 
 <!-- The Daily Clamour Feature Card -->
@@ -40,12 +33,6 @@ permalink: /
 <!-- Navigation Links -->
 <div style="text-align: center; margin-top: 40px; font-family: var(--font-mono);">
   
-  <div style="margin-bottom: 20px;">
-    <a href="/resume/" style="font-weight: bold; font-size: 1.1em; border-bottom: 2px solid var(--accent-primary);">
-      View Professional Resume &rarr;
-    </a>
-  </div>
-
   <div>
     <span style="color: var(--muted-color); font-size: 0.9em;">Built entirely with Gemini Ultra.</span><br>
     <a href="/fishwrap/" style="font-weight: bold; font-size: 0.9em; border-bottom: 1px dotted var(--accent-primary);">
