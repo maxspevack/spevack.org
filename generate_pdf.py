@@ -9,6 +9,7 @@ from weasyprint.text.fonts import FontConfiguration
 # Configuration
 INPUT_FILE = "resume.md"
 OUTPUT_FILE = "resume.pdf"
+DEBUG_HTML_FILE = "debug_resume.html"
 
 def generate_pdf():
     # 1. Read Markdown
@@ -22,27 +23,24 @@ def generate_pdf():
     # 2. Strip Front Matter
     content = re.sub(r'^---\n.+?---\n', '', raw_content, flags=re.DOTALL)
 
-    # 3. Strip HTML Wrappers (PDF generation doesn't need them, it applies its own CSS)
-    # Remove <div class="story-container" ...> and closing </div>
+    # 3. Strip HTML Wrappers
+    # We strip the specific div that wraps the main content for the website layout.
+    # The regex now handles attributes like markdown="1"
     content = re.sub(r'<div class="story-container"[^>]*>', '', content)
     content = content.replace('</div>', '')
 
     # 4. Pre-process Image Paths for PDF
     # WeasyPrint needs to find the image locally.
-    # If the markdown has src="/max.jpg", change it to "max.jpg" (assuming script runs in same dir)
     content = content.replace('src="/max.jpg"', 'src="max.jpg"')
 
-    # 4. Convert to HTML
-    # We use 'extra' for better feature support
+    # 5. Convert to HTML
+    # Enable 'extra' to handle tables or other md features if they exist
     html_body = markdown.markdown(content, extensions=['extra'])
     
-    # 5. Build Full HTML Document with CSS
-    # Note: We explicitly import the Google Fonts here so WeasyPrint can try to fetch them.
-    # However, WeasyPrint sometimes struggles with web fonts if not installed locally.
-    # We will provide a robust font stack fallback.
-    
+    # 6. Build Full HTML Document with CSS
+    # Updated Font URL: Removed Georgia (system font), keeping Special Elite and Courier Prime.
     css = """
-    @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Georgia:ital,wght@0,400;0,700;1,400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
     
     @page {
         size: Letter;
@@ -56,11 +54,11 @@ def generate_pdf():
     }
 
     body {
-        font-family: 'Georgia', serif;
+        font-family: 'Georgia', serif; /* System font fallback works well in WeasyPrint */
         font-size: 10pt;
         line-height: 1.4;
         color: #2f2f2f;
-        background-color: #ffffff; /* White paper for PDF */
+        background-color: #ffffff;
         margin: 0;
         padding: 0;
     }
@@ -69,13 +67,13 @@ def generate_pdf():
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Special Elite', cursive;
         color: #2f2f2f;
-        font-weight: 400; /* Special Elite is naturally bold */
+        font-weight: 400;
         margin-top: 1em;
         margin-bottom: 0.5em;
     }
 
     a {
-        color: #2c3e50; /* Slate */
+        color: #2c3e50;
         text-decoration: none;
         border-bottom: 1px dotted #2c3e50;
     }
@@ -92,7 +90,7 @@ def generate_pdf():
 
     .identity-row {
         display: flex;
-        flex-direction: row; /* Ensure side-by-side */
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         gap: 30px;
@@ -113,7 +111,7 @@ def generate_pdf():
         font-size: 28pt;
         margin: 0;
         line-height: 1;
-        border-bottom: none; /* Override default h1 style */
+        border-bottom: none;
     }
 
     .profile-tagline {
@@ -137,13 +135,8 @@ def generate_pdf():
         display: inline-block;
         border-bottom: none;
     }
-    /* We assume FontAwesome won't render in PDF easily without local fonts.
-       So we'll use text content if possible, or just the links.
-       Ideally, we'd replace icons with text labels for PDF. 
-       We'll do a quick regex fix in Python below to swap icons for text. */
 
     .profile-header div[style] {
-        /* The summary block */
         max-width: 100% !important;
         text-align: center !important;
         font-style: italic;
@@ -153,10 +146,8 @@ def generate_pdf():
 
     /* Content Styling */
     .story-container {
-        /* Remove box shadow/border for print to save ink/clean look, 
-           or keep it if "light box" is desired. Let's keep it subtle. */
         border: 1px solid #dcdcdc;
-        border-left: 4px solid #2c3e50; /* Slate accent */
+        border-left: 4px solid #2c3e50;
         padding: 20px;
         background-color: #fcfcfc;
     }
@@ -176,14 +167,12 @@ def generate_pdf():
         margin-top: 20px;
     }
     
-    /* Company Name Link */
-    h3 a { 
+    h3 a {
         font-weight: bold; 
         border: none;
         color: #000;
     }
 
-    /* Date / Role line */
     p em {
         font-family: 'Courier Prime', monospace;
         font-size: 9pt;
@@ -192,7 +181,6 @@ def generate_pdf():
         margin-bottom: 5px;
     }
 
-    /* Roles */
     strong {
         font-weight: 700;
         color: #2c3e50;
@@ -207,11 +195,9 @@ def generate_pdf():
         text-align: justify;
     }
 
-    /* Hide PDF download link in PDF */
     a[href$=".pdf"] { display: none; }
     """.strip()
 
-    # 6. HTML Template
     full_html = f"""
     <!DOCTYPE html>
     <html>
@@ -226,11 +212,10 @@ def generate_pdf():
     </html>
     """
 
-    # 7. Post-Processing HTML (Quick Fixes)
-    # Replace FontAwesome icons with Text for PDF readability
+    # 7. Post-Processing HTML
     soup = BeautifulSoup(full_html, 'html.parser')
     
-    # Map common FA classes to text
+    # Text replacements for icons
     icon_map = {
         'fa-envelope': 'Email',
         'fa-file-pdf': 'PDF',
@@ -242,40 +227,34 @@ def generate_pdf():
         classes = i_tag.get('class', [])
         for cls in classes:
             if cls in icon_map:
-                # Replace <i> with text span
                 new_span = soup.new_tag('span')
                 new_span.string = icon_map[cls]
                 i_tag.replace_with(new_span)
                 break
     
-    # Clean up the social links (add spacing)
+    # Link Text Cleanup
     for a_tag in soup.select('.social-icons a'):
-        # Get the URL
         href = a_tag.get('href')
         if not href: continue
         
-        # If it's the email, strip mailto
         display_text = href.replace('mailto:', '').replace('https://', '').replace('www.', '')
         
-        # If we replaced the icon with text, append the URL or format nicely
-        # Current state: <a><span>Email</span></a>
-        # Desired: <a>Email: max...</a> or just the text
-        
-        if a_tag.find('span'):
-            label = a_tag.find('span').string
-            # For PDF, let's just show the Label linking to the URL, 
-            # maybe add the actual text if it's not obvious?
-            # Actually, standard resume header: "max.spevack@gmail.com | linkedin.com/in/..."
-            # Let's replace the content of the A tag with the clean URL or label
-            if 'linkedin' in href:
-                a_tag.string = "LinkedIn"
-            elif 'github' in href:
-                a_tag.string = "GitHub"
-            elif '@' in href:
-                 a_tag.string = display_text
-            
-            
+        # If the link has the new span we just added, we're good.
+        # If it has nothing (was empty), set text.
+        if 'linkedin' in href:
+            if not a_tag.get_text().strip(): a_tag.string = "LinkedIn"
+        elif 'github' in href:
+            if not a_tag.get_text().strip(): a_tag.string = "GitHub"
+        elif '@' in href:
+            # For email, show the address if possible, or just "Email"
+             if not a_tag.get_text().strip(): a_tag.string = display_text
+
     final_html = str(soup)
+
+    # Save Debug HTML
+    with open(DEBUG_HTML_FILE, "w") as f:
+        f.write(final_html)
+    print(f"Debug HTML saved to {DEBUG_HTML_FILE}")
 
     # 8. Render
     print(f"Rendering {INPUT_FILE} to {OUTPUT_FILE}...")
