@@ -6,7 +6,6 @@ permalink: /
 <div class="profile-header">
   <img src="max.jpg" class="profile-photo" alt="Max Spevack">
   <h1>Max Spevack</h1>
-  <p class="profile-tagline">Bad at chess, decent at AI, stellar at Mario-Kart!</p>
 </div>
 
 <!-- The Daily Clamour Feature Card -->
@@ -29,15 +28,3 @@ permalink: /
     <span class="clamour-btn">Read Today's Edition</span>
   </div>
 </a>
-
-<!-- Navigation Links -->
-<div style="text-align: center; margin-top: 40px; font-family: var(--font-mono);">
-  
-  <div>
-    <span style="color: var(--muted-color); font-size: 0.9em;">Built entirely with Gemini Ultra.</span><br>
-    <a href="/fishwrap/" style="font-weight: bold; font-size: 0.9em; border-bottom: 1px dotted var(--accent-primary);">
-      Read the Engineering Story &rarr;
-    </a>
-  </div>
-
-</div>
