@@ -18,36 +18,35 @@ title: Max Spevack
   <br>
 
   <!-- The Daily Clamour Feature Card -->
-  <div style="background-color: #282a36; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); margin-top: 40px; max-width: 650px; margin-left: auto; margin-right: auto; overflow: hidden; position: relative; border: 1px solid #44475a;">
+  <div style="background-color: #282a36; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); margin-top: 40px; max-width: 650px; margin-left: auto; margin-right: auto; position: relative; border: 1px solid #44475a;">
     
     <!-- Hero Image Banner -->
-    <div style="width: 100%; height: 250px; overflow: hidden; position: relative;">
-      <img src="/scoop-ad-wide.png" alt="Scoop the Pearl in the Pressroom" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
-      <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 80px; background: linear-gradient(to top, #282a36, transparent);"></div>
+    <div style="width: 100%; position: relative;">
+      <img src="/scoop-ad-wide.png" alt="Scoop the Pearl in the Pressroom" style="width: 100%; height: auto; display: block; border-radius: 12px 12px 0 0; opacity: 0.95;">
+      <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100px; background: linear-gradient(to top, #282a36, transparent);"></div>
     </div>
 
     <!-- Content Body -->
     <div style="padding: 0 30px 30px 30px; position: relative;">
       
       <!-- Overlapping Logo -->
-      <div style="margin-top: -50px; margin-bottom: 15px;">
-         <img src="/daily-clamour.png" alt="The Daily Clamour Logo" style="width: 160px; background-color: #282a36; padding: 10px; border-radius: 50%; box-shadow: 0 5px 15px rgba(0,0,0,0.6);">
+      <div style="margin-top: -60px; margin-bottom: 15px; text-align: center;">
+         <img src="/daily-clamour.png" alt="The Daily Clamour Logo" style="width: 140px; background-color: #282a36; padding: 10px; border-radius: 50%; box-shadow: 0 5px 15px rgba(0,0,0,0.6); display: inline-block;">
       </div>
 
-      <h2 style="color: #50fa7b; font-family: 'Times New Roman', serif; font-size: 2.2em; margin-bottom: 10px; margin-top: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
-        The Future of News is... <br><span style="color: #ff79c6;">Automated.</span>
+      <h2 style="color: #50fa7b; font-family: 'Times New Roman', serif; font-size: 2.2em; margin-bottom: 5px; margin-top: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+        Often Wrong, Never in Doubt!
       </h2>
       
-      <p style="font-size: 1.1em; line-height: 1.6; color: #f8f8f2; margin-bottom: 25px; max-width: 500px; margin-left: auto; margin-right: auto;">
-        Meet <strong>Scoop the Pearl</strong> and his relentless digital press. 
-        "The Daily Clamour" is a fully autonomous newspaper engine, turning raw data into polished stories 4 times a day.
+      <p style="font-size: 1.1em; line-height: 1.6; color: #f8f8f2; margin-bottom: 25px; max-width: 580px; margin-left: auto; margin-right: auto;">
+        In a world of whispers and half-truths, <strong>The Daily Clamour</strong> rips through the static like a tireless news hound! Meet Scoop -- our pearl of persistence -- and his whirlwind digital press. We're an old-school engine of raw grit, churning out the truth (and a bit of delightful gossip). So loud, so fast, so utterly unyielding, you'll feel the rumble in your bones.
       </p>
 
       <a href="https://dailyclamour.com" 
          style="display: inline-block; background-color: #ff5555; color: #f8f8f2; padding: 14px 35px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.2em; transition: all 0.3s ease; border: 2px solid #ff5555; box-shadow: 0 4px 6px rgba(0,0,0,0.3);"
          onmouseover="this.style.backgroundColor='#282a36'; this.style.color='#ff5555';" 
          onmouseout="this.style.backgroundColor='#ff5555'; this.style.color='#f8f8f2'">
-        Read Today's Edition
+        Get Your Daily Dose
       </a>
     </div>
   </div>
