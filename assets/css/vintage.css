@@ -71,6 +71,20 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
     border-bottom: 1px dashed var(--text-color);
 }
 
+.identity-row {
+    display: flex;
+    align-items: center; /* Vertical alignment (equator) */
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.identity-row h1 {
+    margin: 0;
+    border-bottom: none; /* No underline per request */
+    line-height: 1;
+}
+
 .profile-photo {
     width: 150px;
     height: 150px;
@@ -79,6 +93,7 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     filter: sepia(0.2);
     transition: all 0.3s ease;
+    margin: 0; /* Reset margin for flex layout */
 }
 .profile-photo:hover {
     filter: sepia(0);

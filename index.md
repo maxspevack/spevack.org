@@ -5,10 +5,12 @@ permalink: /
 ---
 <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 20px;">
 
-  <!-- Profile Section -->
-  <div style="text-align: center; margin-bottom: 30px;">
-    <img src="/max.jpg" class="profile-photo" alt="Max Spevack" style="width: 140px; height: 140px;">
-    <h1 style="margin-top: 15px; border-bottom: none; font-size: 2.8em;">Max Spevack</h1>
+  <!-- Profile Section (Identity Row) -->
+  <div class="profile-header" style="border-bottom: none; margin-bottom: 30px;">
+    <div class="identity-row">
+      <img src="/max.jpg" class="profile-photo" alt="Max Spevack" style="width: 140px; height: 140px;">
+      <h1 style="font-size: 2.5em;">Max Spevack</h1>
+    </div>
   </div>
 
   <!-- Main Feature: The Daily Clamour -->
