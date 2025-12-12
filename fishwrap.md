@@ -14,11 +14,11 @@ permalink: /fishwrap/
 
   <p>I am thrilled to announce the release of <strong>Fishwrap 1.1.0</strong> and the launch of its flagship instance, <strong><a href="https://dailyclamour.com">The Daily Clamour</a></strong>.</p>
 
-  <p>For my nerdy friends who care about the "how" as much as the "what," here is the real story.</p>
+  <p>For my nerdy friends who care about the "how" as much as the "what," here is the story.</p>
 
   <p>This entire stack—the Python ingestion engine, the "Glass-Box" auditing architecture, the HTML/CSS rendering pipelines, and the CI/CD scripts—was built entirely with <strong>Gemini Ultra</strong>.</p>
 
-  <blockquote>I wrote almost zero code. Instead, I "vibe-coded" it.</blockquote>
+  <blockquote>I wrote almost zero code. Yes, I "vibe-coded" it.</blockquote>
 
   <h3>The "Team"</h3>
   <p>My role wasn't "Software Engineer" but <strong>Engineering Manager (EM)</strong> and <strong>Product Manager (PM)</strong>.</p>
@@ -26,16 +26,16 @@ permalink: /fishwrap/
   <p>When I needed to configure Cloudflare DNS or GitHub Pages, I didn't open a tutorial. I told the model: <em>"I need this live at this domain. Tell me exactly which buttons to click."</em> And it did.</p>
 
   <h3>The "Impossible" Velocity</h3>
-  <p>If I had to build this the "old way," I simply wouldn't have done it. In a professional setting, delivering this scope requires:</p>
+  <p>If I had tried to build this myself, I simply couldn't have done it. It is far beyond my individual skill level. In a professional setting, delivering this scope requires:</p>
   <ul>
     <li><strong>1 L6 Product Manager</strong></li>
     <li><strong>1 Senior Designer</strong></li>
-    <li><strong>2-3 L5 SDEs</strong></li>
+    <li><strong>1 TL and 1-2 junior SDEs</strong></li>
   </ul>
 
   <div style="background-color: rgba(0,0,0,0.05); padding: 20px; border-left: 4px solid var(--accent-red); margin: 20px 0;">
     <p style="margin: 0; font-family: var(--font-mono);"><strong>Traditional Timeline:</strong> 4-6 months from brainstorming to v1.0.</p>
-    <p style="margin: 10px 0 0 0; font-family: var(--font-mono);"><strong>Reality:</strong> I vibe-coded the entire thing in about <strong>50 hours</strong> over a few weeks.</p>
+    <p style="margin: 10px 0 0 0; font-family: var(--font-mono);"><strong>Reality:</strong> I vibe-coded the entire thing in my spare time in less than a week.</p>
   </div>
 
   <h3>The "Nerdy" Stuff (Fishwrap 1.1.0)</h3>
@@ -48,7 +48,7 @@ permalink: /fishwrap/
   </ol>
 
   <h3>The Conclusion</h3>
-  <p>The meta-story is the future of software. I didn't need to know <em>how</em> to implement a Jaccard Index for deduplication; I just needed to know it was the <em>right tool</em> to ask for. I didn't need to memorize <code>tar</code> flags; I just needed to define safety constraints.</p>
+  <p>The meta-story is the future of software. I didn't need to know <em>how</em> to implement a Jaccard Index for deduplication (or even what it was); I just needed to <em>observe</em> a performance issue and <em>ask</em> the right questions.</p>
   <p>This is what a 100x multiplier feels like.</p>
 
   <div style="text-align: center; margin-top: 50px; padding-top: 30px; border-top: 3px double var(--border-color);">
@@ -61,7 +61,7 @@ permalink: /fishwrap/
   </div>
   
   <div style="text-align: center; margin-top: 40px;">
-    <a href="/" style="font-family: var(--font-mono); font-size: 0.9em;">&larr; Back to Max Spevack</a>
+    <a href="/" style="font-family: var(--font-mono); font-size: 0.9em;">&larr; Back to spevack.org</a>
   </div>
 
   <div class="footer-note">
