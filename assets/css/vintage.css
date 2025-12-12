@@ -1,3 +1,4 @@
+/* Vintage Clamour Theme for spevack.org */
 /* 
    The Daily Clamour / Spevack.org Vintage Palette 
    -----------------------------------------------
@@ -162,6 +163,7 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
     margin-bottom: 20px;
 }
 
+/* Updated Clamour Button Style */
 .clamour-btn {
     display: inline-block;
     background-color: transparent;
@@ -178,7 +180,7 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
 .clamour-card:hover .clamour-btn,
 .clamour-btn:hover {
     background-color: var(--text-color);
-    color: var(--accent-red);
+    color: var(--accent-red); /* Black background, Red Text */
     border-color: var(--text-color);
 }
 

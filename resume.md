@@ -4,7 +4,7 @@ title: Max Spevack - Resume
 permalink: /resume/
 ---
 <div class="profile-header">
-  <img src="max.jpg" class="profile-photo" alt="Max Spevack">
+  <img src="/max.jpg" class="profile-photo" alt="Max Spevack">
   <h1>Max Spevack</h1>
   <p class="profile-tagline">Engineering Leader & Organizational Architect</p>
   
