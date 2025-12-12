@@ -4,10 +4,11 @@ This is the source code for my personal website and resume, hosted at [spevack.o
 
 ## 🏗 Architecture
 
-The site is built using **Jekyll** and hosted on **GitHub Pages**. It is designed to match the "Vintage" aesthetic of [The Daily Clamour](https://dailyclamour.com).
+The site is built using **Jekyll** and hosted on **GitHub Pages**. It is designed to allow distinct styling for the public website and the downloadable resume.
 
-*   **Theme:** Custom "Vintage Clamour" CSS (no remote theme dependency).
-*   **Palette:**
+*   **Website Theme:** Custom "Vintage Clamour" CSS (`assets/css/vintage.css`).
+*   **Resume Theme:** Custom "Clean Professional" CSS (`assets/css/resume.css`).
+*   **Palette (Website):**
     *   Background (Cream Paper): `#fdfbf7`
     *   Text (Ink Black): `#2f2f2f`
     *   Accents: Slate `#2c3e50`, Urgent Red `#c0392b`
@@ -18,9 +19,10 @@ The site is built using **Jekyll** and hosted on **GitHub Pages**. It is designe
 
 ## 📂 File Structure
 
-*   `assets/css/vintage.css`: The source of truth for the site's styling.
-*   `generate_pdf.py`: Python script (using WeasyPrint) that transpiles `resume.md` into `resume.pdf`. **Crucially, this script ingests `vintage.css` directly**, ensuring the PDF always matches the website's design.
-*   `_layouts/default.html`: The HTML wrapper. It links the vintage CSS, FontAwesome, and handles the favicons.
+*   `assets/css/vintage.css`: The stylesheet for the Jekyll-rendered website.
+*   `assets/css/resume.css`: The stylesheet exclusively used by `generate_pdf.py` for the PDF resume.
+*   `generate_pdf.py`: Python script (using WeasyPrint) that transpiles `resume.md` into `resume.pdf`. **Crucially, this script ingests `assets/css/resume.css` directly**, ensuring the PDF has a consistent, professional look independent of the website's brand.
+*   `_layouts/default.html`: The HTML wrapper for the Jekyll site. It links `assets/css/vintage.css`.
 *   `max.jpg`: Profile picture.
 *   `CNAME`: Configures the custom domain `spevack.org`.
 
@@ -29,7 +31,7 @@ The site is built using **Jekyll** and hosted on **GitHub Pages**. It is designe
 ### PDF Resume Generation
 The repository uses a local build process (via `Makefile`) to generate the PDF artifact before pushing.
 
-1.  **Generate:** `make generate-pdf` builds `resume.pdf` from `resume.md`, applying `vintage.css` styles.
+1.  **Generate:** `make generate-pdf` builds `resume.pdf` from `resume.md`, applying the `assets/css/resume.css` styles.
 2.  **Publish:** `make publish-resume` generates the PDF and pushes all changed artifacts to GitHub.
 
 ### Setup
