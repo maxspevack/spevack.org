@@ -27,7 +27,7 @@ pdf-deps:
 	@$(PIP) install -r requirements.txt
 
 generate-pdf: pdf-deps
-	@echo "Generating resume.pdf from index.md..."
+	@echo "Generating resume.pdf from resume.md..."
 	@$(PYTHON) generate_pdf.py
 
 publish-resume: generate-pdf

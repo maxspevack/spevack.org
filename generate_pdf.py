@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup, Tag
 from weasyprint import HTML
 
 # Configuration
-INPUT_FILE = "index.md"
+INPUT_FILE = "resume.md"
 OUTPUT_FILE = "resume.pdf"
 
 def clean_url(url):
