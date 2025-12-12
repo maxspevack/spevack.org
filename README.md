@@ -4,28 +4,32 @@ This is the source code for my personal website and resume, hosted at [spevack.o
 
 ## 🏗 Architecture
 
-The site is built using **Jekyll** and hosted on **GitHub Pages**. It prioritizes minimalism and maintainability by separating content from presentation using a remote theme.
+The site is built using **Jekyll** and hosted on **GitHub Pages**. It is designed to match the "Vintage" aesthetic of [The Daily Clamour](https://dailyclamour.com).
 
-*   **Theme:** [Dracula Theme for Jekyll](https://draculatheme.com/gh-pages) (`dracula/gh-pages`).
-*   **Content:** Single-page Markdown (`index.md`).
-*   **Layout:** Overridden default layout (`_layouts/default.html`) to provide a custom header and favicon support while inheriting the theme's styling.
+*   **Theme:** Custom "Vintage Clamour" CSS (no remote theme dependency).
+*   **Palette:**
+    *   Background (Cream Paper): `#fdfbf7`
+    *   Text (Ink Black): `#2f2f2f`
+    *   Accents: Slate `#2c3e50`, Urgent Red `#c0392b`
+*   **Content:**
+    *   `index.md`: Landing page with "Daily Clamour" feature.
+    *   `resume.md`: Professional resume.
+    *   `fishwrap.md`: "Vibe-Coding" engineering story.
 
 ## 📂 File Structure
 
-*   `index.md`: The single source of truth for the resume content. Written in standard Markdown with minimal inline HTML for the header.
-*   `resume.pdf`: Auto-generated print-friendly version of the resume.
-*   `generate_pdf.py`: Python script (using WeasyPrint) that transpiles `index.md` into `resume.pdf`.
-*   `_config.yml`: Jekyll configuration file defining the remote theme and site metadata.
-*   `_layouts/default.html`: The HTML wrapper that overrides the theme's default. It links the theme's CSS, FontAwesome, and handles the favicons.
+*   `assets/css/vintage.css`: The source of truth for the site's styling.
+*   `generate_pdf.py`: Python script (using WeasyPrint) that transpiles `resume.md` into `resume.pdf`.
+*   `_layouts/default.html`: The HTML wrapper. It links the vintage CSS, FontAwesome, and handles the favicons.
 *   `max.jpg`: Profile picture.
 *   `CNAME`: Configures the custom domain `spevack.org`.
 
 ## 🤖 Automation
 
 ### PDF Resume Generation
-The repository includes a **Git Pre-Commit Hook** (`.git/hooks/pre-commit`) that automatically ensures `resume.pdf` is always in sync with `index.md`.
+The repository includes a **Git Pre-Commit Hook** (`.git/hooks/pre-commit`) that automatically ensures `resume.pdf` is always in sync with `resume.md`.
 
-1.  When you commit a change to `index.md`.
+1.  When you commit a change to `resume.md`.
 2.  The hook runs `generate_pdf.py` (using the `fishwrap` Python environment).
 3.  The script converts the Markdown to a clean, print-optimized HTML structure and renders it to PDF.
 4.  The updated `resume.pdf` is automatically added to the commit.

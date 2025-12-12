@@ -226,6 +226,18 @@ def generate_pdf():
     # 7. Construct Final HTML
     # CSS
     css = """
+    /* 
+       The Daily Clamour / Spevack.org Vintage Palette 
+       -----------------------------------------------
+       Background (Cream Paper): #fdfbf7
+       Text (Ink Black):         #2f2f2f
+       Accent (Slate):           #2c3e50
+       Accent (Urgent Red):      #c0392b
+       Accent (Link Blue):       #2980b9
+       Muted Text:               #555555
+       Borders:                  #dcdcdc
+    */
+
     @page { size: Letter; margin: 0.5in; }
     @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Georgia:ital,wght@0,400;0,700;1,400&display=swap');
 
