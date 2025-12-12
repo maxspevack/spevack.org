@@ -2,65 +2,50 @@
 layout: default
 title: Max Spevack
 ---
-<div style="text-align: center; color: #f8f8f2;">
-  <!-- Profile Header -->
-  <img src="max.jpg" style="width: 150px; border-radius: 50%; border: 3px solid #bd93f9; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
-  <h1 style="margin-top: 10px; margin-bottom: 5px; color: #bd93f9;">Max Spevack</h1>
-  <p style="color: #8be9fd; font-weight: bold; margin-bottom: 15px;">Bad at chess, decent at AI, stellar at Mario-Kart!</p>
+<div class="profile-header">
+  <img src="max.jpg" class="profile-photo" alt="Max Spevack">
+  <h1>Max Spevack</h1>
+  <p class="profile-tagline">Bad at chess, decent at AI, stellar at Mario-Kart!</p>
   
-  <p>
-    <a href="mailto:max.spevack@gmail.com" style="margin: 0 10px; text-decoration: none; color: #f8f8f2;">
-      <i class="fas fa-envelope fa-lg" onmouseover="this.style.color='#ff79c6'" onmouseout="this.style.color='#f8f8f2'"></i>
-    </a>
-  </p>
-  <br>
-
-  <!-- The Daily Clamour Feature Card -->
-  <a href="https://dailyclamour.com" style="text-decoration: none; color: inherit;">
-    <div style="background-color: #282a36; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); margin-top: 40px; max-width: 650px; margin-left: auto; margin-right: auto; position: relative; border: 1px solid #44475a; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1.00)'">
-      
-      <!-- Hero Image Banner -->
-      <div style="width: 100%; position: relative;">
-        <img src="/scoop-ad-wide.png" alt="Scoop the Pearl in the Pressroom" style="width: 100%; height: auto; display: block; border-radius: 12px 12px 0 0; opacity: 0.95;">
-        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100px; background: linear-gradient(to top, #282a36, transparent);"></div>
-      </div>
-
-      <!-- Content Body -->
-      <div style="padding: 0 30px 30px 30px; position: relative;">
-        
-        <!-- Overlapping Logo -->
-        <div style="margin-top: -60px; margin-bottom: 15px; text-align: center;">
-           <img src="/daily-clamour.png" alt="The Daily Clamour Logo" style="width: 140px; background-color: #282a36; padding: 10px; border-radius: 50%; box-shadow: 0 5px 15px rgba(0,0,0,0.6); display: inline-block;">
-        </div>
-
-        <h2 style="color: #50fa7b; font-family: 'Times New Roman', serif; font-size: 2.2em; margin-bottom: 5px; margin-top: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
-          "Often Wrong, Never in Doubt!"
-        </h2>
-        
-        <p style="font-size: 1.1em; line-height: 1.6; color: #f8f8f2; margin-bottom: 25px; max-width: 580px; margin-left: auto; margin-right: auto;">
-          In a world of whispers and half-truths, <strong>The Daily Clamour</strong> rips through the static like a tireless news hound! Meet Scoop -- our pearl of persistence -- and his whirlwind digital press. We're an old-school engine of raw grit, churning out the truth (and a bit of delightful gossip). So loud, so fast, so utterly unyielding, you'll feel the rumble in your bones.
-        </p>
-
-        <span style="display: inline-block; background-color: #ff5555; color: #f8f8f2; padding: 14px 35px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.2em; transition: all 0.3s ease; border: 2px solid #ff5555; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-          Get Your Daily Dose
-        </span>
-      </div>
-    </div>
-  </a>
-
-  <!-- The "Behind The Scenes" Link -->
-  <div style="margin-top: 25px; font-size: 0.9em; opacity: 0.8;">
-    <span style="color: #6272a4;">Built entirely with Gemini Ultra.</span><br>
-    <a href="/story/" style="color: #8be9fd; text-decoration: none; border-bottom: 1px dotted #8be9fd; margin-top: 5px; display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='#50fa7b'" onmouseout="this.style.color='#8be9fd'">
-      Read the Engineering Story: "Vibe-Coding a News Engine" &rarr;
+  <div class="social-icons">
+    <a href="mailto:max.spevack@gmail.com">
+      <i class="fas fa-envelope"></i>
     </a>
   </div>
+</div>
 
-  <!-- The "Soupçon" Footer -->
-  <div style="margin-top: 60px; margin-bottom: 40px; border-top: 1px solid #44475a; max-width: 400px; margin-left: auto; margin-right: auto; padding-top: 20px;">
-    <p style="font-family: 'Courier New', monospace; color: #6272a4; font-size: 0.85em;">
-      <i class="fas fa-code"></i> &nbsp;This website was also re-implemented as a <em>soupçon</em> by the same AI team.
+<!-- The Daily Clamour Feature Card -->
+<a href="https://dailyclamour.com" class="clamour-card">
+  
+  <!-- Hero Image -->
+  <img src="/scoop-ad-wide.png" class="clamour-hero" alt="Scoop the Pearl">
+
+  <div class="clamour-content">
+    
+    <!-- Logo Overlap -->
+    <img src="/daily-clamour.png" class="clamour-logo" alt="The Daily Clamour">
+
+    <h2 class="clamour-headline">"Often Wrong, Never in Doubt!"</h2>
+    
+    <p class="clamour-copy">
+      In a world of whispers, <strong>The Daily Clamour</strong> rips through the static! Meet Scoop and his whirlwind press. We're an old-school engine of raw grit, churning out the truth. So loud, so fast, you'll feel the rumble.
     </p>
-  </div>
 
+    <span class="clamour-btn">Get Your Daily Dose</span>
+  </div>
+</a>
+
+<!-- Behind The Scenes Link -->
+<div style="text-align: center; margin-top: 30px; font-family: var(--font-mono);">
+  <span style="color: var(--muted-color); font-size: 0.9em;">Built entirely with Gemini Ultra.</span><br>
+  <a href="/story/" style="font-weight: bold;">
+    Read the Engineering Story: "Vibe-Coding a News Engine" &rarr;
+  </a>
+</div>
+
+<!-- Footer -->
+<div class="footer-note">
+  <p>
+    <i class="fas fa-newspaper"></i> &nbsp;This website was also re-implemented as a <em>soupçon</em> by the same AI team.
+  </p>
 </div>

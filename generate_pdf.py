@@ -227,113 +227,130 @@ def generate_pdf():
     # CSS
     css = """
     @page { size: Letter; margin: 0.5in; }
+    @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Georgia:ital,wght@0,400;0,700;1,400&display=swap');
+
     body {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        color: #333;
+        font-family: "Georgia", serif;
+        color: #2f2f2f;
+        background-color: #fdfbf7;
         font-size: 10pt;
         line-height: 1.4;
     }
-    a { color: #333; text-decoration: none; }
+    a { color: #2f2f2f; text-decoration: none; }
     
     /* Header */
     .header {
         display: flex;
         flex-direction: row;
-        border-bottom: 2px solid #333;
+        border-bottom: 3px double #2f2f2f;
         padding-bottom: 15px;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
         align-items: center;
     }
     .header-photo {
         flex: 0 0 100px;
-        margin-right: 20px;
+        margin-right: 25px;
     }
     .profile-photo {
         width: 100px;
-        border-radius: 50%; /* Circle */
-        border: 1px solid #ddd;
+        border-radius: 50%;
+        border: 2px solid #2f2f2f;
+        filter: sepia(0.2);
     }
     .header-info {
         flex: 1;
     }
     .name {
-        font-size: 24pt;
-        font-weight: bold;
+        font-family: "Special Elite", cursive;
+        font-size: 22pt;
+        font-weight: 700;
         margin: 0 0 5px 0;
         text-transform: uppercase;
         letter-spacing: 1px;
     }
     .title {
-        font-size: 12pt;
-        color: #666;
+        font-family: "Courier Prime", monospace;
+        font-size: 11pt;
+        color: #555;
         margin: 0 0 10px 0;
-        font-weight: 600;
+        font-weight: 400;
+        font-style: italic;
     }
     .contact-info {
+        font-family: "Courier Prime", monospace;
         font-size: 9pt;
-        color: #555;
+        color: #444;
         margin-bottom: 10px;
     }
     .contact-item {
         margin-right: 15px;
         display: inline-block;
+        border-bottom: 1px dotted #999;
     }
     .contact-item:last-child { margin-right: 0; }
     
     .summary p {
         margin: 0;
-        font-size: 9.5pt;
-        color: #444;
-        font-style: italic;
+        font-size: 10pt;
+        color: #333;
+        font-family: "Georgia", serif;
     }
 
     /* Sections */
     .section-header {
-        font-size: 12pt;
-        border-bottom: 1px solid #ccc;
-        margin-top: 15px;
-        margin-bottom: 10px;
-        padding-bottom: 2px;
+        font-family: "Special Elite", cursive;
+        font-size: 14pt;
+        border-bottom: 1px solid #2f2f2f;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        padding-bottom: 4px;
         color: #000;
+        text-transform: uppercase;
     }
     
     /* Entries */
     .entry {
-        margin-bottom: 12px;
-        page-break-inside: avoid; /* Try to keep jobs together */
+        margin-bottom: 15px;
+        page-break-inside: avoid;
     }
     .entry-header {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        margin-bottom: 2px;
+        margin-bottom: 4px;
+        border-bottom: 1px dotted #ccc;
+        padding-bottom: 2px;
     }
     .company {
         font-weight: bold;
         font-size: 11pt;
+        font-family: "Georgia", serif;
     }
     .date {
         font-size: 9pt;
-        font-style: italic;
-        color: #666;
+        font-family: "Courier Prime", monospace;
+        color: #555;
     }
     .role {
         font-weight: 600;
         font-size: 10pt;
-        margin-bottom: 2px;
+        margin-bottom: 4px;
+        font-style: italic;
+        color: #444;
     }
     .details {
-        font-size: 9.5pt;
+        font-size: 10pt;
+        color: #2f2f2f;
     }
     .details ul {
         margin: 0;
         padding-left: 18px;
     }
     .details li {
-        margin-bottom: 2px;
+        margin-bottom: 3px;
     }
     .details p {
-        margin: 2px 0;
+        margin: 3px 0;
     }
     """
 
