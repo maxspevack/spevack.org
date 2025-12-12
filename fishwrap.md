@@ -8,7 +8,7 @@ permalink: /fishwrap/
   <!-- Header -->
   <div style="text-align: center; margin-bottom: 40px;">
     <h1>The Daily Clamour & Fishwrap 1.1.0</h1>
-    <div class="story-meta">December 12, 2025 • By Max Spevack</div>
+    <div class="story-meta">December 12, 2025</div>
     <h2 style="border: none; font-size: 1.6em; margin-top: 10px;">"Vibe-Coding" a News Engine with Gemini Ultra</h2>
   </div>
 
@@ -66,7 +66,7 @@ permalink: /fishwrap/
 
   <div class="footer-note">
     <p>
-      <i class="fas fa-newspaper"></i> &nbsp;This website (spevack.org) was also re-implemented as a <em>soupçon</em> by the same AI team.
+      <i class="fas fa-newspaper"></i> &nbsp;This website was also re-implemented as a <em>soupçon</em> by the same AI team.
     </p>
   </div>
 

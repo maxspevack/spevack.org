@@ -226,143 +226,114 @@ def generate_pdf():
     # 7. Construct Final HTML
     # CSS
     css = """
-    /* 
-       The Daily Clamour / Spevack.org Vintage Palette 
-       -----------------------------------------------
-       Background (Cream Paper): #fdfbf7
-       Text (Ink Black):         #2f2f2f
-       Accent (Slate):           #2c3e50
-       Accent (Urgent Red):      #c0392b
-       Accent (Link Blue):       #2980b9
-       Muted Text:               #555555
-       Borders:                  #dcdcdc
-    */
-
     @page { size: Letter; margin: 0.5in; }
-    @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Georgia:ital,wght@0,400;0,700;1,400&display=swap');
-
     body {
-        font-family: "Georgia", serif;
-        color: #2f2f2f;
-        background-color: #fdfbf7;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #333;
         font-size: 10pt;
         line-height: 1.4;
     }
-    a { color: #2f2f2f; text-decoration: none; }
+    a { color: #333; text-decoration: none; }
     
     /* Header */
     .header {
         display: flex;
         flex-direction: row;
-        border-bottom: 3px double #2f2f2f;
+        border-bottom: 2px solid #333;
         padding-bottom: 15px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         align-items: center;
     }
     .header-photo {
         flex: 0 0 100px;
-        margin-right: 25px;
+        margin-right: 20px;
     }
     .profile-photo {
         width: 100px;
-        border-radius: 50%;
-        border: 2px solid #2f2f2f;
-        filter: sepia(0.2);
+        border-radius: 50%; /* Circle */
+        border: 1px solid #ddd;
     }
     .header-info {
         flex: 1;
     }
     .name {
-        font-family: "Special Elite", cursive;
-        font-size: 22pt;
-        font-weight: 700;
+        font-size: 24pt;
+        font-weight: bold;
         margin: 0 0 5px 0;
         text-transform: uppercase;
         letter-spacing: 1px;
     }
     .title {
-        font-family: "Courier Prime", monospace;
-        font-size: 11pt;
-        color: #555;
+        font-size: 12pt;
+        color: #666;
         margin: 0 0 10px 0;
-        font-weight: 400;
-        font-style: italic;
+        font-weight: 600;
     }
     .contact-info {
-        font-family: "Courier Prime", monospace;
         font-size: 9pt;
-        color: #444;
+        color: #555;
         margin-bottom: 10px;
     }
     .contact-item {
         margin-right: 15px;
         display: inline-block;
-        border-bottom: 1px dotted #999;
     }
     .contact-item:last-child { margin-right: 0; }
     
     .summary p {
         margin: 0;
-        font-size: 10pt;
-        color: #333;
-        font-family: "Georgia", serif;
+        font-size: 9.5pt;
+        color: #444;
+        font-style: italic;
     }
 
     /* Sections */
     .section-header {
-        font-family: "Special Elite", cursive;
-        font-size: 14pt;
-        border-bottom: 1px solid #2f2f2f;
-        margin-top: 20px;
-        margin-bottom: 15px;
-        padding-bottom: 4px;
+        font-size: 12pt;
+        border-bottom: 1px solid #ccc;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        padding-bottom: 2px;
         color: #000;
-        text-transform: uppercase;
     }
     
     /* Entries */
     .entry {
-        margin-bottom: 15px;
-        page-break-inside: avoid;
+        margin-bottom: 12px;
+        page-break-inside: avoid; /* Try to keep jobs together */
     }
     .entry-header {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        margin-bottom: 4px;
-        border-bottom: 1px dotted #ccc;
-        padding-bottom: 2px;
+        margin-bottom: 2px;
     }
     .company {
         font-weight: bold;
         font-size: 11pt;
-        font-family: "Georgia", serif;
     }
     .date {
         font-size: 9pt;
-        font-family: "Courier Prime", monospace;
-        color: #555;
+        font-style: italic;
+        color: #666;
     }
     .role {
         font-weight: 600;
         font-size: 10pt;
-        margin-bottom: 4px;
-        font-style: italic;
-        color: #444;
+        margin-bottom: 2px;
     }
     .details {
-        font-size: 10pt;
-        color: #2f2f2f;
+        font-size: 9.5pt;
     }
     .details ul {
         margin: 0;
         padding-left: 18px;
     }
     .details li {
-        margin-bottom: 3px;
+        margin-bottom: 2px;
     }
     .details p {
-        margin: 3px 0;
+        margin: 2px 0;
     }
     """
 
