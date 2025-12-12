@@ -4,17 +4,11 @@ import sys
 import os
 from bs4 import BeautifulSoup
 from weasyprint import HTML, CSS
+from weasyprint.text.fonts import FontConfiguration
 
 # Configuration
 INPUT_FILE = "resume.md"
 OUTPUT_FILE = "resume.pdf"
-
-def clean_url(url):
-    """Strip https://, mailto:, and trailing slashes for display."""
-    clean = url.replace("https://", "").replace("http://", "").replace("mailto:", "")
-    if clean.endswith("/"):
-        clean = clean[:-1]
-    return clean
 
 def generate_pdf():
     # 1. Read Markdown
@@ -28,325 +22,260 @@ def generate_pdf():
     # 2. Strip Front Matter
     content = re.sub(r'^---\n.+?---\n', '', raw_content, flags=re.DOTALL)
 
-    # 3. Fix Image Paths (Local file system)
-    # Convert /max.jpg to max.jpg so WeasyPrint finds it in CWD
+    # 3. Pre-process Image Paths for PDF
+    # WeasyPrint needs to find the image locally.
+    # If the markdown has src="/max.jpg", change it to "max.jpg" (assuming script runs in same dir)
     content = content.replace('src="/max.jpg"', 'src="max.jpg"')
 
     # 4. Convert to HTML
-    # Enable 'markdown.extensions.extra' for better handling of nested structures if needed
-    html_raw = markdown.markdown(content, extensions=['extra'])
-    soup = BeautifulSoup(html_raw, 'html.parser')
-
-    # 5. Clean ALL inline styles for consistent PDF styling
-    for tag in soup.descendants:
-        if hasattr(tag, 'attrs') and 'style' in tag.attrs:
-            del tag.attrs['style']
-
-    # 6. Extract Header
-    # We look for the profile-header div
-    header_div = soup.find('div', class_='profile-header')
+    # We use 'extra' for better feature support
+    html_body = markdown.markdown(content, extensions=['extra'])
     
-    new_header = soup.new_tag('div', attrs={'class': 'header'})
+    # 5. Build Full HTML Document with CSS
+    # Note: We explicitly import the Google Fonts here so WeasyPrint can try to fetch them.
+    # However, WeasyPrint sometimes struggles with web fonts if not installed locally.
+    # We will provide a robust font stack fallback.
     
-    if header_div:
-        # Process Image
-        img = header_div.find('img')
-        if img:
-            img_container = soup.new_tag('div', attrs={'class': 'header-photo'})
-            img['class'] = 'profile-photo'
-            img_container.append(img)
-            new_header.append(img_container)
-
-        # Process Info (Name, Title, Contact)
-        info_container = soup.new_tag('div', attrs={'class': 'header-info'})
-        
-        # Name
-        h1 = header_div.find('h1')
-        if h1:
-            h1['class'] = 'name'
-            info_container.append(h1)
-        
-        # Title (Find by class profile-tagline)
-        title_p = header_div.find(class_='profile-tagline')
-        if title_p:
-            title_p['class'] = 'title'
-            info_container.append(title_p)
-
-        # Contact Links
-        contact_div = soup.new_tag('div', attrs={'class': 'contact-info'})
-        social_div = header_div.find(class_='social-icons')
-        
-        links_source = social_div.find_all('a') if social_div else []
-        for a in links_source:
-            href = a.get('href')
-            # Skip email mailto prefix for display, keep link
-            # Skip PDF download link
-            if not href or 'resume.pdf' in href: continue 
-            
-            link_span = soup.new_tag('span', attrs={'class': 'contact-item'})
-            
-            # Icon mapping (simple text for PDF)
-            label = clean_url(href)
-            link_span.string = label + "  "
-            contact_div.append(link_span)
-        
-        info_container.append(contact_div)
-        
-        # Intro Text (The div after social icons)
-        # It's usually the last div in profile-header
-        intro_texts = [child for child in header_div.children if child.name == 'div' and not child.get('class')]
-        if intro_texts:
-             intro_div = soup.new_tag('div', attrs={'class': 'summary'})
-             # Copy contents
-             for c in intro_texts[0].contents:
-                 intro_div.append(c)
-             info_container.append(intro_div)
-
-        new_header.append(info_container)
-    else:
-        print("Warning: profile-header not found.")
-
-    # 7. Flatten and Rebuild Sections
-    # The content might be inside a .story-container div or top level
-    # We will iterate through all elements that are NOT the header
-    
-    main_content = soup.new_tag('div', attrs={'class': 'main-content'})
-    
-    # Locate the start of content. It's either inside story-container or just after header
-    story_container = soup.find('div', class_='story-container')
-    content_source = story_container if story_container else soup
-
-    # Helper to flush current job to main_content
-    def create_entry(company_tag, date_tag, role_tags, content_tags):
-        entry = soup.new_tag('div', attrs={'class': 'entry'})
-        
-        # Header Row: Company | Date
-        row1 = soup.new_tag('div', attrs={'class': 'entry-header'})
-        
-        comp_span = soup.new_tag('span', attrs={'class': 'company'})
-        comp_span.append(company_tag.get_text())
-        
-        date_span = soup.new_tag('span', attrs={'class': 'date'})
-        date_span.string = date_tag.get_text() if date_tag else ""
-        
-        row1.append(comp_span)
-        row1.append(date_span)
-        entry.append(row1)
-        
-        # Role(s)
-        for r in role_tags:
-            r_div = soup.new_tag('div', attrs={'class': 'role'})
-            r_div.string = r.get_text()
-            entry.append(r_div)
-            
-        # Content
-        details = soup.new_tag('div', attrs={'class': 'details'})
-        for c in content_tags:
-            details.append(c)
-        entry.append(details)
-        
-        return entry
-
-    # State Machine
-    pending_company = None
-    pending_date = None
-    pending_roles = []
-    pending_content = []
-
-    # Iterate elements in content_source
-    for tag in content_source.children:
-        if tag.name == 'h2':
-            # Section Header (Experience / Education)
-            # Flush pending
-            if pending_company:
-                main_content.append(create_entry(pending_company, pending_date, pending_roles, pending_content))
-                pending_company, pending_date, pending_roles, pending_content = None, None, [], []
-            
-            sec_header = soup.new_tag('h3', attrs={'class': 'section-header'})
-            sec_header.string = tag.get_text().upper()
-            main_content.append(sec_header)
-
-        elif tag.name == 'h3':
-            # Job / School
-            # Flush pending
-            if pending_company:
-                main_content.append(create_entry(pending_company, pending_date, pending_roles, pending_content))
-                pending_company, pending_date, pending_roles, pending_content = None, None, [], []
-            
-            pending_company = tag
-
-        elif tag.name == 'p':
-            text = tag.get_text().strip()
-            # Date detection: Starts with ( and ends with ) or contains date-like patterns
-            # In resume.md: *(July 2025 - Present)* which is <em>...</em> inside <p>
-            # Markdown usually renders *Text* as <p><em>Text</em></p>
-            if pending_company and not pending_date and (text.startswith('(') or text.startswith('*(')):
-                 pending_date = tag
-            # Role detection: **Role** -> <strong>Role</strong>
-            elif pending_company and tag.find('strong') and len(tag.get_text()) < 100:
-                # If the paragraph is JUST the role (or mostly), treat as role
-                # But sometimes role is separate.
-                # In resume.md: **Senior Principal Linux Architect** <br> **Chief of Staff...**
-                # This might come as one p with br or multiple.
-                # Let's assume lines with <strong> are roles if appear before lists
-                pass # Handled by content append, but let's try to extract explicit roles?
-                # Simpler: Just dump it into content/details for now, or refine?
-                # The user wanted "lighter box". The PDF formatting is separate.
-                # Let's try to identify explicit role lines if possible.
-                if tag.find('strong'):
-                     pending_roles.append(tag)
-                else:
-                     pending_content.append(tag)
-            else:
-                if pending_company:
-                    pending_content.append(tag)
-        
-        elif tag.name == 'ul':
-            if pending_company:
-                pending_content.append(tag)
-
-    # Flush final
-    if pending_company:
-        main_content.append(create_entry(pending_company, pending_date, pending_roles, pending_content))
-
-    # 8. CSS Styling
     css = """
-    @page { size: Letter; margin: 0.5in; }
+    @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Georgia:ital,wght@0,400;0,700;1,400&display=swap');
+    
+    @page {
+        size: Letter;
+        margin: 0.5in;
+        @bottom-right {
+            content: "Page " counter(page) " of " counter(pages);
+            font-family: 'Courier Prime', monospace;
+            font-size: 8pt;
+            color: #555;
+        }
+    }
+
     body {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        color: #333;
+        font-family: 'Georgia', serif;
         font-size: 10pt;
         line-height: 1.4;
+        color: #2f2f2f;
+        background-color: #ffffff; /* White paper for PDF */
+        margin: 0;
+        padding: 0;
     }
-    a { color: #333; text-decoration: none; }
-    
-    /* Header */
-    .header {
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Special Elite', cursive;
+        color: #2f2f2f;
+        font-weight: 400; /* Special Elite is naturally bold */
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    a {
+        color: #2c3e50; /* Slate */
+        text-decoration: none;
+        border-bottom: 1px dotted #2c3e50;
+    }
+
+    /* Header / Profile Styling */
+    .profile-header {
         display: flex;
-        flex-direction: row;
-        border-bottom: 2px solid #333;
-        padding-bottom: 15px;
-        margin-bottom: 15px;
+        flex-direction: column;
         align-items: center;
+        border-bottom: 2px solid #2f2f2f;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
     }
-    .header-photo {
-        flex: 0 0 100px;
-        margin-right: 20px;
+
+    .identity-row {
+        display: flex;
+        flex-direction: row; /* Ensure side-by-side */
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 15px;
     }
+
+    /* Photo */
     .profile-photo {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
+        width: 120px;
+        height: 120px;
         border-radius: 50%;
-        border: 1px solid #ddd;
+        border: 2px solid #2f2f2f;
+        object-fit: cover;
     }
-    .header-info {
-        flex: 1;
+
+    /* Name */
+    h1 {
+        font-size: 28pt;
+        margin: 0;
+        line-height: 1;
+        border-bottom: none; /* Override default h1 style */
     }
-    .name {
-        font-size: 24pt;
-        font-weight: bold;
-        margin: 0 0 5px 0;
+
+    .profile-tagline {
+        font-family: 'Courier Prime', monospace;
+        font-size: 11pt;
+        color: #555;
+        font-style: italic;
+        margin: 5px 0 15px 0;
+        text-align: center;
+    }
+
+    /* Contact / Social */
+    .social-icons {
+        margin-bottom: 15px;
+        text-align: center;
+        font-family: 'Courier Prime', monospace;
+        font-size: 9pt;
+    }
+    .social-icons a {
+        margin: 0 10px;
+        display: inline-block;
+        border-bottom: none;
+    }
+    /* We assume FontAwesome won't render in PDF easily without local fonts.
+       So we'll use text content if possible, or just the links.
+       Ideally, we'd replace icons with text labels for PDF. 
+       We'll do a quick regex fix in Python below to swap icons for text. */
+
+    .profile-header div[style] {
+        /* The summary block */
+        max-width: 100% !important;
+        text-align: center !important;
+        font-style: italic;
+        color: #444;
+        font-size: 10pt;
+    }
+
+    /* Content Styling */
+    .story-container {
+        /* Remove box shadow/border for print to save ink/clean look, 
+           or keep it if "light box" is desired. Let's keep it subtle. */
+        border: 1px solid #dcdcdc;
+        border-left: 4px solid #2c3e50; /* Slate accent */
+        padding: 20px;
+        background-color: #fcfcfc;
+    }
+
+    h2 {
+        font-size: 16pt;
+        border-bottom: 1px solid #dcdcdc;
+        padding-bottom: 5px;
+        margin-top: 25px;
         text-transform: uppercase;
         letter-spacing: 1px;
     }
-    .title {
-        font-size: 12pt;
-        color: #666;
-        margin: 0 0 10px 0;
-        font-weight: 600;
-    }
-    .contact-info {
-        font-size: 9pt;
-        color: #555;
-        margin-bottom: 10px;
-    }
-    .contact-item {
-        margin-right: 15px;
-        display: inline-block;
-    }
-    .contact-item:last-child { margin-right: 0; }
-    
-    .summary p {
-        margin: 0;
-        font-size: 9.5pt;
-        color: #444;
-        font-style: italic;
-    }
 
-    /* Sections */
-    .section-header {
-        font-size: 12pt;
-        border-bottom: 1px solid #ccc;
+    h3 {
+        font-size: 13pt;
+        margin-bottom: 2px;
         margin-top: 20px;
-        margin-bottom: 10px;
-        padding-bottom: 2px;
+    }
+    
+    /* Company Name Link */
+    h3 a { 
+        font-weight: bold; 
+        border: none;
         color: #000;
-        font-weight: bold;
     }
-    
-    /* Entries */
-    .entry {
-        margin-bottom: 15px;
-        page-break-inside: avoid;
-    }
-    .entry-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        margin-bottom: 2px;
-    }
-    .company {
-        font-weight: bold;
-        font-size: 11pt;
-    }
-    .date {
-        font-size: 9pt;
-        font-style: italic;
-        color: #666;
-    }
-    .role {
-        font-weight: 600;
-        font-size: 10pt;
-        margin-bottom: 2px;
-        color: #222;
-    }
-    /* Clean up paragraphs in roles if they exist */
-    .role p { margin: 0; display: inline; }
-    
-    .details {
-        font-size: 9.5pt;
-    }
-    .details ul {
-        margin: 2px 0 0 0;
-        padding-left: 18px;
-    }
-    .details li {
-        margin-bottom: 2px;
-    }
-    .details p {
-        margin: 2px 0;
-    }
-    """
 
-    final_html = f"""
+    /* Date / Role line */
+    p em {
+        font-family: 'Courier Prime', monospace;
+        font-size: 9pt;
+        color: #666;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    /* Roles */
+    strong {
+        font-weight: 700;
+        color: #2c3e50;
+    }
+
+    ul {
+        margin-top: 5px;
+        padding-left: 1.2em;
+    }
+    li {
+        margin-bottom: 4px;
+        text-align: justify;
+    }
+
+    /* Hide PDF download link in PDF */
+    a[href$=".pdf"] { display: none; }
+    """.strip()
+
+    # 6. HTML Template
+    full_html = f"""
     <!DOCTYPE html>
     <html>
     <head>
         <meta charset="utf-8">
+        <title>Max Spevack - Resume</title>
         <style>{css}</style>
     </head>
     <body>
-        {new_header}
-        {main_content}
+        {html_body}
     </body>
     </html>
     """
 
-    # 9. Render
-    print(f"Rendering {INPUT_FILE} to {OUTPUT_FILE} (Resume Layout)...")
-    # base_url="." ensures it finds images in the current directory
-    HTML(string=final_html, base_url=".").write_pdf(OUTPUT_FILE)
+    # 7. Post-Processing HTML (Quick Fixes)
+    # Replace FontAwesome icons with Text for PDF readability
+    soup = BeautifulSoup(full_html, 'html.parser')
+    
+    # Map common FA classes to text
+    icon_map = {
+        'fa-envelope': 'Email',
+        'fa-file-pdf': 'PDF',
+        'fa-linkedin': 'LinkedIn',
+        'fa-github': 'GitHub'
+    }
+    
+    for i_tag in soup.find_all('i'):
+        classes = i_tag.get('class', [])
+        for cls in classes:
+            if cls in icon_map:
+                # Replace <i> with text span
+                new_span = soup.new_tag('span')
+                new_span.string = icon_map[cls]
+                i_tag.replace_with(new_span)
+                break
+    
+    # Clean up the social links (add spacing)
+    for a_tag in soup.select('.social-icons a'):
+        # Get the URL
+        href = a_tag.get('href')
+        if not href: continue
+        
+        # If it's the email, strip mailto
+        display_text = href.replace('mailto:', '').replace('https://', '').replace('www.', '')
+        
+        # If we replaced the icon with text, append the URL or format nicely
+        # Current state: <a><span>Email</span></a>
+        # Desired: <a>Email: max...</a> or just the text
+        
+        if a_tag.find('span'):
+            label = a_tag.find('span').string
+            # For PDF, let's just show the Label linking to the URL, 
+            # maybe add the actual text if it's not obvious?
+            # Actually, standard resume header: "max.spevack@gmail.com | linkedin.com/in/..."
+            # Let's replace the content of the A tag with the clean URL or label
+            if 'linkedin' in href:
+                a_tag.string = "LinkedIn"
+            elif 'github' in href:
+                a_tag.string = "GitHub"
+            elif '@' in href:
+                 a_tag.string = display_text
+            
+            
+    final_html = str(soup)
+
+    # 8. Render
+    print(f"Rendering {INPUT_FILE} to {OUTPUT_FILE}...")
+    font_config = FontConfiguration()
+    HTML(string=final_html, base_url=".").write_pdf(OUTPUT_FILE, font_config=font_config)
     print("Success!")
 
 if __name__ == "__main__":
