@@ -40,7 +40,7 @@ def generate_pdf():
     # 6. Build Full HTML Document with CSS
     # Updated Font URL: Removed Georgia (system font), keeping Special Elite and Courier Prime.
     css = """
-    @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap');
     
     @page {
         size: Letter;
