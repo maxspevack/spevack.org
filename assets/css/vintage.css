@@ -68,7 +68,7 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
     text-align: center;
     margin-bottom: 50px;
     padding-bottom: 30px;
-    border-bottom: 1px dashed var(--text-color);
+    border-bottom: none;
 }
 
 .identity-row {
@@ -106,7 +106,7 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
     color: var(--muted-color);
     font-style: italic;
     font-size: 1.1em;
-    margin-top: -10px;
+    margin-top: 15px;
 }
 
 .social-icons a {
