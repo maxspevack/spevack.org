@@ -79,37 +79,50 @@ def generate_pdf():
             h1['class'] = 'name'
             info_container.append(h1)
         
-        # Title (first p after h1)
-        # Note: Be careful if structure changed.
-        title_p = header_div.find('p') # The first p is title?
+        # Title (Find by class profile-tagline, or fallback to first p)
+        title_p = header_div.find(attrs={'class': 'profile-tagline'})
+        if not title_p:
+            title_p = header_div.find('p')
+            
         if title_p:
             title_p['class'] = 'title'
             info_container.append(title_p)
 
-        # Contact Links
+        # Contact Links (Find by class social-icons, or fallback)
         contact_div = soup.new_tag('div', attrs={'class': 'contact-info'})
-        # The second p has the links?
-        all_ps = header_div.find_all('p')
-        if len(all_ps) > 1:
-            links_p = all_ps[1] 
-            for a in links_p.find_all('a'):
-                href = a.get('href')
-                if not href or 'resume.pdf' in href: continue # Skip resume download link
-                
-                link_span = soup.new_tag('span', attrs={'class': 'contact-item'})
-                # Determine icon type or label based on href
-                label = clean_url(href)
-                link_span.string = label + "  " # Add spacer
-                contact_div.append(link_span)
+        social_div = header_div.find(attrs={'class': 'social-icons'})
+        
+        links_source = social_div.find_all('a') if social_div else []
+        
+        # Fallback if no social-icons class (legacy structure)
+        if not links_source and len(header_div.find_all('p')) > 1:
+             links_source = header_div.find_all('p')[1].find_all('a')
+
+        for a in links_source:
+            href = a.get('href')
+            if not href or 'resume.pdf' in href: continue 
+            
+            link_span = soup.new_tag('span', attrs={'class': 'contact-item'})
+            label = clean_url(href)
+            link_span.string = label + "  "
+            contact_div.append(link_span)
         
         info_container.append(contact_div)
         
-        # Intro Text (last p in div)
-        if len(all_ps) > 2:
-            intro_p = all_ps[-1]
-            intro_div = soup.new_tag('div', attrs={'class': 'summary'})
-            intro_div.append(intro_p)
-            info_container.append(intro_div)
+        # Intro Text
+        # In new structure, it's a div after social-icons. 
+        # We can just look for the text div.
+        # It's usually the last element or has a specific text content.
+        # Let's grab the last div in profile-header that is NOT social-icons or identity-row
+        for child in header_div.children:
+            if child.name == 'div' and not child.get('class'):
+                 # This is likely the summary container
+                 child_p = child.find('p')
+                 if child_p:
+                    intro_div = soup.new_tag('div', attrs={'class': 'summary'})
+                    intro_div.append(child_p)
+                    info_container.append(intro_div)
+                    break
 
         new_header.append(info_container)
         

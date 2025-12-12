@@ -55,8 +55,8 @@ permalink: /fishwrap/
     <h4 style="margin-top: 0; margin-bottom: 20px;">Explore the Ecosystem</h4>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
       <a href="https://dailyclamour.com" class="clamour-btn" style="font-size: 0.9em;">Live Product</a>
-      <a href="https://fishwrap.org" class="clamour-btn" style="font-size: 0.9em; background-color: var(--bg-color); color: var(--text-color); border: 1px solid var(--text-color);">The Engine</a>
-      <a href="https://github.com/maxspevack/fishwrap" class="clamour-btn" style="font-size: 0.9em; background-color: var(--bg-color); color: var(--text-color); border: 1px solid var(--text-color);">The Code</a>
+      <a href="https://fishwrap.org" class="clamour-btn" style="font-size: 0.9em;">The Engine</a>
+      <a href="https://github.com/maxspevack/fishwrap" class="clamour-btn" style="font-size: 0.9em;">The Code</a>
     </div>
   </div>
   
