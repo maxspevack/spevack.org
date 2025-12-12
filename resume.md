@@ -24,6 +24,8 @@ permalink: /resume/
   </div>
 </div>
 
+<div class="story-container">
+
 ## Experience
 
 ### [CIQ](https://ciq.com/)
@@ -115,3 +117,5 @@ Led three engineering teams (KVM, Kernel Performance, Customer Experience) respo
 *(September 1998 - June 2002)*
 
 **BS [Computer Science](https://cs.stanford.edu/)**
+
+</div>

@@ -1,8 +1,9 @@
 import markdown
 import re
 import sys
-from bs4 import BeautifulSoup, Tag
-from weasyprint import HTML
+import os
+from bs4 import BeautifulSoup
+from weasyprint import HTML, CSS
 
 # Configuration
 INPUT_FILE = "resume.md"
@@ -27,41 +28,27 @@ def generate_pdf():
     # 2. Strip Front Matter
     content = re.sub(r'^---\n.+?---\n', '', raw_content, flags=re.DOTALL)
 
-    # 3. Convert to HTML
-    html_raw = markdown.markdown(content)
+    # 3. Fix Image Paths (Local file system)
+    # Convert /max.jpg to max.jpg so WeasyPrint finds it in CWD
+    content = content.replace('src="/max.jpg"', 'src="max.jpg"')
+
+    # 4. Convert to HTML
+    # Enable 'markdown.extensions.extra' for better handling of nested structures if needed
+    html_raw = markdown.markdown(content, extensions=['extra'])
     soup = BeautifulSoup(html_raw, 'html.parser')
 
-    # 4. Clean ALL inline styles
+    # 5. Clean ALL inline styles for consistent PDF styling
     for tag in soup.descendants:
-        if hasattr(tag, 'attrs'):
-            if 'style' in tag.attrs:
-                del tag.attrs['style']
+        if hasattr(tag, 'attrs') and 'style' in tag.attrs:
+            del tag.attrs['style']
 
-    # 5. Extract and Rebuild Header
-    # The first div contains the profile info
-    # Note: In standard markdown-to-html, there might not be a wrapping div, 
-    # but the previous code assumed one. Let's adapt if needed.
-    # Looking at index.md structure, the header is likely the first few elements.
-    # The previous code assumed 'header_div = soup.find('div')'. 
-    # Let's inspect what markdown usually produces.
-    # If the markdown has raw HTML <div> wrapper, it works. 
-    # If it's just # Header, it might be h1, p, p...
+    # 6. Extract Header
+    # We look for the profile-header div
+    header_div = soup.find('div', class_='profile-header')
     
-    # We'll try to find the structure assuming the user's specific index.md format.
-    # If soup.find('div') is None (because markdown didn't wrap it), we might need to grab the first elements.
-    
-    header_div = soup.find('div')
-    if not header_div:
-        # Fallback: Create a div from the first N elements if they look like header?
-        # Or maybe the user's markdown has a <div id="header"> or similar.
-        # Let's check if there is an image (profile photo) to anchor us.
-        img = soup.find('img')
-        if img and img.parent.name == 'div':
-            header_div = img.parent
+    new_header = soup.new_tag('div', attrs={'class': 'header'})
     
     if header_div:
-        new_header = soup.new_tag('div', attrs={'class': 'header'})
-        
         # Process Image
         img = header_div.find('img')
         if img:
@@ -79,64 +66,56 @@ def generate_pdf():
             h1['class'] = 'name'
             info_container.append(h1)
         
-        # Title (Find by class profile-tagline, or fallback to first p)
-        title_p = header_div.find(attrs={'class': 'profile-tagline'})
-        if not title_p:
-            title_p = header_div.find('p')
-            
+        # Title (Find by class profile-tagline)
+        title_p = header_div.find(class_='profile-tagline')
         if title_p:
             title_p['class'] = 'title'
             info_container.append(title_p)
 
-        # Contact Links (Find by class social-icons, or fallback)
+        # Contact Links
         contact_div = soup.new_tag('div', attrs={'class': 'contact-info'})
-        social_div = header_div.find(attrs={'class': 'social-icons'})
+        social_div = header_div.find(class_='social-icons')
         
         links_source = social_div.find_all('a') if social_div else []
-        
-        # Fallback if no social-icons class (legacy structure)
-        if not links_source and len(header_div.find_all('p')) > 1:
-             links_source = header_div.find_all('p')[1].find_all('a')
-
         for a in links_source:
             href = a.get('href')
+            # Skip email mailto prefix for display, keep link
+            # Skip PDF download link
             if not href or 'resume.pdf' in href: continue 
             
             link_span = soup.new_tag('span', attrs={'class': 'contact-item'})
+            
+            # Icon mapping (simple text for PDF)
             label = clean_url(href)
             link_span.string = label + "  "
             contact_div.append(link_span)
         
         info_container.append(contact_div)
         
-        # Intro Text
-        # In new structure, it's a div after social-icons. 
-        # We can just look for the text div.
-        # It's usually the last element or has a specific text content.
-        # Let's grab the last div in profile-header that is NOT social-icons or identity-row
-        for child in header_div.children:
-            if child.name == 'div' and not child.get('class'):
-                 # This is likely the summary container
-                 child_p = child.find('p')
-                 if child_p:
-                    intro_div = soup.new_tag('div', attrs={'class': 'summary'})
-                    intro_div.append(child_p)
-                    info_container.append(intro_div)
-                    break
+        # Intro Text (The div after social icons)
+        # It's usually the last div in profile-header
+        intro_texts = [child for child in header_div.children if child.name == 'div' and not child.get('class')]
+        if intro_texts:
+             intro_div = soup.new_tag('div', attrs={'class': 'summary'})
+             # Copy contents
+             for c in intro_texts[0].contents:
+                 intro_div.append(c)
+             info_container.append(intro_div)
 
         new_header.append(info_container)
-        
-        # Replace the old header div with our structured one
-        header_div.replace_with(new_header)
     else:
-        new_header = "" # Should not happen given previous success
+        print("Warning: profile-header not found.")
 
-    # 6. Rebuild Sections (Experience, Education)
-    # We iterate through siblings to group linear elements into blocks
+    # 7. Flatten and Rebuild Sections
+    # The content might be inside a .story-container div or top level
+    # We will iterate through all elements that are NOT the header
     
-    # Create a wrapper for the main content
     main_content = soup.new_tag('div', attrs={'class': 'main-content'})
     
+    # Locate the start of content. It's either inside story-container or just after header
+    story_container = soup.find('div', class_='story-container')
+    content_source = story_container if story_container else soup
+
     # Helper to flush current job to main_content
     def create_entry(company_tag, date_tag, role_tags, content_tags):
         entry = soup.new_tag('div', attrs={'class': 'entry'})
@@ -145,9 +124,7 @@ def generate_pdf():
         row1 = soup.new_tag('div', attrs={'class': 'entry-header'})
         
         comp_span = soup.new_tag('span', attrs={'class': 'company'})
-        # company_tag is <h2><a>Name</a></h2>
-        comp_name = company_tag.get_text()
-        comp_span.string = comp_name
+        comp_span.append(company_tag.get_text())
         
         date_span = soup.new_tag('span', attrs={'class': 'date'})
         date_span.string = date_tag.get_text() if date_tag else ""
@@ -157,13 +134,12 @@ def generate_pdf():
         entry.append(row1)
         
         # Role(s)
-        # Note: sometimes multiple roles.
         for r in role_tags:
             r_div = soup.new_tag('div', attrs={'class': 'role'})
             r_div.string = r.get_text()
             entry.append(r_div)
             
-        # Content (ul, p)
+        # Content
         details = soup.new_tag('div', attrs={'class': 'details'})
         for c in content_tags:
             details.append(c)
@@ -171,63 +147,60 @@ def generate_pdf():
         
         return entry
 
-    # Parsing state machine
+    # State Machine
     pending_company = None
     pending_date = None
     pending_roles = []
     pending_content = []
 
-    # Iterate over top-level elements *after* the new header
-    # Since we replaced the first div, we need to be careful with navigation
-    # Let's just iterate through body children
-    
-    for tag in list(soup.body.children if soup.body else soup.children):
-        if tag.name == 'div' and tag.get('class') == ['header']:
-            continue # Skip our new header
-        if tag.name == 'hr':
-            continue # Skip separators
-        
+    # Iterate elements in content_source
+    for tag in content_source.children:
         if tag.name == 'h2':
-            # Is this a Section Header (Experience/Education) or a Company Name?
-            is_company = tag.find('a') is not None
+            # Section Header (Experience / Education)
+            # Flush pending
+            if pending_company:
+                main_content.append(create_entry(pending_company, pending_date, pending_roles, pending_content))
+                pending_company, pending_date, pending_roles, pending_content = None, None, [], []
             
-            if not is_company:
-                # Flush pending job if any
-                if pending_company:
-                    main_content.append(create_entry(pending_company, pending_date, pending_roles, pending_content))
-                    pending_company, pending_date, pending_roles, pending_content = None, None, [], []
-                
-                # Start new Section
-                section_title = tag.get_text()
-                sec_header = soup.new_tag('h3', attrs={'class': 'section-header'})
-                sec_header.string = section_title.upper()
-                main_content.append(sec_header)
-                
-            else:
-                # It's a Company/School
-                # Flush previous job
-                if pending_company:
-                    main_content.append(create_entry(pending_company, pending_date, pending_roles, pending_content))
-                    pending_company, pending_date, pending_roles, pending_content = None, None, [], []
-                
-                pending_company = tag
-        
+            sec_header = soup.new_tag('h3', attrs={'class': 'section-header'})
+            sec_header.string = tag.get_text().upper()
+            main_content.append(sec_header)
+
+        elif tag.name == 'h3':
+            # Job / School
+            # Flush pending
+            if pending_company:
+                main_content.append(create_entry(pending_company, pending_date, pending_roles, pending_content))
+                pending_company, pending_date, pending_roles, pending_content = None, None, [], []
+            
+            pending_company = tag
+
         elif tag.name == 'p':
-            # Could be Date, or Role (if wrapped in p?), or Content
-            # Identify Date: usually immediately follows Company
             text = tag.get_text().strip()
-            if pending_company and not pending_date and re.match(r'^\(.*\)$', text):
-                pending_date = tag
+            # Date detection: Starts with ( and ends with ) or contains date-like patterns
+            # In resume.md: *(July 2025 - Present)* which is <em>...</em> inside <p>
+            # Markdown usually renders *Text* as <p><em>Text</em></p>
+            if pending_company and not pending_date and (text.startswith('(') or text.startswith('*(')):
+                 pending_date = tag
+            # Role detection: **Role** -> <strong>Role</strong>
+            elif pending_company and tag.find('strong') and len(tag.get_text()) < 100:
+                # If the paragraph is JUST the role (or mostly), treat as role
+                # But sometimes role is separate.
+                # In resume.md: **Senior Principal Linux Architect** <br> **Chief of Staff...**
+                # This might come as one p with br or multiple.
+                # Let's assume lines with <strong> are roles if appear before lists
+                pass # Handled by content append, but let's try to extract explicit roles?
+                # Simpler: Just dump it into content/details for now, or refine?
+                # The user wanted "lighter box". The PDF formatting is separate.
+                # Let's try to identify explicit role lines if possible.
+                if tag.find('strong'):
+                     pending_roles.append(tag)
+                else:
+                     pending_content.append(tag)
             else:
-                # Just content?
                 if pending_company:
                     pending_content.append(tag)
         
-        elif tag.name == 'strong':
-            # Role?
-            if pending_company:
-                pending_roles.append(tag)
-                
         elif tag.name == 'ul':
             if pending_company:
                 pending_content.append(tag)
@@ -236,8 +209,7 @@ def generate_pdf():
     if pending_company:
         main_content.append(create_entry(pending_company, pending_date, pending_roles, pending_content))
 
-    # 7. Construct Final HTML
-    # CSS
+    # 8. CSS Styling
     css = """
     @page { size: Letter; margin: 0.5in; }
     body {
@@ -263,7 +235,9 @@ def generate_pdf():
     }
     .profile-photo {
         width: 100px;
-        border-radius: 50%; /* Circle */
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
         border: 1px solid #ddd;
     }
     .header-info {
@@ -304,16 +278,17 @@ def generate_pdf():
     .section-header {
         font-size: 12pt;
         border-bottom: 1px solid #ccc;
-        margin-top: 15px;
+        margin-top: 20px;
         margin-bottom: 10px;
         padding-bottom: 2px;
         color: #000;
+        font-weight: bold;
     }
     
     /* Entries */
     .entry {
-        margin-bottom: 12px;
-        page-break-inside: avoid; /* Try to keep jobs together */
+        margin-bottom: 15px;
+        page-break-inside: avoid;
     }
     .entry-header {
         display: flex;
@@ -334,12 +309,16 @@ def generate_pdf():
         font-weight: 600;
         font-size: 10pt;
         margin-bottom: 2px;
+        color: #222;
     }
+    /* Clean up paragraphs in roles if they exist */
+    .role p { margin: 0; display: inline; }
+    
     .details {
         font-size: 9.5pt;
     }
     .details ul {
-        margin: 0;
+        margin: 2px 0 0 0;
         padding-left: 18px;
     }
     .details li {
@@ -364,8 +343,9 @@ def generate_pdf():
     </html>
     """
 
-    # 8. Render
+    # 9. Render
     print(f"Rendering {INPUT_FILE} to {OUTPUT_FILE} (Resume Layout)...")
+    # base_url="." ensures it finds images in the current directory
     HTML(string=final_html, base_url=".").write_pdf(OUTPUT_FILE)
     print("Success!")
 

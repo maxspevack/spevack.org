@@ -124,7 +124,63 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
 }
 .social-icons a:hover { color: var(--accent-red); }
 
-/* ... existing clamour-card ... */
+/* Clamour Card Styles */
+.clamour-card {
+    display: block;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    text-decoration: none !important; /* No underline for the card container */
+    color: var(--text-color) !important;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+}
+.clamour-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.clamour-hero {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.clamour-content {
+    padding: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.clamour-logo {
+    width: 180px; /* Constrain the logo size */
+    height: auto;
+    display: block;
+    margin: -60px auto 15px auto; /* Negative margin to overlap the hero image */
+    background: #fff;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    position: relative;
+}
+
+.clamour-headline {
+    font-family: var(--font-head);
+    font-size: 1.6em;
+    margin: 10px 0;
+    color: var(--accent-primary);
+    border: none;
+    line-height: 1.2;
+}
+
+.clamour-copy {
+    font-family: var(--font-body);
+    font-size: 1.05em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
 /* Updated Clamour Button Style */
 .clamour-btn {
     display: inline-block;
