@@ -23,22 +23,69 @@ def generate_pdf():
     # 2. Strip Front Matter
     content = re.sub(r'^---\n.+?---\n', '', raw_content, flags=re.DOTALL)
 
-    # 3. Strip HTML Wrappers
-    # We strip the specific div that wraps the main content for the website layout.
-    # The regex now handles attributes like markdown="1"
-    content = re.sub(r'<div class="story-container"[^>]*>', '', content)
-    content = content.replace('</div>', '')
-
-    # 4. Pre-process Image Paths for PDF
-    # WeasyPrint needs to find the image locally.
-    content = content.replace('src="/max.jpg"', 'src="max.jpg"')
-
-    # 5. Convert to HTML
-    # Enable 'extra' to handle tables or other md features if they exist
-    html_body = markdown.markdown(content, extensions=['extra'])
+    # 3. Split Header and Body
+    # The header is valid HTML in the markdown file.
+    # The body is Markdown wrapped in a div.
     
-    # 6. Build Full HTML Document with CSS
-    # Updated Font URL: Removed Georgia (system font), keeping Special Elite and Courier Prime.
+    # We'll use a simple regex to find the end of the profile-header div.
+    # It ends with </div>. Since there are nested divs, we need to be careful.
+    # But visually in the file, it's the first big block of HTML.
+    
+    # Alternative: Parse the WHOLE thing as HTML? No, because the body is Markdown.
+    
+    # Let's match the <div class="profile-header"> ... </div> block.
+    # Since regex is bad at nested HTML, we'll try to split by the known boundary.
+    # The boundary is the start of <div class="story-container" ...>
+    
+    parts = re.split(r'(<div class="story-container"[^>]*>)', content)
+    
+    if len(parts) < 3:
+        # Fallback: Maybe the div isn't there (old version?) or regex failed.
+        # Let's assume everything is markdown? No, header is HTML.
+        print("Warning: Could not split header and body by story-container. attempting fallback.")
+        header_raw = content
+        body_raw = ""
+    else:
+        header_raw = parts[0] # Everything before the story-container
+        # parts[1] is the opening tag
+        # parts[2] is the rest (content + closing div)
+        body_raw = parts[2]
+        
+        # Remove the closing </div> at the end of the body
+        # It's usually the very last line or close to it.
+        body_raw = body_raw.replace('</div>', '')
+
+    # 4. Process Header (HTML)
+    header_raw = header_raw.replace('src="/max.jpg"', 'src="max.jpg"')
+    soup_header = BeautifulSoup(header_raw, 'html.parser')
+    
+    # Fix Header Icons/Links
+    icon_map = {'fa-envelope': 'Email', 'fa-file-pdf': 'PDF', 'fa-linkedin': 'LinkedIn', 'fa-github': 'GitHub'}
+    for i_tag in soup_header.find_all('i'):
+        classes = i_tag.get('class', [])
+        for cls in classes:
+            if cls in icon_map:
+                new_span = soup_header.new_tag('span')
+                new_span.string = icon_map[cls]
+                i_tag.replace_with(new_span)
+                break
+    
+    # Fix Links
+    for a_tag in soup_header.select('.social-icons a'):
+        href = a_tag.get('href')
+        if not href: continue
+        display_text = href.replace('mailto:', '').replace('https://', '').replace('www.', '')
+        if 'linkedin' in href and not a_tag.get_text().strip(): a_tag.string = "LinkedIn"
+        elif 'github' in href and not a_tag.get_text().strip(): a_tag.string = "GitHub"
+        elif '@' in href and not a_tag.get_text().strip(): a_tag.string = display_text
+
+    final_header_html = str(soup_header)
+
+    # 5. Process Body (Markdown)
+    # Now that we stripped the wrapper, it's pure markdown.
+    html_body = markdown.markdown(body_raw, extensions=['extra'])
+
+    # 6. Build CSS (Correct Fonts)
     css = """
     @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap');
     
@@ -54,7 +101,7 @@ def generate_pdf():
     }
 
     body {
-        font-family: 'Georgia', serif; /* System font fallback works well in WeasyPrint */
+        font-family: 'Georgia', serif;
         font-size: 10pt;
         line-height: 1.4;
         color: #2f2f2f;
@@ -196,8 +243,9 @@ def generate_pdf():
     }
 
     a[href$=".pdf"] { display: none; }
-    """.strip()
+    """
 
+    # 7. Construct Final HTML
     full_html = f"""
     <!DOCTYPE html>
     <html>
@@ -207,59 +255,23 @@ def generate_pdf():
         <style>{css}</style>
     </head>
     <body>
-        {html_body}
+        {final_header_html}
+        <div class="main-content">
+            {html_body}
+        </div>
     </body>
     </html>
     """
 
-    # 7. Post-Processing HTML
-    soup = BeautifulSoup(full_html, 'html.parser')
-    
-    # Text replacements for icons
-    icon_map = {
-        'fa-envelope': 'Email',
-        'fa-file-pdf': 'PDF',
-        'fa-linkedin': 'LinkedIn',
-        'fa-github': 'GitHub'
-    }
-    
-    for i_tag in soup.find_all('i'):
-        classes = i_tag.get('class', [])
-        for cls in classes:
-            if cls in icon_map:
-                new_span = soup.new_tag('span')
-                new_span.string = icon_map[cls]
-                i_tag.replace_with(new_span)
-                break
-    
-    # Link Text Cleanup
-    for a_tag in soup.select('.social-icons a'):
-        href = a_tag.get('href')
-        if not href: continue
-        
-        display_text = href.replace('mailto:', '').replace('https://', '').replace('www.', '')
-        
-        # If the link has the new span we just added, we're good.
-        # If it has nothing (was empty), set text.
-        if 'linkedin' in href:
-            if not a_tag.get_text().strip(): a_tag.string = "LinkedIn"
-        elif 'github' in href:
-            if not a_tag.get_text().strip(): a_tag.string = "GitHub"
-        elif '@' in href:
-            # For email, show the address if possible, or just "Email"
-             if not a_tag.get_text().strip(): a_tag.string = display_text
-
-    final_html = str(soup)
-
     # Save Debug HTML
     with open(DEBUG_HTML_FILE, "w") as f:
-        f.write(final_html)
+        f.write(full_html)
     print(f"Debug HTML saved to {DEBUG_HTML_FILE}")
 
     # 8. Render
     print(f"Rendering {INPUT_FILE} to {OUTPUT_FILE}...")
     font_config = FontConfiguration()
-    HTML(string=final_html, base_url=".").write_pdf(OUTPUT_FILE, font_config=font_config)
+    HTML(string=full_html, base_url=".").write_pdf(OUTPUT_FILE, font_config=font_config)
     print("Success!")
 
 if __name__ == "__main__":
