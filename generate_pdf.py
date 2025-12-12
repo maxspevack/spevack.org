@@ -22,7 +22,12 @@ def generate_pdf():
     # 2. Strip Front Matter
     content = re.sub(r'^---\n.+?---\n', '', raw_content, flags=re.DOTALL)
 
-    # 3. Pre-process Image Paths for PDF
+    # 3. Strip HTML Wrappers (PDF generation doesn't need them, it applies its own CSS)
+    # Remove <div class="story-container" ...> and closing </div>
+    content = re.sub(r'<div class="story-container"[^>]*>', '', content)
+    content = content.replace('</div>', '')
+
+    # 4. Pre-process Image Paths for PDF
     # WeasyPrint needs to find the image locally.
     # If the markdown has src="/max.jpg", change it to "max.jpg" (assuming script runs in same dir)
     content = content.replace('src="/max.jpg"', 'src="max.jpg"')

@@ -24,7 +24,7 @@ permalink: /resume/
   </div>
 </div>
 
-<div class="story-container">
+<div class="story-container" markdown="1">
 
 ## Experience
 
