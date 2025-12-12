@@ -273,7 +273,25 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
 .story-container p em {
     font-family: var(--font-mono);
     color: var(--muted-color);
+    width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+/* Resume Specifics - The POP (Role) */
+.story-container p .resume-role {
     display: block;
+    color: var(--accent-red);
+    font-family: var(--font-head);
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+/* Resume Specifics - The Wire (Dates) */
+.story-container p .resume-date {
+    display: block;
+    font-family: var(--font-mono);
+    color: var(--muted-color);
     border-bottom: 1px solid var(--border-color);
     width: 100%;
     margin-bottom: 15px;
@@ -285,7 +303,6 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
     color: var(--accent-red);
     font-family: var(--font-head);
     font-size: 1.2em;
-    display: block;
     margin-top: 5px;
 }
 

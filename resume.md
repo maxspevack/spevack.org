@@ -29,9 +29,9 @@ permalink: /resume/
 ## Experience
 
 ### [CIQ](https://ciq.com/)
-*(July 2025 - Present)*
+<span class="resume-date">(July 2025 - Present)</span>
 
-**Senior Principal Linux Architect**  
+<span class="resume-role">Senior Principal Linux Architect</span>  
 **Chief of Staff to the CTO**
 
 Acting as the strategic "fixer" for the CTO, re-architecting the engineering organization for velocity and accountability.
@@ -43,9 +43,9 @@ Acting as the strategic "fixer" for the CTO, re-architecting the engineering org
 ---
 
 ### [Google](https://www.google.com/)
-*(July 2021 - July 2023)*
+<span class="resume-date">(July 2021 - July 2023)</span>
 
-**Senior Manager, [Google Compute Engine](https://cloud.google.com/compute/) (Fleet)**
+<span class="resume-role">Senior Manager, [Google Compute Engine](https://cloud.google.com/compute/) (Fleet)</span>
 
 Directed the 50-person engineering organization responsible for the lifecycle and stability of the entire global GCE fleet.
 
@@ -56,9 +56,9 @@ Directed the 50-person engineering organization responsible for the lifecycle an
 ---
 
 ### [Amazon Web Services](https://aws.amazon.com/)
-*(July 2019 - June 2021)*
+<span class="resume-date">(July 2019 - June 2021)</span>
 
-**General Manager, [Amazon Linux](https://aws.amazon.com/linux/amazon-linux-2023/) & [Open Source](https://aws.amazon.com/opensource/)**
+<span class="resume-role">General Manager, [Amazon Linux](https://aws.amazon.com/linux/amazon-linux-2023/) & [Open Source](https://aws.amazon.com/opensource/)</span>
 
 Recruited to overhaul the Amazon Linux organization and OSPO. Scaled the team to 100+ engineers and product managers while redefining the product roadmap.
 
@@ -70,9 +70,9 @@ Recruited to overhaul the Amazon Linux organization and OSPO. Scaled the team to
 ---
 
 ### [Google](https://www.google.com/)
-*(February 2016 - June 2019)*
+<span class="resume-date">(February 2016 - June 2019)</span>
 
-**Senior Manager, [Google Compute Engine](https://cloud.google.com/compute/) (Virtualization)**
+<span class="resume-role">Senior Manager, [Google Compute Engine](https://cloud.google.com/compute/) (Virtualization)</span>
 
 Led three engineering teams (KVM, Kernel Performance, Customer Experience) responsible for the core virtualization technology powering Google Cloud.
 
@@ -83,9 +83,9 @@ Led three engineering teams (KVM, Kernel Performance, Customer Experience) respo
 ---
 
 ### [Amazon Web Services](https://aws.amazon.com/)
-*(August 2011 - January 2016)*
+<span class="resume-date">(August 2011 - January 2016)</span>
 
-**Manager, Linux Kernel & Operating Systems**
+<span class="resume-role">Manager, Linux Kernel & Operating Systems</span>
 
 *   **Foundational Engineering:** Built and maintained Amazon Linux 1 during its explosive growth phase, owning the kernel, [security updates](https://alas.aws.amazon.com/), and package repositories.
 *   **Platform Launch:** Led the qualification/testing teams for major EC2 instance launches ([T2](https://aws.amazon.com/blogs/aws/low-cost-burstable-ec2-instances/), [C4](https://aws.amazon.com/blogs/aws/now-available-new-c4-instances/), [D2](https://aws.amazon.com/blogs/aws/next-generation-of-dense-storage-instances-for-ec2/)), ensuring day-one stability for new hardware families.
@@ -95,9 +95,9 @@ Led three engineering teams (KVM, Kernel Performance, Customer Experience) respo
 ### [Red Hat](https://www.redhat.com/)
 *(August 2004 - August 2011)*
 
-**Manager, Open Source Community Architecture** *(Feb 2008 - Aug 2011)*  
-**[Fedora Project Leader](https://docs.fedoraproject.org/en-US/council/fpl/)** *(Feb 2006 - Feb 2008)*  
-**Linux Systems Engineer** *(Aug 2004 - Feb 2006)*
+<span class="resume-role">Manager, Open Source Community Architecture</span> <span class="resume-date">*(Feb 2008 - Aug 2011)*</span>  
+<span class="resume-role">[Fedora Project Leader](https://docs.fedoraproject.org/en-US/council/fpl/)</span> <span class="resume-date">*(Feb 2006 - Feb 2008)*</span>  
+<span class="resume-role">Linux Systems Engineer</span> <span class="resume-date">*(Aug 2004 - Feb 2006)*</span>
 
 *   **Community Leadership:** Led the [Fedora Project](https://fedoraproject.org/) (2006–2008). Governed the global open-source community, serving as the primary public figurehead and liaison between Red Hat engineering and community contributors. (Media: [LWN](https://lwn.net/Articles/237700/), [Slashdot](https://slashdot.org/story/06/08/17/177220/fedora-project-leader-max-spevack-responds), [Ohio Linux Fest](https://www.youtube.com/watch?v=JC6URXglbO4))
 *   **Strategy:** Founded the Open Source Community Architecture team, establishing the [Open Source Way](https://www.theopensourceway.org/) as a corporate standard for productizing community software and founding the [Teaching Open Source](https://teachingopensource.org/) community.
@@ -105,17 +105,17 @@ Led three engineering teams (KVM, Kernel Performance, Customer Experience) respo
 ---
 
 ### [Verisign](https://www.verisign.com/)
-*(October 2002 - August 2004)*
+<span class="resume-date">*(October 2002 - August 2004)*</span>
 
-**Quality Assurance Engineer**
+<span class="resume-role">Quality Assurance Engineer</span>
 
 ---
 
 ## Education
 
 ### [Stanford University](https://cs.stanford.edu/)
-*(September 1998 - June 2002)*
+<span class="resume-date">*(September 1998 - June 2002)*</span>
 
-**BS [Computer Science](https://cs.stanford.edu/)**
+<span class="resume-role">BS [Computer Science](https://cs.stanford.edu/)</span>
 
 </div>
