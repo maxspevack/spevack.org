@@ -164,20 +164,22 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
 
 .clamour-btn {
     display: inline-block;
-    background-color: var(--text-color);
-    color: #fff;
+    background-color: transparent;
+    color: var(--text-color);
     font-family: var(--font-head);
     padding: 10px 25px;
     border-radius: 2px;
     text-transform: uppercase;
     font-size: 1.1em;
-    border: 1px solid transparent;
+    border: 1px solid var(--text-color);
     transition: all 0.2s;
     text-decoration: none;
 }
-.clamour-card:hover .clamour-btn {
-    background-color: var(--accent-red);
-    color: #fff;
+.clamour-card:hover .clamour-btn,
+.clamour-btn:hover {
+    background-color: var(--text-color);
+    color: var(--accent-red);
+    border-color: var(--text-color);
 }
 
 /* Story/Article Styling */

@@ -28,3 +28,15 @@ permalink: /
     <span class="clamour-btn">Read Today's Edition</span>
   </div>
 </a>
+
+<!-- Navigation Links -->
+<div style="text-align: center; margin-top: 40px; font-family: var(--font-mono);">
+  
+  <div>
+    <span style="color: var(--muted-color); font-size: 0.9em;">Built entirely with Gemini Ultra.</span><br>
+    <a href="/fishwrap/" style="font-weight: bold; font-size: 0.9em; border-bottom: 1px dotted var(--accent-primary);">
+      Read the Engineering Story &rarr;
+    </a>
+  </div>
+
+</div>

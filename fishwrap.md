@@ -8,7 +8,7 @@ permalink: /fishwrap/
   <!-- Header -->
   <div style="text-align: center; margin-bottom: 40px;">
     <h1>The Daily Clamour & Fishwrap 1.1.0</h1>
-    <div class="story-meta">December 12, 2025 • Engineering Blog • By Max Spevack</div>
+    <div class="story-meta">December 12, 2025 • By Max Spevack</div>
     <h2 style="border: none; font-size: 1.6em; margin-top: 10px;">"Vibe-Coding" a News Engine with Gemini Ultra</h2>
   </div>
 
