@@ -10,7 +10,7 @@ permalink: /
     <h1>Max Spevack</h1>
   </div>
 
-  <p class="profile-tagline">Considered harmful.</p>
+  <p class="profile-tagline">A tiny little song.</p>
 
   <div class="social-icons">
     <a href="mailto:max.spevack@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
