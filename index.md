@@ -6,7 +6,7 @@ permalink: /
 <div class="profile-header">
 
   <div class="identity-row">
-    <img src="/max.jpg" class="profile-photo" alt="Max Spevack">
+    <img src="/max.jpg?v={{ site.time | date: '%s' }}" class="profile-photo" alt="Max Spevack">
     <h1>Max Spevack</h1>
   </div>
 
