@@ -1,25 +1,14 @@
-/* Vintage Clamour Theme for spevack.org */
-/* 
-   The Daily Clamour / Spevack.org Vintage Palette 
-   -----------------------------------------------
-   Background (Cream Paper): #fdfbf7
-   Text (Ink Black):         #2f2f2f
-   Accent (Slate):           #2c3e50
-   Accent (Urgent Red):      #c0392b
-   Accent (Link Blue):       #2980b9
-   Muted Text:               #555555
-   Borders:                  #dcdcdc
-*/
+/* spevack.org — Family Office theme
+ * Cream paper, ink, calm typography.
+ * Sister site to LulzCorp; shared fonts, quieter expression. */
 
 :root {
     --bg-color: #fdfbf7;
     --text-color: #2f2f2f;
     --muted-color: #7f8c8d;
-    --accent-primary: #2c3e50; /* Slate */
-    --accent-red: #c0392b;
+    --accent-primary: #2c3e50;
     --border-color: #dcdcdc;
-    
-    /* Fonts */
+
     --font-head: 'Special Elite', cursive;
     --font-body: 'Georgia', serif;
     --font-mono: 'Courier Prime', monospace;
@@ -27,8 +16,6 @@
 
 body {
     background-color: var(--bg-color);
-    background-image: url('../img/newsprint.png');
-    background-repeat: repeat;
     color: var(--text-color);
     font-family: var(--font-body);
     line-height: 1.6;
@@ -36,7 +23,6 @@ body {
     padding: 0;
 }
 
-/* Layout Wrapper */
 .wrapper {
     max-width: 800px;
     margin: 0 auto;
@@ -46,34 +32,41 @@ body {
 /* Typography */
 h1, h2, h3, h4 {
     font-family: var(--font-head);
-    font-weight: 400; /* Special Elite is naturally bold */
+    font-weight: 400;
     color: var(--text-color);
     margin-top: 1.5em;
     margin-bottom: 0.5em;
 }
 
-h1 { font-size: 2.5em; border-bottom: 3px double var(--text-color); display: inline-block; padding-bottom: 5px; }
+h1 { font-size: 2.8em; padding-bottom: 5px; }
 h2 { font-size: 1.8em; border-bottom: 1px solid var(--text-color); }
 h3 { font-size: 1.4em; }
 
 p { margin-bottom: 1.2em; font-size: 1.1em; }
 
-a { color: var(--accent-primary); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; }
-a:hover { color: var(--accent-red); text-decoration-style: solid; }
+a {
+    color: var(--accent-primary);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 3px;
+}
+a:hover {
+    color: var(--accent-primary);
+    text-decoration-style: solid;
+}
 
-/* Profile Section */
+/* Profile (used on / and /resume/) */
 .profile-header {
     text-align: center;
-    margin-bottom: 50px;
-    padding-bottom: 30px;
-    border-bottom: none !important; /* Ensure no border */
+    margin-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 .identity-row {
     display: flex;
-    align-items: center; /* Vertical alignment (equator) */
+    align-items: center;
     justify-content: center;
-    gap: 25px; /* Increased gap slightly */
+    gap: 25px;
     margin-bottom: 15px;
     padding-top: 10px;
 }
@@ -81,26 +74,17 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
 .identity-row h1 {
     margin: 0;
     padding: 0;
-    border: none !important; /* Force removal of underline */
+    border: none;
     line-height: 1;
-    display: block;
 }
 
 .profile-photo {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 4px double var(--text-color);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    filter: sepia(0.2);
-    transition: all 0.3s ease;
-    margin: 0; /* Reset margin for flex layout */
-    display: block; /* Remove inline spacing */
-}
-.profile-photo:hover {
-    filter: sepia(0);
-    transform: scale(1.05) rotate(-2deg);
-    border-color: var(--accent-red);
+    object-fit: cover;
+    margin: 0;
+    display: block;
 }
 
 .profile-tagline {
@@ -112,96 +96,57 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
     line-height: 1.4;
 }
 
-/* ... existing social-icons ... */
+.social-icons {
+    margin-top: 15px;
+}
 .social-icons a {
     color: var(--text-color);
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
     margin: 0 10px;
     font-size: 1.5em;
     transition: color 0.2s;
 }
-.social-icons a:hover { color: var(--accent-red); }
+.social-icons a:hover { color: var(--accent-primary); }
 
-/* Clamour Card Styles */
-.clamour-card {
-    display: block;
-    background-color: #fff;
-    border: 1px solid var(--border-color);
-    text-decoration: none !important; /* No underline for the card container */
-    color: var(--text-color) !important;
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow 0.2s ease;
+/* Home page bio — cocktail-menu layout */
+.bio-grid {
+    max-width: 620px;
+    margin: 50px auto 0 auto;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 32px;
+    row-gap: 22px;
+    align-items: baseline;
 }
-.clamour-card:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.clamour-hero {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.clamour-content {
-    padding: 25px;
-    text-align: center;
-    position: relative;
-}
-
-.clamour-logo {
-    width: 180px; /* Constrain the logo size */
-    height: auto;
-    display: block;
-    margin: -60px auto 15px auto; /* Negative margin to overlap the hero image */
-    background: #fff;
-    padding: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    position: relative;
-}
-
-.clamour-headline {
+.bio-grid dt {
     font-family: var(--font-head);
-    font-size: 1.6em;
-    margin: 10px 0;
-    color: var(--accent-primary);
-    border: none;
-    line-height: 1.2;
-}
-
-.clamour-copy {
-    font-family: var(--font-body);
-    font-size: 1.05em;
-    color: var(--text-color);
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-/* Updated Clamour Button Style */
-.clamour-btn {
-    display: inline-block;
-    background-color: transparent;
-    color: var(--text-color);
-    font-family: var(--font-head);
-    padding: 10px 25px;
-    border-radius: 2px;
     text-transform: uppercase;
-    font-size: 1.1em;
-    border: 1px solid var(--text-color);
-    transition: all 0.2s;
-    text-decoration: none;
+    letter-spacing: 1.5px;
+    color: var(--text-color);
+    font-size: 1em;
+    white-space: nowrap;
 }
-.clamour-card:hover .clamour-btn,
-.clamour-btn:hover {
-    background-color: var(--text-color);
-    color: var(--accent-red);
-    border-color: var(--text-color);
-    cursor: pointer;
+.bio-grid dd {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 1.1em;
+    line-height: 1.55;
+}
+@media (max-width: 480px) {
+    .bio-grid {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        row-gap: 6px;
+    }
+    .bio-grid dt {
+        margin-top: 1em;
+    }
+    .bio-grid dt:first-of-type {
+        margin-top: 0;
+    }
 }
 
-/* Story/Article Styling */
+/* Resume page (story-container wraps the CV body) */
 .story-container {
     background: #fff;
     padding: 40px;
@@ -209,48 +154,6 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
     box-shadow: 2px 2px 0 rgba(0,0,0,0.05);
 }
 
-.story-meta {
-    font-family: var(--font-mono);
-    font-size: 0.9em;
-    color: var(--muted-color);
-    text-align: center;
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-}
-
-.story-container blockquote {
-    border-left: 4px solid var(--accent-primary);
-    margin: 20px 0;
-    padding-left: 20px;
-    font-style: italic;
-    color: var(--muted-color);
-    background: rgba(0,0,0,0.03);
-    padding: 15px;
-}
-
-.story-container code {
-    background: rgba(0,0,0,0.05);
-    padding: 2px 5px;
-    font-family: var(--font-mono);
-    font-size: 0.9em;
-    color: var(--accent-red);
-}
-
-/* Footer "Soupcon" */
-.footer-note {
-    margin-top: 60px;
-    border-top: 1px double var(--text-color);
-    padding-top: 20px;
-    text-align: center;
-    font-family: var(--font-mono);
-    font-size: 0.8em;
-    color: var(--muted-color);
-}
-
-/* Resume Specifics - "The Front Page" */
-
-/* Section Headers */
 .story-container h2 {
     border-bottom: 4px double var(--accent-primary);
     padding-bottom: 5px;
@@ -258,7 +161,6 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
     letter-spacing: 2px;
 }
 
-/* Company Names */
 .story-container h3 {
     color: var(--accent-primary);
     font-size: 1.8em;
@@ -269,25 +171,14 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
     color: var(--accent-primary);
 }
 
-/* The Wire (Dates) */
-.story-container p em {
-    font-family: var(--font-mono);
-    color: var(--muted-color);
-    width: 100%;
-    margin-bottom: 15px;
-    padding-bottom: 5px;
-}
-
-/* Resume Specifics - The POP (Role) */
 .story-container p .resume-role {
     display: block;
-    color: var(--accent-red);
+    color: var(--accent-primary);
     font-family: var(--font-head);
     font-size: 1.2em;
     margin-top: 5px;
 }
 
-/* Resume Specifics - The Wire (Dates) */
 .story-container p .resume-date {
     display: block;
     font-family: var(--font-mono);
@@ -298,15 +189,13 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
     padding-bottom: 5px;
 }
 
-/* The Role (The POP) */
 .story-container p strong {
-    color: var(--accent-red);
+    color: var(--accent-primary);
     font-family: var(--font-head);
     font-size: 1.2em;
     margin-top: 5px;
 }
 
-/* Reset for List Items (Don't make bold text in lists red) */
 .story-container li strong {
     color: var(--text-color);
     font-family: var(--font-body);
@@ -314,7 +203,6 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
     display: inline;
 }
 
-/* Custom Bullets */
 .story-container ul {
     list-style: none;
     padding-left: 20px;
@@ -325,4 +213,42 @@ a:hover { color: var(--accent-red); text-decoration-style: solid; }
     display: inline-block;
     width: 1em;
     margin-left: -1em;
+}
+
+/* Print: clean PDF when reader hits Cmd+P on /resume/ */
+@media print {
+    body {
+        background: white;
+        color: black;
+        font-size: 10pt;
+    }
+    .social-icons,
+    .profile-photo {
+        display: none;
+    }
+    .story-container {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+    a {
+        color: black;
+        text-decoration: none;
+    }
+    h1, h2, h3, h4 {
+        color: black;
+    }
+    .story-container h2 {
+        border-bottom: 1px solid black;
+    }
+    .story-container h3,
+    .story-container h3 a,
+    .story-container p .resume-role,
+    .story-container p strong {
+        color: black;
+    }
+    @page {
+        margin: 0.6in;
+    }
 }

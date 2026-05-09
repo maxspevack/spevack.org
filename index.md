@@ -3,43 +3,29 @@ layout: default
 title: Max Spevack
 permalink: /
 ---
-<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 20px;">
+<div class="profile-header">
 
-  <!-- Profile Section (Identity Row) -->
-  <div class="profile-header" style="border-bottom: none; margin-bottom: 30px;">
-    <div class="identity-row">
-      <img src="/max.jpg" class="profile-photo" alt="Max Spevack" style="width: 140px; height: 140px;">
-      <h1 style="font-size: 2.5em;">Max Spevack</h1>
-    </div>
+  <div class="identity-row">
+    <img src="/max.jpg" class="profile-photo" alt="Max Spevack">
+    <h1>Max Spevack</h1>
   </div>
 
-  <!-- Main Feature: The Daily Clamour -->
-  <a href="https://dailyclamour.com" class="clamour-card" style="margin: 0 0 40px 0; width: 100%; max-width: 550px;">
-    <!-- Hero Image -->
-    <img src="/scoop-ad-wide.png" class="clamour-hero" alt="Scoop the Pearl">
+  <p class="profile-tagline">Considered harmful.</p>
 
-    <div class="clamour-content">
-      <!-- Logo Overlap -->
-      <img src="/daily-clamour.png" class="clamour-logo" alt="The Daily Clamour">
-
-      <h2 class="clamour-headline">"Often Wrong, Never in Doubt!"</h2>
-      
-      <p class="clamour-copy">
-        In a world of whispers, <strong>The Daily Clamour</strong> rips through the static! Meet Scoop and his whirlwind press. We're an old-school engine of raw grit, churning out the truth.
-      </p>
-
-      <span class="clamour-btn">Read Today's Edition</span>
-    </div>
-  </a>
-
-  <!-- Secondary Link: The Engineering Story -->
-  <div style="text-align: center; border-top: 1px solid var(--text-color); padding-top: 20px; width: 80%; max-width: 400px;">
-    <p style="font-family: var(--font-mono); font-size: 0.85em; color: var(--muted-color); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
-      Behind The Scenes
-    </p>
-    <a href="/fishwrap/" style="font-family: var(--font-head); font-size: 1.2em; text-decoration: none; border-bottom: 2px solid var(--accent-primary);">
-      How I "Vibe-Coded" This Engine
-    </a>
+  <div class="social-icons">
+    <a href="mailto:max.spevack@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="/resume/" title="Résumé"><i class="fas fa-file-lines"></i></a>
+    <a href="https://www.linkedin.com/in/maxspevack/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/maxspevack" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://lulzcorp.biz" title="LulzCorp"><i class="fas fa-building"></i></a>
   </div>
 
 </div>
+
+<dl class="bio-grid">
+  <dt>By day</dt>
+  <dd>Engineering organizations, Linux operating systems, cloud infrastructure.</dd>
+
+  <dt>By night</dt>
+  <dd>Digital newspapers, CLI tools for the tired, general trolling.</dd>
+</dl>

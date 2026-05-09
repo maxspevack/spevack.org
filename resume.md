@@ -13,14 +13,15 @@ permalink: /resume/
   <p class="profile-tagline">Engineering Leader & Organizational Architect</p>
   
   <div class="social-icons">
-    <a href="mailto:max.spevack@gmail.com"><i class="fas fa-envelope"></i></a>
-    <a href="/resume.pdf" download><i class="fas fa-file-pdf"></i></a>
-    <a href="https://www.linkedin.com/in/maxspevack/"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/maxspevack"><i class="fab fa-github"></i></a>
+    <a href="mailto:max.spevack@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="/" title="Home"><i class="fas fa-house"></i></a>
+    <a href="https://www.linkedin.com/in/maxspevack/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/maxspevack" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://lulzcorp.biz" title="LulzCorp"><i class="fas fa-building"></i></a>
   </div>
 
   <div style="max-width: 700px; margin: 20px auto 0 auto; text-align: left;">
-    <p>Senior leader with 20+ years of experience bridging deep Linux engineering and high-level product strategy. Specializing in high-stakes engineering leadership, organizational turnarounds, and building the teams that power the cloud at hyperscale (Google, AWS) and open-source pioneers (Red Hat).</p>
+<p>Senior leader with 20+ years of experience bridging deep Linux engineering and high-level product strategy. Specializing in high-stakes engineering leadership, organizational turnarounds, and building the teams that power the cloud at hyperscale (Google, AWS, CIQ) and open-source pioneers (Red Hat).</p>
   </div>
 </div>
 
@@ -34,11 +35,12 @@ permalink: /resume/
 <span class="resume-role">Senior Principal Linux Architect</span>  
 **Chief of Staff to the CTO**
 
-Acting as the strategic "fixer" for the CTO, re-architecting the engineering organization for velocity and accountability.
+Operating as both individual contributor and manager — building the systems CIQ needs and re-architecting the org around them.
 
+*   **Built [NARF](https://github.com/ctrliq/narf), CIQ's CVE Remediation Pipeline:** Designed and shipped the automation system that replaced manual CVE remediation in [Rocky Linux from CIQ](https://ciq.com/products/rocky-linux/) LTS. Handed off execution to a senior engineer through pair-programming and sprint ownership transfer.
 *   **Organizational Transformation:** Architected and executed the reorganization of Linux Engineering into "Core Distro" (OS) and "Release All Things" (Build Automation & Delivery), clarifying accountability and accelerating release velocity.
-*   **Turnaround Leadership:** Assumed control of the stalled "RAT" unit to resolve critical delivery failures. Restructured the team composition to establish a high-performance culture, unblocking pipelines and drastically reducing image build cycles for [Rocky Linux from CIQ](https://ciq.com/products/rocky-linux/) and [Google Distributed Cloud](https://cloud.google.com/distributed-cloud-air-gapped). Handed over a stabilized, high-velocity organization to permanent Director.
-*   **Strategic Planning:** Led 2026 resource planning and prioritization, implementing AI-driven reporting frameworks to provide executive visibility into engineering output.
+*   **Turnaround Leadership:** Assumed control of the stalled "RAT" unit to resolve critical delivery failures. Restructured team composition to establish a high-performance culture, unblocking pipelines and drastically reducing image build cycles for [Rocky Linux from CIQ](https://ciq.com/products/rocky-linux/) and [Google Distributed Cloud](https://cloud.google.com/distributed-cloud-air-gapped). Handed over a stabilized, high-velocity organization to a permanent Director.
+*   **Strategic Planning:** Led 2026 resource planning and prioritization for Linux Engineering, including AI-assisted executive reporting frameworks now in production for engineering output visibility.
 
 ---
 

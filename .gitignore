@@ -7,16 +7,10 @@
 ehthumbs.db
 Thumbs.db
 
-# Python
-venv/
-__pycache__/
-*.pyc
-
 # Jekyll
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
-
-# Build Artifacts
-debug_resume.html
+vendor/
+.bundle/

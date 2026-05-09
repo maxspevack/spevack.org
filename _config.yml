@@ -1,9 +1,8 @@
 title: Max Spevack
-description: Senior Principal Linux Architect & Chief of Staff
+description: Engineering Leader & Organizational Architect
+url: https://spevack.org
 
 lang: en
 
 # Build settings
 markdown: kramdown
-plugins:
-  - jekyll-remote-theme
