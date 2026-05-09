@@ -4,8 +4,6 @@ Personal site for Max Spevack. Hosted on GitHub Pages.
 
 ## Stack
 
-Pure Jekyll. No build pipeline, no PDF generator, no Python.
-
 | File | Purpose |
 |------|---------|
 | `index.md` | Home |
