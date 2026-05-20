@@ -37,10 +37,10 @@ permalink: /resume/
 
 Operating as both individual contributor and manager — building the systems CIQ needs and re-architecting the org around them.
 
-*   **Built [NARF](https://github.com/ctrliq/narf), CIQ's CVE Remediation Pipeline:** Designed and shipped the automation system that replaced manual CVE remediation in [Rocky Linux from CIQ](https://ciq.com/products/rocky-linux/) LTS. Handed off execution to a senior engineer through pair-programming and sprint ownership transfer.
+*   **Built [NARF](https://github.com/ctrliq/narf), CIQ's CVE Remediation Pipeline:** Designed and shipped the automation system that replaced manual CVE remediation in [Rocky Linux from CIQ](https://ciq.com/products/rocky-linux/) LTS.
 *   **Organizational Transformation:** Architected and executed the reorganization of Linux Engineering into "Core Distro" (OS) and "Release All Things" (Build Automation & Delivery), clarifying accountability and accelerating release velocity.
 *   **Turnaround Leadership:** Assumed control of the stalled "RAT" unit to resolve critical delivery failures. Restructured team composition to establish a high-performance culture, unblocking pipelines and drastically reducing image build cycles for [Rocky Linux from CIQ](https://ciq.com/products/rocky-linux/) and [Google Distributed Cloud](https://cloud.google.com/distributed-cloud-air-gapped). Handed over a stabilized, high-velocity organization to a permanent Director.
-*   **Strategic Planning:** Led 2026 resource planning and prioritization for Linux Engineering, including AI-assisted executive reporting frameworks now in production for engineering output visibility.
+*   **Strategic Planning:** Led 2026 resource planning and prioritization for Linux Engineering, including AI-assisted executive reporting frameworks in production for engineering output visibility.
 
 ---
 
@@ -64,7 +64,7 @@ Directed the 50-person engineering organization responsible for the lifecycle an
 
 Recruited to overhaul the Amazon Linux organization and OSPO. Scaled the team to 100+ engineers and product managers while redefining the product roadmap.
 
-*   **Product Turnaround:** Delivered the roadmap and PR/FAQ for [Amazon Linux 2023](https://aws.amazon.com/linux/amazon-linux-2023/), defining the next generation of AWS's core operating system after a period of stagnation.
+*   **Product Turnaround:** Delivered the PR/FAQ and engineering roadmap for [Amazon Linux 2023](https://aws.amazon.com/linux/amazon-linux-2023/), defining the next generation of AWS's core operating system after a period of stagnation.
 *   **Innovation:** Launched [Bottlerocket](https://bottlerocket.dev/) GA, a purpose-built open-source OS for container orchestration, capturing new workloads on EKS/ECS.
 *   **Lifecycle Management:** Engineered the [extended support plan](https://aws.amazon.com/blogs/aws/update-on-amazon-ami-end-of-life/) for Amazon Linux 1, retaining critical legacy customer workloads while driving automated migration paths to Amazon Linux 2.
 *   **Open Source Strategy:** Transformed the OSPO from a compliance bottleneck into a strategic enabler by launching the "Open Source Champions" program and automating legal reviews, reducing cycle time for code releases.
