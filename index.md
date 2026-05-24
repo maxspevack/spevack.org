@@ -6,18 +6,21 @@ permalink: /
 <div class="profile-header">
 
   <div class="identity-row">
-    <img src="/max.jpg?v={{ site.time | date: '%s' }}" class="profile-photo" alt="Max Spevack">
+    <picture>
+      <source srcset="/max.webp" type="image/webp">
+      <img src="/max.jpg" class="profile-photo" alt="Max Spevack" width="400" height="400">
+    </picture>
     <h1>Max Spevack</h1>
   </div>
 
   <p class="profile-tagline">A tiny little song.</p>
 
   <div class="social-icons">
-    <a href="mailto:max.spevack@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-    <a href="/resume/" title="Résumé"><i class="fas fa-file-lines"></i></a>
-    <a href="https://www.linkedin.com/in/maxspevack/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/maxspevack" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://lulzcorp.biz" title="LulzCorp"><i class="fas fa-building"></i></a>
+    <a href="mailto:max.spevack@gmail.com" aria-label="Email">{% include icon.html name="mail" %}</a>
+    <a href="/resume/" aria-label="Résumé">{% include icon.html name="file" %}</a>
+    <a href="https://www.linkedin.com/in/maxspevack/" aria-label="LinkedIn">{% include icon.html name="linkedin" %}</a>
+    <a href="https://github.com/maxspevack" aria-label="GitHub">{% include icon.html name="github" %}</a>
+    <a href="https://lulzcorp.biz" aria-label="LulzCorp">{% include icon.html name="building" %}</a>
   </div>
 
 </div>

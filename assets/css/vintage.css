@@ -5,7 +5,7 @@
 :root {
     --bg-color: #fdfbf7;
     --text-color: #2f2f2f;
-    --muted-color: #7f8c8d;
+    --muted-color: #5d6d6e;
     --accent-primary: #2c3e50;
     --border-color: #dcdcdc;
 
@@ -103,10 +103,23 @@ a:hover {
     color: var(--text-color);
     text-decoration: none;
     margin: 0 10px;
-    font-size: 1.5em;
+    display: inline-block;
+    line-height: 0;
     transition: color 0.2s;
 }
 .social-icons a:hover { color: var(--accent-primary); }
+.social-icons .icon {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+}
+
+/* Resume summary block (used under the profile header on /resume/) */
+.profile-summary {
+    max-width: 700px;
+    margin: 20px auto 0 auto;
+    text-align: left;
+}
 
 /* Home page bio — cocktail-menu layout */
 .bio-grid {

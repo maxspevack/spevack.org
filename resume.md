@@ -4,23 +4,26 @@ title: Max Spevack - Resume
 permalink: /resume/
 ---
 <div class="profile-header">
-  
+
   <div class="identity-row">
-    <img src="/max.jpg" class="profile-photo" alt="Max Spevack">
+    <picture>
+      <source srcset="/max.webp" type="image/webp">
+      <img src="/max.jpg" class="profile-photo" alt="Max Spevack" width="400" height="400">
+    </picture>
     <h1>Max Spevack</h1>
   </div>
 
   <p class="profile-tagline">Engineering Leader & Organizational Architect</p>
-  
+
   <div class="social-icons">
-    <a href="mailto:max.spevack@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-    <a href="/" title="Home"><i class="fas fa-house"></i></a>
-    <a href="https://www.linkedin.com/in/maxspevack/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/maxspevack" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://lulzcorp.biz" title="LulzCorp"><i class="fas fa-building"></i></a>
+    <a href="mailto:max.spevack@gmail.com" aria-label="Email">{% include icon.html name="mail" %}</a>
+    <a href="/" aria-label="Home">{% include icon.html name="house" %}</a>
+    <a href="https://www.linkedin.com/in/maxspevack/" aria-label="LinkedIn">{% include icon.html name="linkedin" %}</a>
+    <a href="https://github.com/maxspevack" aria-label="GitHub">{% include icon.html name="github" %}</a>
+    <a href="https://lulzcorp.biz" aria-label="LulzCorp">{% include icon.html name="building" %}</a>
   </div>
 
-  <div style="max-width: 700px; margin: 20px auto 0 auto; text-align: left;">
+  <div class="profile-summary">
 <p>Senior leader with 20+ years of experience bridging deep Linux engineering and high-level product strategy. Specializing in high-stakes engineering leadership, organizational turnarounds, and building the teams that power the cloud at hyperscale (Google, AWS, CIQ) and open-source pioneers (Red Hat).</p>
   </div>
 </div>

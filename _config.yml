@@ -6,3 +6,9 @@ lang: en
 
 # Build settings
 markdown: kramdown
+
+# Repo-level files that should not be published to the site
+exclude:
+  - README.md
+  - LICENSE
+  - .github

@@ -9,7 +9,6 @@
     {%- assign page_description = page.description | default: site.description -%}
     {%- assign page_image = "/max.jpg" | absolute_url -%}
     {%- assign canonical = page.url | absolute_url -%}
-    {%- assign cb = site.time | date: '%s' -%}
 
     <title>{{ page_title }}</title>
     <meta name="description" content="{{ page_description }}">
@@ -23,6 +22,8 @@
     <meta property="og:description" content="{{ page_description }}">
     <meta property="og:url" content="{{ canonical }}">
     <meta property="og:image" content="{{ page_image }}">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
     <meta property="og:image:alt" content="Portrait of Max Spevack">
     <meta property="og:locale" content="en_US">
 
@@ -35,22 +36,18 @@
     <!-- Theme color (mobile browser chrome) -->
     <meta name="theme-color" content="#fdfbf7">
 
-    <!-- Fonts -->
+    <!-- Fonts (Courier Prime: italic 400 only — single use on .profile-tagline / .resume-date) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@1,400&family=Special+Elite&display=swap" rel="stylesheet">
 
-    <!-- Theme (?v= cache-buster ties asset URL to build time so CDN refetches) -->
-    <link rel="stylesheet" href="{{ '/assets/css/vintage.css' | relative_url }}?v={{ cb }}">
+    <link rel="stylesheet" href="{{ '/assets/css/vintage.css' | relative_url }}">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-    <!-- Favicons (cache-busted) -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v={{ cb }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v={{ cb }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v={{ cb }}">
-    <link rel="shortcut icon" href="/favicon.ico?v={{ cb }}">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="shortcut icon" href="/favicon.ico">
   </head>
   <body>
     <main class="page-content" aria-label="Content">
