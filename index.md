@@ -27,8 +27,8 @@ permalink: /
 
 <dl class="bio-grid">
   <dt>By day</dt>
-  <dd>Engineering organizations, Linux operating systems, cloud infrastructure.</dd>
+  <dd>Engineering organizations & Linux operating systems.</dd>
 
   <dt>By night</dt>
-  <dd>Digital newspapers, game theory, general trolling.</dd>
+  <dd>Game theory & general trolling.</dd>
 </dl>
