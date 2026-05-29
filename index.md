@@ -30,5 +30,5 @@ permalink: /
   <dd>Engineering organizations, Linux operating systems, cloud infrastructure.</dd>
 
   <dt>By night</dt>
-  <dd>Digital newspapers, CLI tools for the tired, general trolling.</dd>
+  <dd>Digital newspapers, game theory, general trolling.</dd>
 </dl>
