@@ -98,11 +98,11 @@ Led three engineering teams (KVM, Kernel Performance, Customer Experience) respo
 ---
 
 ### [Red Hat](https://www.redhat.com/)
-*(August 2004 - August 2011)*
+<span class="resume-date">(August 2004 - August 2011)</span>
 
-<span class="resume-role">Manager, Open Source Community Architecture</span> <span class="resume-date">*(Feb 2008 - Aug 2011)*</span>  
-<span class="resume-role">[Fedora Project Leader](https://docs.fedoraproject.org/en-US/council/fpl/)</span> <span class="resume-date">*(Feb 2006 - Feb 2008)*</span>  
-<span class="resume-role">Linux Systems Engineer</span> <span class="resume-date">*(Aug 2004 - Feb 2006)*</span>
+<span class="resume-role">Manager, Open Source Community Architecture</span> <span class="resume-date">(February 2008 - August 2011)</span>  
+<span class="resume-role">[Fedora Project Leader](https://docs.fedoraproject.org/en-US/council/fpl/)</span> <span class="resume-date">(February 2006 - February 2008)</span>  
+<span class="resume-role">Linux Systems Engineer</span> <span class="resume-date">(August 2004 - February 2006)</span>
 
 *   **Community Leadership:** Led the [Fedora Project](https://fedoraproject.org/) (2006–2008). Governed the global open-source community, serving as the primary public figurehead and liaison between Red Hat engineering and community contributors. (Media: [LWN](https://lwn.net/Articles/237700/), [Slashdot](https://slashdot.org/story/06/08/17/177220/fedora-project-leader-max-spevack-responds), [Ohio Linux Fest](https://www.youtube.com/watch?v=JC6URXglbO4))
 *   **Strategy:** Founded the Open Source Community Architecture team, establishing the [Open Source Way](https://www.theopensourceway.org/) as a corporate standard for productizing community software and founding the [Teaching Open Source](https://teachingopensource.org/) community.
@@ -110,7 +110,7 @@ Led three engineering teams (KVM, Kernel Performance, Customer Experience) respo
 ---
 
 ### [Verisign](https://www.verisign.com/)
-<span class="resume-date">*(October 2002 - August 2004)*</span>
+<span class="resume-date">(October 2002 - August 2004)</span>
 
 <span class="resume-role">Quality Assurance Engineer</span>
 
@@ -119,7 +119,7 @@ Led three engineering teams (KVM, Kernel Performance, Customer Experience) respo
 ## Education
 
 ### [Stanford University](https://cs.stanford.edu/)
-<span class="resume-date">*(September 1998 - June 2002)*</span>
+<span class="resume-date">(September 1998 - June 2002)</span>
 
 <span class="resume-role">BS [Computer Science](https://cs.stanford.edu/)</span>
 
