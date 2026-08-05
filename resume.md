@@ -35,8 +35,7 @@ permalink: /resume/
 ### [CIQ](https://ciq.com/)
 <span class="resume-date">(July 2025 - Present)</span>
 
-<span class="resume-role">Senior Principal Linux Architect</span>  
-**Chief of Staff to the CTO**
+<span class="resume-role">Senior Principal Linux Architect & Chief of Staff to the CTO</span>
 
 Operating as both individual contributor and manager — building the systems CIQ needs and re-architecting the org around them.
 
