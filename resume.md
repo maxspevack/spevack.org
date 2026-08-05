@@ -44,6 +44,7 @@ Operating as both individual contributor and manager — building the systems CI
 *   **Organizational Transformation:** Architected and executed the reorganization of Linux Engineering into "Core Distro" (OS) and "Release All Things" (Build Automation & Delivery), clarifying accountability and accelerating release velocity.
 *   **Turnaround Leadership:** Assumed control of the stalled "RAT" unit to resolve critical delivery failures. Restructured team composition to establish a high-performance culture, unblocking pipelines and drastically reducing image build cycles for [Rocky Linux from CIQ](https://ciq.com/products/rocky-linux/) and [Google Distributed Cloud](https://cloud.google.com/distributed-cloud-air-gapped). Handed over a stabilized, high-velocity organization to a permanent Director.
 *   **Strategic Planning:** Led 2026 resource planning and prioritization for Linux Engineering, including AI-assisted executive reporting frameworks in production for engineering output visibility.
+*   **AI Systems Engineering:** Built [spark-rocky](https://github.com/maxspevack/spark-rocky) — Rocky Linux 10 plus the CIQ Linux Kernel and NVIDIA's open GPU driver on the DGX Spark (GB10 Grace Blackwell), with zero carried patches, shipped as GPG-signed, reproducible, boot-validated appliance releases.
 
 ---
 
@@ -100,12 +101,17 @@ Led three engineering teams (KVM, Kernel Performance, Customer Experience) respo
 ### [Red Hat](https://www.redhat.com/)
 <span class="resume-date">(August 2004 - August 2011)</span>
 
-<span class="resume-role">Manager, Open Source Community Architecture</span> <span class="resume-date">(February 2008 - August 2011)</span>  
-<span class="resume-role">[Fedora Project Leader](https://docs.fedoraproject.org/en-US/council/fpl/)</span> <span class="resume-date">(February 2006 - February 2008)</span>  
-<span class="resume-role">Linux Systems Engineer</span> <span class="resume-date">(August 2004 - February 2006)</span>
+<span class="resume-role">Manager, Open Source Community Architecture</span> <span class="resume-date">(February 2008 - August 2011)</span>
 
-*   **Community Leadership:** Led the [Fedora Project](https://fedoraproject.org/) (2006–2008). Governed the global open-source community, serving as the primary public figurehead and liaison between Red Hat engineering and community contributors. (Media: [LWN](https://lwn.net/Articles/237700/), [Slashdot](https://slashdot.org/story/06/08/17/177220/fedora-project-leader-max-spevack-responds), [Ohio Linux Fest](https://www.youtube.com/watch?v=JC6URXglbO4))
-*   **Strategy:** Founded the Open Source Community Architecture team, establishing the [Open Source Way](https://www.theopensourceway.org/) as a corporate standard for productizing community software and founding the [Teaching Open Source](https://teachingopensource.org/) community.
+*   **Team Founding:** Founded the Open Source Community Architecture team, establishing the [Open Source Way](https://www.theopensourceway.org/) as a corporate standard for productizing community software.
+*   **Community Programs:** Founded the [Teaching Open Source](https://teachingopensource.org/) community, connecting university computer-science education to real open-source projects.
+
+<span class="resume-role">[Fedora Project Leader](https://docs.fedoraproject.org/en-US/council/fpl/)</span> <span class="resume-date">(February 2006 - February 2008)</span>
+
+*   **Community Leadership:** Led the global [Fedora Project](https://fedoraproject.org/) — governed the community, served as its primary public figurehead, and was the liaison between Red Hat engineering and community contributors. (Media: [LWN](https://lwn.net/Articles/237700/), [Slashdot](https://slashdot.org/story/06/08/17/177220/fedora-project-leader-max-spevack-responds), [Ohio Linux Fest](https://www.youtube.com/watch?v=JC6URXglbO4))
+*   **Distribution Unification:** Oversaw the merge of Fedora Core and Fedora Extras into a single community-driven distribution (Fedora 7), opening Red Hat's build infrastructure to outside contributors.
+
+<span class="resume-role">Linux Systems Engineer</span> <span class="resume-date">(August 2004 - February 2006)</span>
 
 ---
 
