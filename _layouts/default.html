@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {%- assign page_title = page.title | default: site.title -%}
@@ -27,27 +26,24 @@
     <meta property="og:image:alt" content="Portrait of Max Spevack">
     <meta property="og:locale" content="en_US">
 
-    <!-- Twitter -->
+    <!-- Twitter (title/description/image fall back to the og:* tags above) -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ page_title }}">
-    <meta name="twitter:description" content="{{ page_description }}">
-    <meta name="twitter:image" content="{{ page_image }}">
 
     <!-- Theme color (mobile browser chrome) -->
     <meta name="theme-color" content="#fdfbf7">
 
-    <!-- Fonts (Courier Prime: italic 400 only — single use on .profile-tagline / .resume-date) -->
+    <!-- Fonts (Courier Prime 400: upright for .resume-date, italic for .profile-tagline) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@1,400&family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;1,400&family=Special+Elite&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ '/assets/css/vintage.css' | relative_url }}">
 
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Favicons (relative_url, like the stylesheet: the workflow passes --baseurl) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/apple-touch-icon.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | relative_url }}">
+    <link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}">
   </head>
   <body>
     <main class="page-content" aria-label="Content">

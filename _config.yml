@@ -2,13 +2,7 @@ title: Max Spevack
 description: Engineering Leader & Organizational Architect
 url: https://spevack.org
 
-lang: en
-
-# Build settings
-markdown: kramdown
-
 # Repo-level files that should not be published to the site
 exclude:
   - README.md
   - LICENSE
-  - .github
