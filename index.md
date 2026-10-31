@@ -30,7 +30,3 @@ layout: default
   <dt>By night</dt>
   <dd>Game theory & general trolling.</dd>
 </dl>
-
-<footer class="site-footer">
-  <a href="{{ '/privacy/' | relative_url }}">Privacy</a> · <a href="{{ '/terms/' | relative_url }}">Terms</a>
-</footer>
