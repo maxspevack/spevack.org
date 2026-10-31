@@ -33,7 +33,7 @@ permalink: /resume/
 ## Experience
 
 ### [CIQ](https://ciq.com/)
-<span class="resume-date">(July 2025 - Present)</span>
+<span class="resume-date">(July 2025 - August 2026)</span>
 
 <span class="resume-role">Senior Principal Linux Architect & Chief of Staff to the CTO</span>
 
