@@ -256,3 +256,12 @@ a:hover {
         margin: 0.6in;
     }
 }
+
+/* Site footer (home page): the two legal links Google requires of an OAuth app */
+.site-footer {
+    margin-top: 60px;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    color: var(--muted-color);
+}
