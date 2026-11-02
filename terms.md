@@ -26,7 +26,7 @@ The sole user agrees to use the tools for exactly the purposes he built them for
 
 ## Termination
 
-Either party may end this agreement at any time by revoking the app's access at [myaccount.google.com/permissions](https://myaccount.google.com/permissions). Both parties are Max. He will not sue himself. Should he try, venue is Palo Alto, California, and the judge is also him.
+Either party may end this agreement at any time by revoking the app's access at [myaccount.google.com/permissions](https://myaccount.google.com/permissions). Both parties are Max. He will not sue himself. Should he try, venue is Mountain View, California, and the judge is also him.
 
 ## Privacy
 
